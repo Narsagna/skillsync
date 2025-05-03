@@ -10,6 +10,11 @@ import requests
 import sys
 import os
 from github_client import GITHUB_TOKEN
+from pydantic import BaseModel
+from enum import Enum
+from typing import Any, Dict
+import json
+import re
 
 @dataclass
 class Prompts:
@@ -66,6 +71,19 @@ LLAMA_API_URL = "https://api.llama.com/v1/chat/completions"
 LLAMA_MODEL = "Llama-4-Maverick-17B-128E-Instruct-FP8"
 LLAMA_API_KEY = os.getenv("LLAMA_API_KEY")
 
+class Provider(str, Enum):
+    llama = "llama"
+    # Add other providers as needed
+
+class ReadmeAnalysis(BaseModel):
+    """
+    Stores the results of README analysis, including provider, repository info, and analysis results.
+    """
+    provider: Provider = Provider.llama
+    repository: str
+    name: str
+    analysis: Dict[Any, Any]
+
 def fetch_readme(owner: str, repo: str) -> str:
     """
     Fetch the README file content for a given repository using the GitHub API.
@@ -107,18 +125,41 @@ def analyze_readme_with_llama(readme_content: str, prompt: str) -> str:
         ai_message = result.get("response", str(result))
     return ai_message
 
+def extract_owner_repo_from_url(repository_url: str):
+    """
+    Extracts the owner and repo name from a GitHub repository URL.
+    Example: https://github.com/facebook/react -> ("facebook", "react")
+    """
+    pattern = r"github\.com[/:]([\w.-]+)/([\w.-]+)(?:\.git)?/?"
+    match = re.search(pattern, repository_url)
+    if not match:
+        raise ValueError(f"Invalid GitHub repository URL: {repository_url}")
+    return match.group(1), match.group(2)
+
 def main():
     parser = argparse.ArgumentParser(description="Repository Profiler: Analyze a GitHub repo's README.")
-    parser.add_argument("--owner", required=True, help="GitHub repository owner (user or org)")
-    parser.add_argument("--repo", required=True, help="GitHub repository name")
+    parser.add_argument("repository_url", help="GitHub repository URL (e.g. https://github.com/facebook/react)")
     args = parser.parse_args()
 
     try:
-        readme_content = fetch_readme(args.owner, args.repo)
+        owner, repo = extract_owner_repo_from_url(args.repository_url)
+        readme_content = fetch_readme(owner, repo)
         prompt = readme_prompts.synthesis_guidelines + "\n" + readme_prompts.final_type_definition
         print("[INFO] Sending README to Llama for analysis...")
         profile_json = analyze_readme_with_llama(readme_content, prompt)
-        print(profile_json)
+        try:
+            analysis_dict = json.loads(profile_json)
+        except json.JSONDecodeError:
+            print("Llama response was not valid JSON:")
+            print(profile_json)
+            sys.exit(1)
+        analysis_result = ReadmeAnalysis(
+            provider=Provider.llama,
+            repository=f"{owner}/{repo}",
+            name=repo,
+            analysis=analysis_dict
+        )
+        print(analysis_result.model_dump_json(indent=2))
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
