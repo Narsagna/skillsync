@@ -15,6 +15,7 @@ from enum import Enum
 from typing import Any, Dict
 import json
 import re
+from db import Repository, SessionLocal, get_db
 
 @dataclass
 class Prompts:
@@ -136,10 +137,34 @@ def extract_owner_repo_from_url(repository_url: str):
         raise ValueError(f"Invalid GitHub repository URL: {repository_url}")
     return match.group(1), match.group(2)
 
+def pydantic_from_db(db_obj: Repository) -> ReadmeAnalysis:
+    """
+    Convert a Repository database object to a ReadmeAnalysis Pydantic model.
+    """
+    return ReadmeAnalysis(
+        provider=Provider.llama,  # Or use db_obj.provider if you add this field
+        repository=db_obj.repo_url,
+        name=db_obj.name,
+        analysis=db_obj.details
+    )
+
+def pydantic_to_db(pydantic_obj: ReadmeAnalysis) -> Repository:
+    """
+    Convert a ReadmeAnalysis Pydantic model to a Repository database object (not committed).
+    """
+    return Repository(
+        repo_url=pydantic_obj.repository,
+        name=pydantic_obj.name,
+        details=pydantic_obj.analysis
+    )
+
 def main():
     parser = argparse.ArgumentParser(description="Repository Profiler: Analyze a GitHub repo's README.")
     parser.add_argument("repository_url", help="GitHub repository URL (e.g. https://github.com/facebook/react)")
     args = parser.parse_args()
+
+    # Ensure DB tables are created
+    init_db()
 
     try:
         owner, repo = extract_owner_repo_from_url(args.repository_url)
@@ -159,6 +184,19 @@ def main():
             name=repo,
             analysis=analysis_dict
         )
+        # Store in DB (insert or update by repo_url)
+        db = SessionLocal()
+        db_obj = db.query(Repository).filter_by(repo_url=analysis_result.repository).first()
+        if db_obj:
+            db_obj.name = analysis_result.name
+            db_obj.details = analysis_result.analysis
+        else:
+            db_obj = pydantic_to_db(analysis_result)
+            db.add(db_obj)
+        db.commit()
+        db.refresh(db_obj)
+        db.close()
+        print("[INFO] Analysis result stored in database.")
         print(analysis_result.model_dump_json(indent=2))
     except Exception as e:
         print(f"Error: {e}")

@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, Text
+from sqlalchemy import create_engine, Column, Integer, String, JSON
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
@@ -20,12 +20,19 @@ Base = declarative_base()
 class Repository(Base):
     __tablename__ = "repositories"
     id = Column(Integer, primary_key=True, index=True)
-    repo_url = Column(String, unique=True, nullable=False)
+    repo_url = Column(String, nullable=False)
     name = Column(String, nullable=False)
-    details = Column(Text)  # Store JSON or text details
+    details = Column(JSON)  # Store JSON or text details
 
     def __repr__(self):
         return f"<Repository(id={self.id}, repo_url='{self.repo_url}', name='{self.name}')>"
 
 def init_db():
     Base.metadata.create_all(bind=engine) 
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
