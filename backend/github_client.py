@@ -8,10 +8,20 @@ import requests
 import os
 from typing import Any, Dict, List, Optional
 from datetime import datetime
+import itertools
 
-# Optionally set a GitHub token for authenticated requests (higher rate limits)
-GITHUB_TOKEN: Optional[str] = os.environ.get('GITHUB_TOKEN')
+# Load tokens from file
+TOKEN_FILE = os.path.join(os.path.dirname(__file__), 'github_tokens.txt')
+with open(TOKEN_FILE, 'r') as f:
+    TOKENS = [line.strip() for line in f if line.strip()]
+if not TOKENS:
+    raise Exception("No GitHub tokens found in backend/github_tokens.txt")
+token_cycle = itertools.cycle(TOKENS)
 
+def get_next_token():
+    token = next(token_cycle)
+    print(f"[TOKEN] Using token: {token[:8]}...")  # Only print the first 8 chars for security
+    return token
 
 def fetch_repo_metadata(owner: str, repo: str) -> Dict[str, Any]:
     """
@@ -25,9 +35,8 @@ def fetch_repo_metadata(owner: str, repo: str) -> Dict[str, Any]:
         Exception if the request fails
     """
     url = f"https://api.github.com/repos/{owner}/{repo}"
-    headers = {}
-    if GITHUB_TOKEN:
-        headers["Authorization"] = f"token {GITHUB_TOKEN}"
+    token = get_next_token()
+    headers = {"Authorization": f"token {token}"}
     response = requests.get(url, headers=headers)
     if response.status_code != 200:
         raise Exception(f"Failed to fetch repo metadata: {response.status_code} {response.text}")
@@ -45,9 +54,8 @@ def list_merged_prs(owner: str, repo: str, limit: Optional[int] = None) -> List[
         List of dictionaries, each representing a merged PR
     """
     url = f"https://api.github.com/repos/{owner}/{repo}/pulls"
-    headers = {}
-    if GITHUB_TOKEN:
-        headers["Authorization"] = f"token {GITHUB_TOKEN}"
+    token = get_next_token()
+    headers = {"Authorization": f"token {token}"}
     params = {"state": "closed", "per_page": 100}
     prs = []
     page = 1
@@ -89,9 +97,8 @@ def fetch_pr_patch(owner: str, repo: str, pr_number: int) -> str:
         String containing the patch content
     """
     url = f"https://github.com/{owner}/{repo}/pull/{pr_number}.patch"
-    headers = {}
-    if GITHUB_TOKEN:
-        headers["Authorization"] = f"token {GITHUB_TOKEN}"
+    token = get_next_token()
+    headers = {"Authorization": f"token {token}"}
     response = requests.get(url, headers=headers)
     if response.status_code != 200:
         raise Exception(f"Failed to fetch PR patch: {response.status_code} {response.text}")
@@ -105,9 +112,8 @@ def fetch_pr_patch_and_comments(owner: str, repo: str, pr_number: int) -> Dict[s
     """
     # Fetch patch
     patch_url = f"https://github.com/{owner}/{repo}/pull/{pr_number}.patch"
-    headers = {}
-    if GITHUB_TOKEN:
-        headers["Authorization"] = f"token {GITHUB_TOKEN}"
+    token = get_next_token()
+    headers = {"Authorization": f"token {token}"}
 
     patch_response = requests.get(patch_url, headers=headers)
     if patch_response.status_code != 200:
@@ -115,6 +121,8 @@ def fetch_pr_patch_and_comments(owner: str, repo: str, pr_number: int) -> Dict[s
 
     # Fetch review comments
     review_comments_url = f"https://api.github.com/repos/{owner}/{repo}/pulls/{pr_number}/comments"
+    token = get_next_token()
+    headers["Authorization"] = f"token {token}"
     review_comments_response = requests.get(review_comments_url, headers=headers)
     if review_comments_response.status_code != 200:
         raise Exception(f"Failed to fetch PR review comments: {review_comments_response.status_code} {review_comments_response.text}")
@@ -129,9 +137,8 @@ def fetch_comprehensive_pr_metadata(owner: str, repo: str, pr_number: int) -> Di
     """
     Fetch comprehensive metadata for a pull request, including commits, reviews, diff, and stats.
     """
-    headers = {}
-    if GITHUB_TOKEN:
-        headers["Authorization"] = f"token {GITHUB_TOKEN}"
+    token = get_next_token()
+    headers = {"Authorization": f"token {token}"}
 
     # Fetch PR data
     pr_url = f"https://api.github.com/repos/{owner}/{repo}/pulls/{pr_number}"
@@ -142,6 +149,8 @@ def fetch_comprehensive_pr_metadata(owner: str, repo: str, pr_number: int) -> Di
 
     # Fetch commits data
     commits_url = pr_data.get("commits_url")
+    token = get_next_token()
+    headers["Authorization"] = f"token {token}"
     commits_response = requests.get(commits_url, headers=headers)
     if commits_response.status_code != 200:
         raise Exception(f"Failed to fetch PR commits: {commits_response.status_code} {commits_response.text}")
@@ -149,6 +158,8 @@ def fetch_comprehensive_pr_metadata(owner: str, repo: str, pr_number: int) -> Di
 
     # Fetch reviews data
     reviews_url = pr_data.get("url") + "/reviews"
+    token = get_next_token()
+    headers["Authorization"] = f"token {token}"
     reviews_response = requests.get(reviews_url, headers=headers)
     if reviews_response.status_code != 200:
         raise Exception(f"Failed to fetch PR reviews: {reviews_response.status_code} {reviews_response.text}")
@@ -156,6 +167,8 @@ def fetch_comprehensive_pr_metadata(owner: str, repo: str, pr_number: int) -> Di
 
     # Fetch diff
     diff_url = f"https://github.com/{owner}/{repo}/pull/{pr_number}.diff"
+    token = get_next_token()
+    headers["Authorization"] = f"token {token}"
     diff_response = requests.get(diff_url, headers=headers)
     if diff_response.status_code != 200:
         raise Exception(f"Failed to fetch PR diff: {diff_response.status_code} {diff_response.text}")

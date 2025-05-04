@@ -362,12 +362,30 @@ def profile_developer(developer: str):
     store_dev_profile_in_db(profile, developer, metrics["total_prs_merged"])
     return profile
 
+def get_all_developers():
+    db = SessionLocal()
+    try:
+        developers = db.query(PullRequest.developer).distinct().all()
+        return [dev[0] for dev in developers]
+    finally:
+        db.close()
+
+def has_profile(developer: str) -> bool:
+    db = SessionLocal()
+    try:
+        return db.query(DevSkillProfile).filter_by(developer=developer).first() is not None
+    finally:
+        db.close()
+
 if __name__ == "__main__":
     import argparse
-    init_db()  # <-- Ensure all tables are created
-    parser = argparse.ArgumentParser(description="Profile a developer's skills and archetype from analyzed PRs.")
-    parser.add_argument("developer", type=str, help="Developer name (as stored in the DB, e.g., GitHub username)")
-    args = parser.parse_args()
-
-    profile = profile_developer(args.developer)
-    print(json.dumps(profile, indent=2))
+    init_db()
+    developers = get_all_developers()
+    print(f"[INFO] Found {len(developers)} developers in the database.")
+    for developer in developers:
+        if has_profile(developer):
+            print(f"[INFO] Developer '{developer}' already profiled. Skipping.")
+            continue
+        print(f"\n[INFO] Profiling developer: {developer}")
+        profile = profile_developer(developer)
+        print(json.dumps(profile, indent=2))

@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Environment variables
+.env
+.env.*
+
+# SQLite database
+skillsync.db
+
+# VSCode and JetBrains IDEs
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Test and coverage outputs
+dist/
+build/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/ 
+
+# Patches
+backend/patches/github_tokens.txt
