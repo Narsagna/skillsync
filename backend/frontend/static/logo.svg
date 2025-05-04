@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <!-- Simple code icon -->
+  <path d="M8,3 L3,12 L8,21" stroke="#999" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16,3 L21,12 L16,21" stroke="#999" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Dot in the middle -->
+  <circle cx="12" cy="12" r="2" fill="#0366d6"/>
+</svg>

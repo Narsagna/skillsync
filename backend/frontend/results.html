@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR Analysis Results - Profile Commit</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card result-card">
+            <h1>PR Analysis Results</h1>
+            
+            <div class="pr-info">
+                <h2>{{ analysis.title }}</h2>
+                <p>Repository: <a href="{{ repo_url }}" target="_blank">{{ repo_url }}</a></p>
+                <p>PR #{{ pr_number }} by <strong>{{ analysis.author }}</strong></p>
+            </div>
+            
+            <div class="skills-container">
+                <h3>Author Skills</h3>
+                {% if analysis.analysis and analysis.analysis.skills %}
+                    <ul class="skills-list">
+                    {% for skill in analysis.analysis.skills %}
+                        <li class="skill-item">
+                            <span class="skill-name">{{ skill.skill }}</span>
+                            {% if skill.evidence %}
+                                <div class="skill-evidence">
+                                    <strong>Evidence:</strong> {{ skill.evidence }}
+                                </div>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="no-data">No skills data available for this PR.</p>
+                {% endif %}
+            </div>
+            
+            <div class="actions">
+                <a href="/" class="button secondary">Analyze Another PR</a>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

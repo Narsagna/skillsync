@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ author }} - Author Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Additional styles for author profile page */
+        .profile-header {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .profile-header h1 {
+            margin-bottom: 10px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .profile-header p {
+            color: #555;
+            font-size: 16px;
+        }
+        .profile-header .author-summary {
+            margin-top: 15px;
+            font-size: 15px;
+            color: #444;
+            font-style: italic;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .profile-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .profile-section h2 {
+            margin-bottom: 20px; /* Increased margin */
+            font-size: 20px;
+            color: #333;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* PR Metrics Styling */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .metric-card {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 15px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .metric-label {
+            font-size: 14px;
+            color: #666;
+        }
+        .repos-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+            max-height: 150px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        .repos-list li {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Skill List Styling */
+        .skill-list {
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-item {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .skill-name {
+            font-weight: 600; /* Bolder name */
+            color: #333;
+            font-size: 16px; /* Slightly larger */
+        }
+        .skill-tags {
+            display: flex;
+            gap: 8px;
+        }
+        .skill-tag {
+            font-size: 12px;
+            color: #666;
+            background-color: #e9e9e9;
+            padding: 3px 8px;
+            border-radius: 12px;
+            white-space: nowrap;
+            display: inline-block;
+            margin-right: 4px;
+        }
+        .skill-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items top */
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        .skill-metrics {
+            display: flex;
+            gap: 20px; /* Increased gap */
+            align-items: center;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+        .skill-metric {
+            text-align: center;
+        }
+        .metric-value-small {
+            font-weight: 500;
+            color: #333;
+            font-size: 14px;
+        }
+        .metric-label-small {
+            font-size: 12px;
+            color: #777;
+        }
+        .skill-evidence {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+            flex-grow: 1; /* Allow evidence to take remaining space */
+            background-color: #fff; /* White background for evidence */
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #eee;
+        }
+        .skill-evidence strong {
+             display: block;
+             margin-bottom: 4px;
+             color: #444;
+        }
+
+        /* Definition List Styling */
+        .analysis-details dl {
+            display: grid;
+            grid-template-columns: auto 1fr; /* Label and value columns */
+            gap: 10px 15px; /* Increased row gap */
+            align-items: center; /* Vertically align items */
+        }
+
+        .analysis-details dt { /* Term (label) */
+            font-weight: 500;
+            color: #555;
+            grid-column: 1;
+            white-space: nowrap;
+            font-size: 14px; /* Slightly smaller labels */
+        }
+
+        .analysis-details dd { /* Definition (value) */
+            color: #333;
+            grid-column: 2;
+            margin-left: 0; /* Reset default margin */
+            font-size: 15px; /* Slightly larger values */
+        }
+
+        .analysis-details dd.code { /* Style for code-like values */
+            font-family: monospace;
+            background-color: #e9e9e9; /* Use tag background color */
+            padding: 3px 8px; /* Match tag padding */
+            border-radius: 12px; /* Match tag radius */
+            word-break: break-word; /* Allow breaking long words */
+            display: inline-block; /* Make it inline */
+            font-size: 13px; /* Smaller font for tags */
+            color: #555;
+        }
+        .analysis-details dd.summary {
+            font-style: italic;
+            color: #444;
+            line-height: 1.6;
+        }
+
+
+        /* Chart Styling */
+        .chart-wrapper {
+            max-width: 500px; /* Adjusted size */
+            margin: 20px auto; /* Centered with margin */
+            background-color: #fff; /* White background */
+            border-radius: 4px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Softer shadow */
+            border: 1px solid #eee;
+        }
+
+        .chart-title {
+            text-align: center;
+            margin-bottom: 15px; /* Increased margin */
+            font-weight: 500;
+            color: #555;
+            font-size: 16px; /* Slightly larger title */
+        }
+
+        .chart-container {
+            position: relative;
+            height: 350px; /* Adjusted height */
+            width: 100%;
+        }
+
+        /* PR Grid Styling */
+        .pr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .pr-card {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 15px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            cursor: pointer; /* Add cursor pointer */
+        }
+
+        .pr-card:hover {
+            transform: translateY(-2px);
+            border-color: #ccc;
+        }
+
+        .pr-card a { /* Remove default link styling */
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .pr-title {
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .pr-meta {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .pr-repo {
+            color: #0366d6;
+        }
+
+        .pr-number {
+            font-weight: 500;
+        }
+
+        .no-skills, .no-prs, .no-metrics {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            color: #666;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .category-header h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
+        }
+        
+        .skill-count {
+            font-size: 16px;
+            color: #666;
+            padding-right: 10px;
+            font-weight: 500;
+        }
+
+        /* Add this to your existing styles */
+        @media screen and (min-width: 992px) {
+          .metrics-container {
+            display: flex;
+            gap: 20px;
+          }
+          
+          .metrics-container .profile-section {
+            flex: 1;
+            width: calc(50% - 10px); /* 50% minus half the gap */
+          }
+        }
+        
+        /* For smaller screens, they'll naturally stack as block elements */
+        .metrics-container {
+          margin-bottom: 30px;
+        }
+
+        .behavioral-tag {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .confidence-value {
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        .skill-evidence {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+            flex-grow: 1;
+            background-color: #fff;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #eee;
+            margin-top: 10px;
+        }
+
+        .skill-evidence strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #444;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .author-summary {
+            margin-top: 15px;
+            font-size: 15px;
+            color: #444;
+            font-style: italic;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #eee;
+        }
+
+        .profile-header {
+            margin: 20px 0;
+            padding: 25px;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .profile-header h1 {
+            margin-bottom: 15px;
+            font-size: 32px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .profile-header p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <!-- Add or modify these styles in the <style> section of your HTML -->
+    <style>
+        /* Update container width to be more responsive */
+        .container {
+            width: 95%;
+            max-width: 1400px; /* Increased from likely 1200px or less */
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+    
+        /* Make the metrics container more responsive */
+        .metrics-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* Adjust for desktop screens */
+        @media screen and (min-width: 992px) {
+            .metrics-container {
+                flex-direction: row;
+            }
+            
+            .metrics-container .profile-section {
+                flex: 1;
+                min-width: 0; /* Allows flex items to shrink below content size */
+            }
+        }
+    
+        /* Make the chart wrapper responsive */
+        .chart-wrapper {
+            max-width: 100%; /* Allow charts to use full width of container */
+            width: 100%;
+        }
+        
+        /* Update PR grid for better responsiveness */
+        .pr-grid {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+        
+        /* Ensure skill evidence doesn't overflow */
+        .skill-details {
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+        
+        .skill-evidence {
+            min-width: 200px; /* Ensure evidence has reasonable width */
+            flex-basis: 100%; /* Take full width on small screens */
+        }
+        
+        @media screen and (min-width: 768px) {
+            .skill-evidence {
+                flex-basis: 0; /* Reset to allow flex-grow to work */
+            }
+        }
+        
+        /* Adjust skill metrics for smaller screens */
+        .skill-metrics {
+            width: 100%;
+            justify-content: flex-start;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .skill-metrics {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="/authors" class="back-button">&larr; Back to Authors</a>
+        {% include 'footer.html' %}
+    </div>
+
+
+    <div class="container">
+        {# Author Header with Summary #}
+        {% if author_profile %}
+        <div class="profile-header">
+            <h1>{{ author_profile.developer_name | default(author) }}</h1>
+            <p>{{ author_profile.pr_metrics.total_prs_merged | default(0) }} Pull Request{% if author_profile.pr_metrics.total_prs_merged != 1 %}s{% endif %} Merged</p>
+            {% if author_profile.summary %}
+                <p class="author-summary">{{ author_profile.summary }}</p>
+            {% endif %}
+        </div>
+
+        <div class="metrics-container">
+        {# Skill Analysis Section #}
+        <div class="profile-section">
+            <h2>Skill Analysis</h2>
+            {% if author_profile.skill_profile %}
+                {# Group skills by category #}
+                {% set categorized_skills = {} %}
+                {% for skill in author_profile.skill_profile %}
+                    {% if skill.category not in categorized_skills %}
+                        {% set _ = categorized_skills.update({skill.category: []}) %}
+                    {% endif %}
+                    {% set _ = categorized_skills[skill.category].append(skill) %}
+                {% endfor %}
+
+                {# Display skills by category #}
+                {% for category, skills in categorized_skills.items() %}
+                    <div class="category-header">
+                        <h3>{{ category | replace('_', ' ') | title }}</h3>
+                        <span class="skill-count">{{ skills|length }}</span>
+                    </div>
+                    <ul class="skill-list">
+                        {% for skill in skills %}
+                        <li class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">{{ skill.name }}</span>
+                                <div class="skill-tags">
+                                    {% if skill.family %}<span class="skill-tag">{{ skill.family }}</span>{% endif %}
+                                    {% if skill.category == 'behavioral_signals' %}
+                                        <span class="skill-tag behavioral-tag">Behavioral</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="skill-details">
+                                <div class="skill-metrics">
+                                    <div class="skill-metric">
+                                        <span class="metric-value-small">{{ skill.frequency }}</span>
+                                        <span class="metric-label-small">{{ skill.unit }}</span>
+                                    </div>
+                                    <div class="skill-metric">
+                                        <span class="metric-value-small confidence-value">{{ "%.0f"|format(skill.confidence * 100) }}%</span>
+                                        <span class="metric-label-small">Confidence</span>
+                                    </div>
+                                </div>
+                                {% if skill.evidence %}
+                                <div class="skill-evidence">
+                                    <strong>Evidence:</strong> {{ skill.evidence }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            {% else %}
+                <div class="no-skills">No skill data available for this author.</div>
+            {% endif %}
+        </div>
+
+        {# PR Metrics Section #}
+        <div class="profile-section">
+            <h2>Code Contribution</h2>
+            {% if author_profile.pr_metrics %}
+                {% set metrics = author_profile.pr_metrics %}
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">{{ metrics.avg_pr_size | round(1) | default('N/A') }}</span>
+                        <span class="metric-label">Avg PR Size (Lines)</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">{{ metrics.avg_time_to_review_hours | format_time }}</span>
+                        <span class="metric-label">Avg Time to Review</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">{{ metrics.avg_time_to_merge_hours | format_time }}</span>
+                        <span class="metric-label">Avg Time to Merge</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">{{ metrics.avg_commits_per_pr | round(1) | default('N/A') }}</span>
+                        <span class="metric-label">Avg Commits / PR</span>
+                    </div>
+                </div>
+                {# Repos Contributed To #}
+                {% if metrics.repos_contributed_to %}
+                <div>
+                    <h4>Repositories Contributed To:</h4>
+                    <ul class="repos-list">
+                        {% for repo in metrics.repos_contributed_to %}
+                            <li>{{ repo }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                 {# Contribution Distribution - Pie Chart #}
+                 {% if metrics.contribution_distribution %}
+                 <div style="margin-top: 20px;">
+                     <h4>Contribution Distribution:</h4>
+                     <div class="chart-wrapper" style="max-width: 380px;">
+                         <div class="chart-container" style="height: 180px;">
+                             <canvas id="contributionChart"></canvas>
+                         </div>
+                     </div>
+                     <script>
+                         const contributionData = {
+                             {% for type, count in metrics.contribution_distribution.items() %}
+                                 {% if count > 0 and type != "others" %}
+                                 "{{ type }}": {{ count }},
+                                 {% endif %}
+                             {% endfor %}
+                         };
+                     </script>
+                 </div>
+                 {% endif %}
+            {% else %}
+                <div class="no-metrics">PR metrics data not available.</div>
+            {% endif %}
+
+            {# PR Contributions Section #}
+            <h2>Pull Request Contributions</h2>
+            {% if pr_list %}
+            <div class="pr-grid">
+                {% for pr in pr_list %}
+                <div class="pr-card" onclick="submitPr('{{ pr.full_ref }}');">
+                    <div class="pr-title">{{ pr.title }}</div>
+                    <div class="pr-meta">
+                        <span class="pr-repo">{{ pr.repo }}</span>
+                        <span class="pr-number">#{{ pr.number }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="no-prs">No pull requests found for this author in the database.</div>
+            {% endif %}
+        </div>
+        </div>
+
+        {% else %}
+            <div class="profile-header">
+                <h1>{{ author }}</h1>
+                <p>Could not load profile data.</p>
+            </div>
+        {% endif %}
+    </div>
+
+    {# Loading Overlay #}
+    <div id="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p id="loading-msg">Loading profile...</p>
+    </div>
+
+    {# Hidden form for PR submission #}
+    <form id="hidden-analyze-form" action="/analyze" method="post" style="display: none;">
+        <input type="text" id="hidden_pr_input" name="pr_input">
+    </form>
+
+    <script>
+        // Add padding to body for top navigation
+        if (document.querySelector('.top-nav')) {
+            document.body.classList.add('has-top-nav');
+        }
+
+        // Function to submit PR analysis form
+        function submitPr(prRef) {
+            document.getElementById('hidden_pr_input').value = prRef;
+            document.getElementById('loading-overlay').style.display = 'flex';
+            document.getElementById('hidden-analyze-form').submit();
+        }
+
+        // Loading message animation
+        let loading_msgs = ['Loading profile...', 'Processing data...', 'Analyzing skills...', 'Generating charts...'];
+        let loading_index = 0;
+        setInterval(() => {
+            const msgElement = document.getElementById('loading-msg');
+             if (msgElement) {
+                 msgElement.innerText = loading_msgs[loading_index];
+                 loading_index = (loading_index + 1) % loading_msgs.length;
+             }
+        }, 3000);
+
+        // Initialize radar chart if skill data is available
+        const skillChartDataString = '{{ skill_proficiency_chart_data | safe }}';
+        let skillChartData = [];
+        try {
+             // Only parse if the string is not empty and represents a valid JSON array
+             if (skillChartDataString && skillChartDataString !== '[]') {
+                 skillChartData = JSON.parse(skillChartDataString);
+             }
+        } catch (e) {
+             console.error("Error parsing skill chart data:", e);
+             skillChartData = []; // Ensure it's an empty array on error
+        }
+        
+        // Initialize contribution distribution pie chart if data is available
+        const contributionChart = typeof contributionData !== 'undefined' ? contributionData : null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize contribution distribution pie chart
+            if (contributionChart && Object.keys(contributionChart).length > 0) {
+                const contributionCtx = document.getElementById('contributionChart');
+                if (contributionCtx) {
+                    // Create arrays for labels and data from the contributionData object
+                    const labels = Object.keys(contributionChart);
+                    const data = Object.values(contributionChart);
+                    
+                    // Generate colors based on the number of segments
+                    const colors = [
+                        'rgba(78, 115, 223, 0.8)',
+                        'rgba(28, 200, 138, 0.8)',
+                        'rgba(54, 185, 204, 0.8)',
+                        'rgba(246, 194, 62, 0.8)',
+                        'rgba(231, 74, 59, 0.8)',
+                        'rgba(104, 109, 224, 0.8)',
+                        'rgba(156, 136, 255, 0.8)',
+                        'rgba(98, 209, 159, 0.8)'
+                    ];
+                    
+                    // Fill in more colors if needed
+                    while (colors.length < labels.length) {
+                        colors.push(...colors.slice(0, labels.length - colors.length));
+                    }
+                    
+                    new Chart(contributionCtx, {
+                        type: 'pie',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                data: data,
+                                backgroundColor: colors.slice(0, data.length),
+                                borderColor: 'white',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'right',
+                                    labels: {
+                                        generateLabels: function(chart) {
+                                            const data = chart.data;
+                                            if (data.labels.length && data.datasets.length) {
+                                                const dataset = data.datasets[0];
+                                                const total = dataset.data.reduce((a, b) => a + b, 0);
+                                                return data.labels.map((label, index) => {
+                                                    const value = dataset.data[index];
+                                                    const percentage = Math.round((value / total) * 100);
+                                                    return {
+                                                        text: `${label}: ${value} (${percentage}%)`,
+                                                        fillStyle: dataset.backgroundColor[index],
+                                                        hidden: !chart.getDataVisibility(index),
+                                                        index: index
+                                                    };
+                                                });
+                                            }
+                                            return [];
+                                        },
+                                        font: {
+                                            size: 12
+                                        },
+                                        color: '#444'
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.raw || 0;
+                                            const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                            const percentage = Math.round((value / total) * 100);
+                                            return `${label}: ${value} (${percentage}%)`;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+            
+            // Initialize skill radar chart
+            if (skillChartData && skillChartData.length > 0) {
+                const proficiencyData = {
+                    labels: skillChartData.map(skill => skill.name),
+                    datasets: [{
+                        label: 'Proficiency',
+                        data: skillChartData.map(skill => skill.proficiency),
+                        backgroundColor: 'rgba(78, 115, 223, 0.2)',
+                        borderColor: 'rgba(78, 115, 223, 1)',
+                        pointBackgroundColor: 'rgba(78, 115, 223, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(78, 115, 223, 1)',
+                        borderWidth: 2
+                    }, {
+                        label: 'Confidence (Scaled)', // Label indicates it's scaled
+                        data: skillChartData.map(skill => skill.confidence_scaled),
+                        backgroundColor: 'rgba(28, 200, 138, 0.2)',
+                        borderColor: 'rgba(28, 200, 138, 1)',
+                        pointBackgroundColor: 'rgba(28, 200, 138, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(28, 200, 138, 1)',
+                        borderWidth: 2
+                    }]
+                };
+
+                const proficiencyConfig = {
+                    type: 'radar',
+                    data: proficiencyData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            r: {
+                                angleLines: { display: true },
+                                suggestedMin: 0,
+                                suggestedMax: 5, // Scale is 0-5
+                                pointLabels: { // Customize point labels (skill names)
+                                     font: {
+                                         size: 11 // Adjust font size if needed
+                                     },
+                                     color: '#444'
+                                 },
+                                ticks: {
+                                    display: true, // Show scale numbers
+                                    stepSize: 1 // Steps of 1 (0, 1, 2, 3, 4, 5)
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const label = context.dataset.label || '';
+                                        const value = context.raw || 0;
+                                        // Display original confidence for tooltip
+                                        if (context.datasetIndex === 1) {
+                                             const originalConfidence = Math.round((value / 5) * 100);
+                                             return `Confidence: ${originalConfidence}%`;
+                                        }
+                                        return `${label}: ${value}/5`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+
+                const chartElement = document.getElementById('skillProficiencyChart');
+                if (chartElement) {
+                     new Chart(chartElement, proficiencyConfig);
+                } else {
+                     console.error("Canvas element for skill chart not found.");
+                }
+            } else {
+                 console.log("No data available for skill proficiency chart.");
+                 // Optionally hide the chart wrapper if no data
+                 const skillChartWrapper = document.querySelector('.chart-wrapper:has(#skillProficiencyChart)');
+                 if(skillChartWrapper) skillChartWrapper.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

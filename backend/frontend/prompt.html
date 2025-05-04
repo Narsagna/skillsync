@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+    <style>
+        /* Navigation Links Styling */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #0366d6;
+            text-decoration: none;
+            background-color: #f0f0f0;
+            border-color: #ddd;
+        }
+
+        /* Result Container */
+        .result-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Dashboard iframe */
+        .dashboard-iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        /* Loading Overlay */
+        #loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0366d6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* People Selector Styling */
+        .people-selector {
+            margin-top: 16px;
+            position: relative;
+            flex: 1.8;
+            min-width: 0; /* Prevents flex item from overflowing */
+        }
+
+        .people-selector-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 12px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            min-height: 40px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+
+        .people-selector-header:hover {
+            border-color: #0366d6;
+        }
+
+        .people-selector-header.active {
+            border-color: #0366d6;
+            box-shadow: 0 0 0 2px rgba(3, 102, 214, 0.1);
+        }
+
+        .selected-people {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            width: 100%;
+        }
+
+        .selected-person {
+            background: #e1f0ff;
+            color: #0366d6;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .selected-person button {
+            background: none;
+            border: none;
+            color: #0366d6;
+            cursor: pointer;
+            padding: 0;
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        .people-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+
+        .people-search {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1;
+        }
+
+        .people-search input {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .people-search input:focus {
+            outline: none;
+            border-color: #0366d6;
+            box-shadow: 0 0 0 2px rgba(3, 102, 214, 0.1);
+        }
+
+        .people-options {
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .no-results {
+            padding: 8px 12px;
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .people-dropdown.active {
+            display: block;
+        }
+
+        .people-option {
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .people-option:hover {
+            background: #f5f5f5;
+        }
+
+        .people-option input[type="checkbox"] {
+            margin: 0;
+        }
+
+        .people-option.selected {
+            background: #e1f0ff;
+        }
+
+        .people-selector-placeholder {
+            color: #666;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Suggestion Bubbles Styling */
+        .suggestions-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .suggestion-bubble {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .suggestion-bubble:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .suggestion-text {
+            color: #495057;
+            font-size: 14px;
+            flex-grow: 1;
+        }
+
+        .suggestion-arrow {
+            color: #6c757d;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .suggestion-bubble::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid #e9ecef;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .suggestion-bubble:hover::after {
+            opacity: 1;
+        }
+
+        /* Suggestion Heading Styling */
+        .suggestions-heading {
+            text-align: center;
+            color: #495057;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            margin-top: 100px;
+        }
+
+        .search-container {
+            margin-top: 20vh;
+        }
+
+        /* Input Row Layout */
+        .input-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            width: 100%;
+        }
+
+        /* Model Switch Styling */
+        .model-switch-container {
+            display: flex;
+            align-items: center;
+            flex: 0.2;
+            justify-content: center;
+            margin: 0;
+            margin-top: 14px;
+            padding: 0;
+            min-width: 60px;
+        }
+
+        .model-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 28px;
+            background: #e9ecef;
+            border: none;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .model-switch:hover {
+            background: #dee2e6;
+        }
+
+        .model-switch input[type="radio"] {
+            display: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .model-switch label {
+            position: absolute;
+            top: 0;
+            width: 30px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            font-size: 12px;
+            color: #495057;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .model-switch label[for="model-fast"] {
+            left: 0;
+        }
+
+        .model-switch label[for="model-slow"] {
+            right: 0;
+        }
+
+        .model-switch-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 26px;
+            height: 24px;
+            background: white;
+            border-radius: 12px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin: 0;
+            padding: 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .model-switch input[type="radio"]:checked + label {
+            color: #0366d6;
+        }
+
+        .model-switch input[type="radio"]#model-slow:checked ~ .model-switch-slider {
+            transform: translateX(30px);
+        }
+
+        .model-switch label i {
+            font-size: 11px;
+            vertical-align: middle;
+            margin: 0;
+            padding: 0;
+        }
+
+        .model-switch input[type="radio"]:checked + label i {
+            color: #0366d6;
+        }
+    </style>
+</head>
+<body>
+    {% include 'footer.html' %}
+
+    <div class="container">
+        <div class="search-container">
+            <h1>Skillsync: Engineering pokedex</h1>
+
+            <form action="/process-prompt" method="post" id="prompt-form">
+                <div class="search-bar">
+                    <input 
+                        type="text" 
+                        id="prompt_input" 
+                        name="prompt_input" 
+                        placeholder="Enter your prompt here..." 
+                        required 
+                        value="{{ prompt_input if prompt_input else '' }}" 
+                        autocomplete="off" 
+                        autofocus>
+                    <button type="submit">Analyze</button>
+                </div>
+
+                <div class="input-row">
+                    <div class="people-selector">
+                        <div class="people-selector-header" id="people-selector-header">
+                            <div class="selected-people" id="selected-people">
+                                <span class="people-selector-placeholder">Select people to analyze...</span>
+                            </div>
+                        </div>
+                        <div class="people-dropdown" id="people-dropdown">
+                            <div class="people-search">
+                                <input type="text" id="people-search-input" placeholder="Search people...">
+                            </div>
+                            <div class="people-options" id="people-options">
+                                {% for person in people %}
+                                <div class="people-option" data-value="{{ person }}">
+                                    <input type="checkbox" id="person-{{ loop.index }}" value="{{ person }}">
+                                    <label for="person-{{ loop.index }}">{{ person }}</label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Model Switch -->
+                    <div class="model-switch-container">
+                        <div class="model-switch">
+                            <input type="radio" id="model-fast" name="model" value="fast" checked>
+                            <label for="model-fast"><i class="fas fa-bolt"></i></label>
+                            <input type="radio" id="model-slow" name="model" value="slow">
+                            <label for="model-slow"><i class="fas fa-lightbulb"></i></label>
+                            <span class="model-switch-slider"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="nav-links" hidden style="display: none;">
+                <!-- TODO: remove this later -->
+                <a href="/">PR Analysis</a>
+                <a href="/repository">Browse Repository PRs</a>
+                <a href="/authors">Browse Authors</a>
+            </div>
+
+            <div class="suggestions-container">
+                {% for prompt in sample_prompts %}
+                <div class="suggestion-bubble" onclick="fillPrompt('{{ prompt }}')">
+                    <span class="suggestion-text">{{ prompt }}</span>
+                    <span class="suggestion-arrow">→</span>
+                </div>
+                {% endfor %}
+            </div>
+
+            {% if error %}
+            <div class="error-message">
+                {{ error }}
+            </div>
+            {% endif %}
+        </div>
+
+        {% if dashboard_html %}
+        <div class="result-container">
+            {{ dashboard_html | safe }}
+        </div>
+        {% endif %}
+    </div>
+
+    {# Loading Overlay #}
+    <div id="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p id="loading-msg">Processing prompt...</p>
+    </div>
+
+    <script>
+        // People selector functionality
+        const peopleSelector = {
+            header: document.getElementById('people-selector-header'),
+            dropdown: document.getElementById('people-dropdown'),
+            selectedPeople: document.getElementById('selected-people'),
+            searchInput: document.getElementById('people-search-input'),
+            optionsContainer: document.getElementById('people-options'),
+            selected: new Set(),
+            placeholder: document.querySelector('.people-selector-placeholder'),
+
+            init() {
+                this.header.addEventListener('click', () => this.toggleDropdown());
+                document.addEventListener('click', (e) => {
+                    if (!this.header.contains(e.target) && !this.dropdown.contains(e.target)) {
+                        this.dropdown.classList.remove('active');
+                        this.header.classList.remove('active');
+                    }
+                });
+
+                this.dropdown.addEventListener('change', (e) => {
+                    if (e.target.type === 'checkbox') {
+                        const value = e.target.value;
+                        if (e.target.checked) {
+                            this.selected.add(value);
+                        } else {
+                            this.selected.delete(value);
+                        }
+                        this.updateSelectedPeople();
+                    }
+                });
+
+                // Add search functionality
+                this.searchInput.addEventListener('input', () => this.filterOptions());
+                this.searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        this.dropdown.classList.remove('active');
+                        this.header.classList.remove('active');
+                    }
+                });
+            },
+
+            toggleDropdown() {
+                this.dropdown.classList.toggle('active');
+                this.header.classList.toggle('active');
+                if (this.dropdown.classList.contains('active')) {
+                    this.searchInput.focus();
+                }
+            },
+
+            filterOptions() {
+                const searchTerm = this.searchInput.value.toLowerCase();
+                const options = this.optionsContainer.querySelectorAll('.people-option');
+                let hasResults = false;
+
+                options.forEach(option => {
+                    const label = option.querySelector('label').textContent.toLowerCase();
+                    const matches = label.includes(searchTerm);
+                    option.style.display = matches ? 'flex' : 'none';
+                    if (matches) hasResults = true;
+                });
+
+                // Show/hide no results message
+                let noResults = this.optionsContainer.querySelector('.no-results');
+                if (!hasResults && !noResults) {
+                    noResults = document.createElement('div');
+                    noResults.className = 'no-results';
+                    noResults.textContent = 'No matching people found';
+                    this.optionsContainer.appendChild(noResults);
+                } else if (hasResults && noResults) {
+                    noResults.remove();
+                }
+            },
+
+            updateSelectedPeople() {
+                if (this.selected.size === 0) {
+                    this.selectedPeople.innerHTML = '<span class="people-selector-placeholder">Select people to analyze...</span>';
+                    return;
+                }
+
+                this.selectedPeople.innerHTML = Array.from(this.selected).map(person => `
+                    <span class="selected-person">
+                        ${person}
+                        <button type="button" onclick="peopleSelector.removePerson('${person}')">&times;</button>
+                    </span>
+                `).join('');
+            },
+
+            removePerson(person) {
+                this.selected.delete(person);
+                const checkbox = this.dropdown.querySelector(`input[value="${person}"]`);
+                if (checkbox) checkbox.checked = false;
+                this.updateSelectedPeople();
+            }
+        };
+
+        // Initialize people selector
+        peopleSelector.init();
+
+        // Function to fill prompt input
+        function fillPrompt(text) {
+            const promptInput = document.getElementById('prompt_input');
+            promptInput.value = text;
+            promptInput.focus();
+        }
+
+        // Modify form submission to include selected people
+        document.getElementById('prompt-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const promptInput = document.getElementById('prompt_input');
+            const selectedPeople = Array.from(peopleSelector.selected);
+            const modelSelection = document.querySelector('input[name="model"]:checked').value;
+            let input = promptInput.value;
+            
+            if (selectedPeople.length > 0) {
+                promptInput.value = `
+                For ${selectedPeople.join(', ')}:
+                ${promptInput.value}`;
+            }
+            
+            // Add model selection to form data
+            const formData = new FormData(this);
+            formData.set('model', modelSelection);
+            
+            // Submit the form
+            this.submit();
+            
+            promptInput.value = input;
+        });
+
+        // Show loading overlay on form submission
+        document.getElementById('prompt-form').addEventListener('submit', function() {
+            document.getElementById('loading-overlay').style.display = 'flex';
+        });
+
+        // Loading message rotation
+        let loading_msgs = ['Processing prompt...', 'Analyzing data...', 'Generating response...', 'Almost there...', 'Hold tight...'];
+        let loading_index = 0;
+        setInterval(() => {
+            const msgElement = document.getElementById('loading-msg');
+            if (msgElement) {
+                msgElement.innerText = loading_msgs[loading_index];
+                loading_index = (loading_index + 1) % loading_msgs.length;
+            }
+        }, 3000);
+    </script>
+</body>
+</html> 

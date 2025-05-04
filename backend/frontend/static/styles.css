@@ -1,0 +1,388 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Top Navigation with Back Button */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    z-index: 100;
+}
+
+.back-button {
+    display: inline-block;
+    font-size: 16px;
+    color: #555;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.back-button:hover {
+    color: #000;
+}
+
+/* Add padding to body when top-nav is present */
+body.has-top-nav {
+    padding-top: 50px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 40px);
+    padding-bottom: 40px; /* Add padding at the bottom for visual balance */
+}
+
+/* Search Container */
+.search-container {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    max-width: 700px; /* Match the max-width of container for consistent sizing */
+    transition: margin 0.3s ease;
+    /* Position based on golden ratio - approximately 38.2% from the top */
+    margin-top: 38.2vh;
+    margin-bottom: auto;
+}
+
+.search-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* When there are results, adjust the search container position */
+.has-results .search-container {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* Fixed search bar positioning */
+.search-bar {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Autocomplete container fix */
+.autocomplete-container {
+    flex: 1;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+    height: 44px;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #555;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 0 4px 4px 0;
+    font-size: 16px;
+    cursor: pointer;
+    height: 44px;
+    white-space: nowrap;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+    border-color: #555;
+}
+
+/* Autocomplete dropdown - updated to be more subtle */
+.autocomplete-dropdown {
+    position: absolute;
+    width: 100%;
+    max-height: 0;
+    overflow-y: hidden;
+    background-color: #f9f9f9; /* Match the page background */
+    border: 1px solid #e5e5e5; /* Lighter border */
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    z-index: 1000;
+    opacity: 0;
+    text-align: left;
+    margin-top: -1px; /* Prevent gap between input and dropdown */
+    transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    pointer-events: none; /* Prevent interaction with hidden dropdown */
+}
+
+.autocomplete-dropdown.show {
+    max-height: 300px;
+    opacity: 1;
+    pointer-events: auto; /* Re-enable interaction when visible */
+}
+
+.autocomplete-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: transparent; /* Use transparent instead of white */
+    color: #555; /* Slightly muted text color */
+    transition: background-color 0.2s ease; /* Smooth hover transition */
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover {
+    background-color: #f3f3f3; /* Subtle hover state */
+}
+
+.autocomplete-highlight {
+    font-weight: 600; /* Slightly less bold */
+    color: #555; /* Match item text color */
+}
+
+/* Update active item styling */
+.autocomplete-item.active {
+    background-color: #f3f3f3;
+    border-left: 2px solid #ccc; /* More subtle left border */
+}
+
+/* Error Message */
+.error-message {
+    margin: 15px auto 0;
+    max-width: 500px;
+    padding: 10px;
+    background-color: #fff0f0;
+    color: #d32f2f;
+    border: 2px solid #ffcdd2;
+    border-radius: 4px;
+    text-align: left;
+}
+
+/* Result Card */
+.result-card {
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+
+.pr-info {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.pr-info h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.pr-info a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.pr-info a:hover {
+    text-decoration: underline;
+}
+
+.skill-section {
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+}
+
+.skill-section h4 {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #eee;
+}
+
+.skill-section:first-of-type {
+    margin-top: 20px;
+}
+
+.skill-section .no-skills {
+    padding: 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    color: #777;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.skills-container h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.skills-list {
+    list-style: none;
+}
+
+.skill-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.skill-name {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.skill-evidence {
+    color: #555;
+    font-size: 14px;
+}
+
+.no-data {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Loading Screen */
+#loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #eee;
+    border-top: 5px solid #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+#loading-overlay p {
+    font-size: 16px;
+    color: #333;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .search-bar {
+        flex-direction: column;
+    }
+    
+    .autocomplete-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .search-bar input {
+        border-right: 2px solid #ddd;
+        border-radius: 4px;
+    }
+    
+    .search-bar button {
+        border-radius: 4px;
+        width: 100%;
+    }
+}
+
+/* Provider footer - final version */
+body {
+    position: relative;
+    min-height: 100vh; /* Ensure the body spans the viewport height */
+    margin: 0;
+    padding-bottom: 50px; /* Space for footer */
+    box-sizing: border-box;
+}
+
+.provider-footer {
+    position: fixed; /* Change to fixed for consistent positioning */
+    top: 15px; /* Adjust top offset */
+    right: 15px; /* Position it on the right */
+    left: auto; /* Ensure it doesn't use the left value */
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #777;
+    z-index: 10;
+}
+
+.provider-footer img {
+    height: 18px;
+    width: 18px;
+    margin-right: 6px;
+}
+
+.provider-footer span {
+    line-height: 18px;
+    display: inline-block;
+}
+
+/* /1* Add this to your container class to make room for the footer *1/ */
+/* body { */
+/*     position: relative; */
+/*     padding-bottom: 50px; /1* Increase bottom padding to make room for footer *1/ */
+/* } */

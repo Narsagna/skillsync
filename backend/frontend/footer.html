@@ -1,0 +1,11 @@
+<!-- Simple provider footer with conditional logo -->
+<div class="provider-footer">
+    {% if provider == "GitHub" %}
+        <img src="{{ url_for('static', path='github-logo.svg') }}" alt="" role="presentation">
+    {% elif provider == "Bitbucket Server" %}
+        <img src="{{ url_for('static', path='bitbucket-logo.svg') }}" alt="" role="presentation">
+    {% else %}
+        <img src="{{ url_for('static', path='logo.svg') }}" alt="" role="presentation">
+    {% endif %}
+    <span>{{ provider }}</span>
+</div>

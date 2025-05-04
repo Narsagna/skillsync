@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author List - Profile Commit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+    <style>
+        /* Additional styles for author list page */
+        .author-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .author-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .author-item {
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .author-item:hover {
+            transform: translateY(-2px);
+            border-color: #aaa;
+        }
+        
+        .author-name {
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .author-meta {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .pr-count {
+            color: #0366d6;
+            font-weight: 500;
+        }
+        
+        .page-header {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+        
+        .page-header p {
+            color: #555;
+            font-size: 16px;
+        }
+        
+        .no-authors {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            color: #666;
+            text-align: center;
+            font-style: italic;
+            margin-top: 30px;
+        }
+        
+        .navigation-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        
+        .navigation-links a {
+            color: #555;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            background-color: white;
+        }
+        
+        .navigation-links a:hover {
+            background-color: #f5f5f5;
+            color: #333;
+            border-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="/" class="back-button">&larr; Back to Analyzer</a>
+
+        {% include 'footer.html' %}
+    </div>
+    
+    <div class="container repo-container">
+        <div class="page-header">
+            <h1>{{ provider }} Contributors</h1>
+            {% if total_authors %}
+                <p>Showing {{ total_authors }} unique contributors across all repositories</p>
+            {% endif %}
+        </div>
+        
+        {% if error %}
+        <div class="error-message">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        {% if left_column %}
+            <div class="author-columns">
+                <div class="author-column">
+                    {% for author in left_column %}
+                        <div class="author-item" onclick="window.location.href='/author/{{ author.name }}';">
+                            <div class="author-name">{{ author.name }}</div>
+                            <div class="author-meta">
+                                <span class="pr-count">{{ author.pr_count }} Pull Request{% if author.pr_count != 1 %}s{% endif %}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="author-column">
+                    {% for author in right_column %}
+                        <div class="author-item" onclick="window.location.href='/author/{{ author.name }}';">
+                            <div class="author-name">{{ author.name }}</div>
+                            <div class="author-meta">
+                                <span class="pr-count">{{ author.pr_count }} Pull Request{% if author.pr_count != 1 %}s{% endif %}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% else %}
+            <div class="no-authors">
+                No authors found in the database.
+            </div>
+        {% endif %}
+    </div>
+    
+    <div id="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p id="loading-msg">Loading authors...</p>
+    </div>
+    
+    <script>
+        // Show loading overlay when navigating
+        document.querySelectorAll('.author-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.getElementById('loading-overlay').style.display = 'flex';
+            });
+        });
+        
+        // Add top-nav padding to body
+        if (document.querySelector('.top-nav')) {
+            document.body.classList.add('has-top-nav');
+        }
+        
+        // Loading message animation
+        let loading_msgs = ['Loading authors...', 'Processing data...', 'Almost there...', 'Analyzing profiles...'];
+        let loading_index = 0;
+        
+        setInterval(() => {
+            document.getElementById('loading-msg').innerText = loading_msgs[loading_index];
+            loading_index = (loading_index + 1) % loading_msgs.length;
+        }, 3000);
+    </script>
+</body>
+</html>

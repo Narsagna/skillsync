@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Commit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+    <script>
+        window.location.href = '/prompt';
+        // TODO: remove this later
+    </script>
+    <style>
+        /* Navigation Links Styling */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            gap: 15px; /* Add gap between links */
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+            border: 1px solid transparent; /* Add transparent border */
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #0366d6;
+            text-decoration: none; /* Remove underline on hover */
+            background-color: #f0f0f0; /* Add subtle background */
+            border-color: #ddd; /* Show border on hover */
+        }
+
+        /* Skills List Styling */
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .skill-item {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .skill-category {
+            font-size: 12px;
+            color: #666;
+            text-transform: capitalize;
+            background-color: #e9e9e9;
+            padding: 2px 6px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .skill-frequency {
+            font-size: 12px;
+            color: #888;
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .skill-evidence {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .skill-behavioral {
+            margin-top: 8px;
+            font-size: 12px;
+            border-top: 1px solid #eee;
+            padding-top: 8px;
+        }
+
+        .behavioral-label {
+            color: #666;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .behavioral-value {
+            color: #0366d6;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .behavioral-evidence {
+            color: #666;
+            font-style: italic;
+            font-size: 11px;
+            display: block;
+            margin-top: 2px;
+        }
+
+        /* Styles for analysis sections (Inspired by author_profile.html) */
+        .analysis-section {
+            margin-bottom: 30px; /* Increased spacing */
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+        }
+         .analysis-section:last-child {
+             margin-bottom: 0; /* Remove margin for the last section */
+         }
+
+        .analysis-section h3 {
+             margin-bottom: 20px; /* Increased margin */
+             font-size: 20px;
+             color: #333;
+             padding-bottom: 10px;
+             border-bottom: 1px solid #eee;
+         }
+
+        /* Definition List Styling */
+        .analysis-details dl {
+            display: grid;
+            grid-template-columns: auto 1fr; /* Label and value columns */
+            gap: 10px 15px; /* Increased row gap */
+            align-items: center; /* Vertically align items */
+        }
+
+        .analysis-details dt { /* Term (label) */
+            font-weight: 500;
+            color: #555;
+            grid-column: 1;
+            white-space: nowrap;
+            font-size: 14px; /* Slightly smaller labels */
+        }
+
+        .analysis-details dd { /* Definition (value) */
+            color: #333;
+            grid-column: 2;
+            margin-left: 0; /* Reset default margin */
+            font-size: 15px; /* Slightly larger values */
+        }
+
+        .analysis-details dd.code { /* Style for code-like values */
+            font-family: monospace;
+            background-color: #e9e9e9; /* Use tag background color */
+            padding: 3px 8px; /* Match tag padding */
+            border-radius: 12px; /* Match tag radius */
+            word-break: break-word; /* Allow breaking long words */
+            display: inline-block; /* Make it inline */
+            font-size: 13px; /* Smaller font for tags */
+            color: #555;
+        }
+        .analysis-details dd.summary {
+            font-style: italic;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Metrics Grid Styling (Inspired by author_profile.html) */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Adjusted min size */
+            gap: 15px; /* Slightly reduced gap */
+            margin-bottom: 25px; /* Space below metrics */
+        }
+        .metric-card {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 15px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 18px; /* Slightly smaller value */
+            font-weight: 600;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .metric-label {
+            font-size: 13px; /* Slightly smaller label */
+            color: #666;
+        }
+
+        /* Commit List Styling */
+        .commit-list-container {
+             margin-top: 20px; /* Add space above commit list */
+        }
+        .commit-list-container h4 {
+             font-size: 16px;
+             color: #444;
+             margin-bottom: 10px;
+        }
+        .commit-list {
+            list-style: none;
+            padding-left: 0;
+            max-height: 250px; /* Increased height */
+            overflow-y: auto; /* Add scroll if needed */
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 15px; /* Increased padding */
+            background-color: #f9f9f9;
+        }
+        .commit-item {
+            margin-bottom: 10px; /* Increased spacing */
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #eee;
+            font-size: 14px;
+            line-height: 1.5; /* Improve readability */
+        }
+        .commit-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .commit-sha {
+            font-family: monospace;
+            color: #0366d6;
+            margin-right: 8px;
+            background-color: #eef; /* Subtle background for SHA */
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+        .commit-msg {
+            color: #333;
+            display: block; /* Ensure message is on its own line */
+            margin-top: 4px;
+        }
+        .commit-author-time { /* Combine author and time */
+            color: #666;
+            font-size: 13px;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* General Result Card Styling */
+        .result-card {
+            padding: 15px 25px 25px 25px; /* Adjust padding */
+        }
+        .pr-info {
+            margin-bottom: 25px; /* Increased spacing */
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .pr-info h2 {
+            margin-bottom: 10px;
+            font-size: 22px; /* Slightly larger title */
+            color: #333;
+        }
+         .pr-info p {
+             font-size: 15px;
+             color: #555;
+         }
+         .pr-info a {
+             color: #0366d6;
+             text-decoration: none;
+             font-weight: 500;
+         }
+         .pr-info a:hover {
+             text-decoration: underline;
+         }
+         .pr-info strong a { /* Style author link */
+             color: #1a7f37; /* Different color for author */
+         }
+
+        .no-data {
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            color: #666;
+            font-style: italic;
+            text-align: center; /* Center align */
+            margin-top: 10px; /* Add margin */
+        }
+
+        /* Section Boxes */
+        .section-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .section-box h3 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* PR Info Box */
+        .pr-info-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .pr-info-box h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .pr-info-box p {
+            color: #6c757d;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* AI Analysis Box */
+        .ai-analysis-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Metadata Box */
+        .metadata-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Skills List Box */
+        .skills-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        /* Suggestion Bubbles Styling */
+        .suggestions-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .suggestion-bubble {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .suggestion-bubble:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .suggestion-text {
+            color: #495057;
+            font-size: 14px;
+            flex-grow: 1;
+        }
+
+        .suggestion-arrow {
+            color: #6c757d;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .suggestion-bubble::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid #e9ecef;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .suggestion-bubble:hover::after {
+            opacity: 1;
+        }
+
+        /* Suggestion Heading Styling */
+        .suggestions-heading {
+            text-align: center;
+            color: #495057;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    {# Conditionally show back button if analysis is present #}
+    {% if analysis_result %}
+    <div class="top-nav">
+        <a href="/" class="back-button">&larr; Analyze Another PR</a>
+    </div>
+    {% endif %}
+
+    {% include 'footer.html' %}
+
+    {# Add class to body if analysis is present for padding adjustment #}
+    <div class="container {% if analysis_result %}has-results{% endif %}">
+        <div class="search-container">
+            <h1>PR Skill Analyzer</h1>
+
+            <form action="/analyze" method="post" id="analyze-form">
+                <div class="search-bar">
+                    <div class="autocomplete-container">
+                        <input type="text" id="pr_input" name="pr_input" placeholder="owner/repo#123 or full PR URL" required value="{{ pr_input if pr_input else '' }}" autocomplete="off" autofocus>
+                        {# Autocomplete dropdown will be populated by JS #}
+                        <div id="autocomplete-dropdown" class="autocomplete-dropdown"></div>
+                    </div>
+                    <button type="submit">Analyze</button>
+                </div>
+            </form>
+
+            <div class="nav-links">
+                <a href="/repository">Browse Repository PRs</a>
+                <a href="/authors">Browse Authors</a>
+                <a href="/prompt">Build Dashboard</a>
+            </div>
+
+            {% if error %}
+            <div class="error-message">
+                {{ error }}
+            </div>
+            {% endif %}
+        </div>
+
+        {# Display analysis results if available #}
+        {% if analysis_result %}
+        <div class="result-card">
+            {# Basic PR Info #}
+            <div class="pr-info-box">
+                <h2>{{ analysis_result.title }}</h2>
+                <p>
+                    PR <a href="{{ repo_url }}/pull/{{ pr_number }}" target="_blank">#{{ pr_number }}</a> by
+                    <strong><a href="/author/{{ analysis_result.author }}">{{ analysis_result.author }}</a></strong>
+                    in <a href="{{ repo_url }}" target="_blank">{{ analysis_result.repository }}</a>
+                </p>
+            </div>
+
+            {# AI Analysis Section #}
+            {% if ai_analysis and ai_analysis.work %}
+            <div class="ai-analysis-box">
+                <h3>AI Analysis</h3>
+                <div class="analysis-details">
+                    <dl>
+                        <dt>Summary:</dt>
+                        <dd class="summary">{{ ai_analysis.work.summary | default('N/A') }}</dd>
+
+                        <dt>PR Type:</dt>
+                        <dd><span class="code">{{ ai_analysis.work.pr_type | default('N/A') }}</span> {{ ai_analysis.work.pr_reason | default('') }}</dd>
+
+                        <dt>Domain Tag:</dt>
+                        <dd><span class="code">{{ ai_analysis.work.domain_tag | default('N/A') }}</span> {{ ai_analysis.work.tag_reason | default('') }}</dd>
+
+                        {% if ai_analysis.work.skills %}
+                        <dt>Skills:</dt>
+                        <dd>
+                            <div class="skills-box">
+                                <div class="skills-list">
+                                    {% for skill in ai_analysis.work.skills %}
+                                    <div class="skill-item">
+                                        <span class="skill-name">{{ skill.name }}</span>
+                                        <span class="skill-category">{{ skill.category | replace('_', ' ') | title }}</span>
+                                        <span class="skill-frequency">{{ skill.frequency }} {{ skill.unit }}</span>
+                                        {% if skill.evidence %}
+                                        <span class="skill-evidence">{{ skill.evidence }}</span>
+                                        {% endif %}
+                                        {% if skill.execution_exploration %}
+                                        <div class="skill-behavioral">
+                                            <span class="behavioral-label">Execution:</span>
+                                            <span class="behavioral-value">{{ skill.execution_exploration.tendency | replace('_', ' ') | title }}</span>
+                                            {% if skill.execution_exploration.evidence %}
+                                            <span class="behavioral-evidence">{{ skill.execution_exploration.evidence }}</span>
+                                            {% endif %}
+                                        </div>
+                                        {% endif %}
+                                        {% if skill.scope_breadth %}
+                                        <div class="skill-behavioral">
+                                            <span class="behavioral-label">Scope:</span>
+                                            <span class="behavioral-value">{{ skill.scope_breadth.tendency | replace('_', ' ') | title }}</span>
+                                            {% if skill.scope_breadth.evidence %}
+                                            <span class="behavioral-evidence">{{ skill.scope_breadth.evidence }}</span>
+                                            {% endif %}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </dd>
+                        {% endif %}
+                    </dl>
+                </div>
+            </div>
+            {% endif %}
+
+            {# Metadata Section #}
+            {% if direct_metadata %}
+            <div class="metadata-box">
+                <h3>Metadata & Metrics</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">{{ direct_metadata.time_to_merge | format_time }}</span>
+                        <span class="metric-label">Time to Merge</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">{{ direct_metadata.time_to_first_review | format_time }}</span>
+                        <span class="metric-label">Time to 1st Review</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">+{{ direct_metadata.additions | default(0) }}/-{{ direct_metadata.deletions | default(0) }}</span>
+                        <span class="metric-label">Lines Changed</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">{{ direct_metadata.number_of_commits | default(0) }}</span>
+                        <span class="metric-label">Commits</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">{{ direct_metadata.review_count | default(0) }}</span>
+                        <span class="metric-label">Reviews</span>
+                    </div>
+                </div>
+
+                {# Commit History List #}
+                {% if direct_metadata.commits %}
+                <div class="commit-list-container">
+                    <h4>Commit History:</h4>
+                    <ul class="commit-list">
+                        {% for commit in direct_metadata.commits %}
+                        <li class="commit-item">
+                            <span class="commit-sha">{{ commit.sha[:7] }}</span>
+                            <span class="commit-msg">{{ commit.message.split('\n')[0] | truncate(80) }}</span>
+                            <span class="commit-author-time">by {{ commit.author }} on {{ commit.timestamp | datetime }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+        {% endif %} {# End check for analysis_result #}
+    </div> {# End container #}
+
+    {# Loading Overlay #}
+    <div id="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p id="loading-msg">Analyzing PR...</p>
+    </div>
+
+    {# Include the autocomplete script #}
+    <script src="{{ url_for('static', path='js/autocomplete.js') }}"></script>
+
+    <script>
+        // Show loading overlay on form submission
+        document.getElementById('analyze-form').addEventListener('submit', function() {
+            document.getElementById('loading-overlay').style.display = 'flex';
+        });
+
+        // Loading message rotation
+        let loading_msgs = ['Analyzing PR...', 'Fetching data...', 'Running AI models...', 'Compiling results...', 'Almost there...', 'Hold tight...'];
+        let loading_index = 0;
+        setInterval(() => {
+            const msgElement = document.getElementById('loading-msg');
+            if (msgElement) {
+                 msgElement.innerText = loading_msgs[loading_index];
+                 loading_index = (loading_index + 1) % loading_msgs.length;
+            }
+        }, 3000); // Change message every 3 seconds
+
+        // Add padding adjustment if top-nav is present
+        if (document.querySelector('.top-nav')) {
+            document.body.classList.add('has-top-nav');
+        }
+
+        // Initialize autocomplete
+        setupAutocomplete('pr_input', 'autocomplete-dropdown', '/api/autocomplete');
+
+        // Function to fill prompt input
+        function fillPrompt(text) {
+            const promptInput = document.getElementById('prompt_input');
+            promptInput.value = text;
+            promptInput.focus();
+        }
+    </script>
+</body>
+</html>
