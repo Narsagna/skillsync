@@ -27,6 +27,18 @@ class Repository(Base):
     def __repr__(self):
         return f"<Repository(id={self.id}, repo_url='{self.repo_url}', name='{self.name}')>"
 
+class PullRequest(Base):
+    __tablename__ = "pull_requests"
+    id = Column(Integer, primary_key=True, index=True)
+    repo_url = Column(String, nullable=False)
+    developer = Column(String, nullable=False)
+    pr_number = Column(Integer, nullable=False)
+    title = Column(String, nullable=False)
+    details = Column(JSON)  # Store JSON or text details
+
+    def __repr__(self):
+        return f"<PullRequest(id={self.id}, repo_url='{self.repo_url}', pr_number={self.pr_number}, developer='{self.developer}', title='{self.title}')>"
+
 def init_db():
     Base.metadata.create_all(bind=engine) 
 
