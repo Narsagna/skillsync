@@ -15,7 +15,7 @@ from enum import Enum
 from typing import Any, Dict
 import json
 import re
-from db import Repository, SessionLocal, get_db
+from db import Repository, SessionLocal, get_db, init_db
 
 @dataclass
 class Prompts:
@@ -168,6 +168,16 @@ def main():
 
     try:
         owner, repo = extract_owner_repo_from_url(args.repository_url)
+        repo_url = f"{owner}/{repo}"
+        db = SessionLocal()
+        db_obj = db.query(Repository).filter_by(repo_url=repo_url).first()
+        if db_obj:
+            print("[INFO] Analysis already exists in database. Skipping analysis.")
+            analysis_result = pydantic_from_db(db_obj)
+            print(analysis_result.model_dump_json(indent=2))
+            db.close()
+            return
+
         readme_content = fetch_readme(owner, repo)
         prompt = readme_prompts.synthesis_guidelines + "\n" + readme_prompts.final_type_definition
         print("[INFO] Sending README to Llama for analysis...")
@@ -177,22 +187,16 @@ def main():
         except json.JSONDecodeError:
             print("Llama response was not valid JSON:")
             print(profile_json)
+            db.close()
             sys.exit(1)
         analysis_result = ReadmeAnalysis(
             provider=Provider.llama,
-            repository=f"{owner}/{repo}",
+            repository=repo_url,
             name=repo,
             analysis=analysis_dict
         )
-        # Store in DB (insert or update by repo_url)
-        db = SessionLocal()
-        db_obj = db.query(Repository).filter_by(repo_url=analysis_result.repository).first()
-        if db_obj:
-            db_obj.name = analysis_result.name
-            db_obj.details = analysis_result.analysis
-        else:
-            db_obj = pydantic_to_db(analysis_result)
-            db.add(db_obj)
+        db_obj = pydantic_to_db(analysis_result)
+        db.add(db_obj)
         db.commit()
         db.refresh(db_obj)
         db.close()
