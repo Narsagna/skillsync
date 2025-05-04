@@ -398,6 +398,124 @@
         .model-switch input[type="radio"]:checked + label i {
             color: #0366d6;
         }
+
+        .pokedex-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 0;
+            border-radius: 32px;
+            background: rgba(30, 30, 40, 0.95);
+            box-shadow: 0 8px 48px rgba(0,0,0,0.25);
+            border: 4px solid #ff3860;
+            position: relative;
+        }
+
+        .pokedex-header {
+            background: linear-gradient(90deg, #ff3860 0%, #36d1c4 100%);
+            color: #fff;
+            padding: 24px 0 12px 0;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            border-radius: 32px 32px 0 0;
+            box-shadow: 0 4px 24px rgba(255,56,96,0.15);
+        }
+
+        .pokedex-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            padding: 32px 0;
+        }
+
+        .pokedex-card {
+            width: 340px;
+            border-radius: 28px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            overflow: hidden;
+            background: linear-gradient(135deg, #7f53ac, #647dee);
+            color: #fff;
+            border: 4px solid #fff;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .pokedex-card.frontend { background: linear-gradient(135deg, #7f53ac, #647dee); border-color: #7f53ac; }
+        .pokedex-card.backend { background: linear-gradient(135deg, #11998e, #38ef7d); border-color: #11998e; }
+        .pokedex-card.mobile { background: linear-gradient(135deg, #ff5858, #f09819); border-color: #ff5858; }
+        .pokedex-card.devops { background: linear-gradient(135deg, #36d1c4, #5b86e5); border-color: #36d1c4; }
+
+        .pokedex-card:hover {
+            transform: scale(1.04) rotate(-1deg);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.22);
+        }
+
+        .card-header {
+            background: rgba(255,255,255,0.12);
+            padding: 16px 24px 8px 24px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-bottom: 2px solid rgba(255,255,255,0.18);
+        }
+
+        .card-initials {
+            font-size: 56px;
+            font-weight: 900;
+            opacity: 0.18;
+            position: absolute;
+            top: 24px; left: 24px;
+            pointer-events: none;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+            padding: 32px 24px 24px 24px;
+        }
+
+        .badges {
+            margin: 16px 0;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.25);
+            border-radius: 12px;
+            padding: 4px 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .exp-rating {
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .view-profile {
+            background: #fff;
+            color: #222;
+            border: none;
+            border-radius: 16px;
+            padding: 8px 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            margin-top: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .view-profile:hover {
+            background: #ff3860;
+            color: #fff;
+        }
     </style>
 </head>
 <body>

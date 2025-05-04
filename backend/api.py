@@ -465,7 +465,7 @@ Remember:
 3. Always clearly label the unit of measurement for each chart and metric
 4. Tables can include multiple units but must clearly indicate the unit for each value
 
-If there is no data available to answer the query, return a simple error page that explains why the data is not available and suggests alternative queries.
+If there is no data available to answer the query, return a simple error page that explains why the data is not available and suggests alternative queries. IMPORTANT: ONLY give the HTML output, no other text.
 """
 
         authors = await self.session.call_tool("list_authors")
