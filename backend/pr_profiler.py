@@ -10,11 +10,13 @@ from typing import Any, Dict, List
 import requests
 import os
 import json
-from github_client import fetch_comprehensive_pr_metadata
+from github_client import fetch_comprehensive_pr_metadata, list_merged_prs
 from db import Repository, PullRequest, SessionLocal
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import argparse
 from db import init_db
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 
 @dataclass
 class Prompts:
@@ -458,32 +460,99 @@ def pydantic_to_db_pr(pydantic_obj: PRAnalysis) -> PullRequest:
         details=pydantic_obj.analysis
     )
 
+def parse_time_period(period: str) -> datetime:
+    """Parse time period strings like '30d', '6m', '1y' and return the corresponding date."""
+    import re
+    from dateutil.relativedelta import relativedelta
+    if not period:
+        return datetime.utcnow() - timedelta(days=30)
+    match = re.match(r'^(\d+)([dmy])$', period.lower())
+    if not match:
+        raise ValueError(f"Invalid time period format: {period}. Use format like '30d', '6m', '1y'")
+    value, unit = match.groups()
+    value = int(value)
+    now = datetime.now(timezone.utc)
+    if unit == 'd':
+        return now - timedelta(days=value)
+    elif unit == 'm':
+        return now - relativedelta(months=value)
+    elif unit == 'y':
+        return now - relativedelta(years=value)
+    else:
+        raise ValueError(f"Unknown time unit: {unit}")
+
+def analyze_and_store_pr(owner, repo, pr_number):
+    from db import SessionLocal, PullRequest
+    session = SessionLocal()
+    repo_url = f"{owner}/{repo}"
+    try:
+        pr_row = session.query(PullRequest).filter_by(repo_url=repo_url, pr_number=pr_number).first()
+        if pr_row:
+            print(f"[INFO] PR #{pr_number} already analyzed. Skipping.")
+            return
+        result = analyze_pr(owner, repo, pr_number)
+        db_obj = pydantic_to_db_pr(result)
+        session.add(db_obj)
+        session.commit()
+        session.refresh(db_obj)
+        print(f"[INFO] Analysis for PR #{pr_number} stored in database.")
+    except Exception as e:
+        print(f"[ERROR] Failed to analyze PR #{pr_number}: {e}")
+    finally:
+        session.close()
+
 if __name__ == "__main__":
-    # Hardcoded test values for quick testing
-    owner = "facebook"
-    repo = "react"
-    pr_number = 33110
+    parser = argparse.ArgumentParser(description="Batch analyze merged PRs in a repo.")
+    parser.add_argument("repo", type=str, help='Repository in the format "owner/repo"')
+    parser.add_argument("--author", type=str, help="Optional: Author name to filter PRs by")
+    parser.add_argument("--period", type=str, default="30d", help='Time period to look back (e.g., "30d", "6m", "1y")')
+    parser.add_argument("--parallel", type=int, default=2, help="Number of PRs to analyze in parallel (default: 2)")
+    parser.add_argument("--limit", type=int, default=10, help="Limit the number of PRs to analyze (default: 10)")
+    args = parser.parse_args()
+
+    owner, repo = args.repo.split("/")
+    period = args.period
+    author = args.author
+    max_workers = args.parallel
 
     # Ensure DB tables are created
     init_db()
 
-    repo_url = f"{owner}/{repo}"
+    since_date = parse_time_period(period)
+    db = SessionLocal()
     try:
-        db = SessionLocal()
-        pr_row = db.query(PullRequest).filter_by(repo_url=repo_url, pr_number=pr_number).first()
-        if pr_row:
-            print("[INFO] Analysis already exists in database. Skipping analysis.")
-            analysis_result = pydantic_from_db_pr(pr_row)
-            print(analysis_result.model_dump_json(indent=2))
-        else:
-            result = analyze_pr(owner, repo, pr_number)
-            db_obj = pydantic_to_db_pr(result)
-            db.add(db_obj)
-            db.commit()
-            db.refresh(db_obj)
-            print("[INFO] Analysis result stored in database.")
-            print(result.model_dump_json(indent=2))
-    except Exception as e:
-        print(f"Error: {e}")
+        merged_prs = list_merged_prs(owner, repo, limit=args.limit) or []
+        print(f"[INFO] Found {len(merged_prs)} merged PRs in repo {owner}/{repo}")
+
+        pr_numbers_to_analyze = []
+        for pr in merged_prs:
+            merged_at_str = pr.get("merged_at")
+            if not merged_at_str:
+                continue
+            merged_at = datetime.strptime(merged_at_str, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            if merged_at < since_date:
+                continue
+            if author and pr.get("user", {}).get("login") != author:
+                continue
+            pr_number = pr.get("number")
+            pr_row = db.query(PullRequest).filter_by(repo_url=f"{owner}/{repo}", pr_number=pr_number).first()
+            if not pr_row:
+                pr_numbers_to_analyze.append(pr_number)
+            else:
+                print(f"[INFO] PR #{pr_number} already analyzed. Skipping.")
+
+        print(f"[INFO] {len(pr_numbers_to_analyze)} PRs to analyze in parallel.")
+
+        pr_numbers_to_analyze = pr_numbers_to_analyze[:args.limit]
+
+        # Parallel analysis
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = [
+                executor.submit(analyze_and_store_pr, owner, repo, pr_number)
+                for pr_number in pr_numbers_to_analyze
+            ]
+            for future in as_completed(futures):
+                future.result()
+
     finally:
         db.close() 

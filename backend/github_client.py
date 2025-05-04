@@ -34,16 +34,48 @@ def fetch_repo_metadata(owner: str, repo: str) -> Dict[str, Any]:
     return response.json()
 
 
-def list_merged_prs(owner: str, repo: str) -> List[Dict[str, Any]]:
+def list_merged_prs(owner: str, repo: str, limit: Optional[int] = None) -> List[Dict[str, Any]]:
     """
     List merged pull requests for a repository using the GitHub API.
     Args:
         owner: Repository owner username or org
         repo: Repository name
+        limit: Maximum number of merged PRs to return (optional)
     Returns:
         List of dictionaries, each representing a merged PR
     """
-    pass
+    url = f"https://api.github.com/repos/{owner}/{repo}/pulls"
+    headers = {}
+    if GITHUB_TOKEN:
+        headers["Authorization"] = f"token {GITHUB_TOKEN}"
+    params = {"state": "closed", "per_page": 100}
+    prs = []
+    page = 1
+    while True:
+        params["page"] = page
+        print(f"[GITHUB] Fetching PRs page {page}...")
+        response = requests.get(url, headers=headers, params=params)
+        if response.status_code != 200:
+            print(f"[ERROR] Failed to fetch PRs: {response.status_code} {response.text}")
+            print(f"[ERROR] Response headers: {response.headers}")
+            if response.status_code == 403 and 'X-RateLimit-Remaining' in response.headers:
+                print(f"[RATE LIMIT] X-RateLimit-Remaining: {response.headers.get('X-RateLimit-Remaining')}")
+                print(f"[RATE LIMIT] X-RateLimit-Reset: {response.headers.get('X-RateLimit-Reset')}")
+            raise Exception(f"Failed to fetch PRs: {response.status_code} {response.text}")
+        data = response.json()
+        print(f"[GITHUB] Page {page}: fetched {len(data)} PRs.")
+        if not data:
+            break
+        for pr in data:
+            if pr.get("merged_at"):
+                prs.append(pr)
+                if limit is not None and len(prs) >= limit:
+                    print(f"[GITHUB] Reached limit of {limit} merged PRs.")
+                    return prs
+        print(f"[GITHUB] Total merged PRs collected so far: {len(prs)}")
+        page += 1
+    print(f"[GITHUB] Finished fetching merged PRs. Total: {len(prs)}")
+    return prs  # Always return a list
 
 
 def fetch_pr_patch(owner: str, repo: str, pr_number: int) -> str:
