@@ -13,6 +13,8 @@ import json
 from github_client import fetch_comprehensive_pr_metadata
 from db import Repository, PullRequest, SessionLocal
 from datetime import datetime
+import argparse
+from db import init_db
 
 @dataclass
 class Prompts:
@@ -432,13 +434,56 @@ def analyze_pr(owner: str, repo: str, pr_number: int) -> PRAnalysis:
         }
     )
 
+def pydantic_from_db_pr(db_obj: PullRequest) -> PRAnalysis:
+    """
+    Convert a PullRequest database object to a PRAnalysis Pydantic model.
+    """
+    return PRAnalysis(
+        repo_url=db_obj.repo_url,
+        pr_number=db_obj.pr_number,
+        developer=db_obj.developer,
+        title=db_obj.title,
+        analysis=db_obj.details
+    )
+
+def pydantic_to_db_pr(pydantic_obj: PRAnalysis) -> PullRequest:
+    """
+    Convert a PRAnalysis Pydantic model to a PullRequest database object (not committed).
+    """
+    return PullRequest(
+        repo_url=pydantic_obj.repo_url,
+        pr_number=pydantic_obj.pr_number,
+        developer=pydantic_obj.developer,
+        title=pydantic_obj.title,
+        details=pydantic_obj.analysis
+    )
+
 if __name__ == "__main__":
-    # Example: facebook/react PR #1 (replace with a real merged PR number for your test repo)
+    # Hardcoded test values for quick testing
     owner = "facebook"
     repo = "react"
-    pr_number = 33110  # Use a real merged PR number
+    pr_number = 33110
+
+    # Ensure DB tables are created
+    init_db()
+
+    repo_url = f"{owner}/{repo}"
     try:
-        result = analyze_pr(owner, repo, pr_number)
-        print(result.model_dump_json(indent=2))
+        db = SessionLocal()
+        pr_row = db.query(PullRequest).filter_by(repo_url=repo_url, pr_number=pr_number).first()
+        if pr_row:
+            print("[INFO] Analysis already exists in database. Skipping analysis.")
+            analysis_result = pydantic_from_db_pr(pr_row)
+            print(analysis_result.model_dump_json(indent=2))
+        else:
+            result = analyze_pr(owner, repo, pr_number)
+            db_obj = pydantic_to_db_pr(result)
+            db.add(db_obj)
+            db.commit()
+            db.refresh(db_obj)
+            print("[INFO] Analysis result stored in database.")
+            print(result.model_dump_json(indent=2))
     except Exception as e:
-        print(f"Error: {e}") 
+        print(f"Error: {e}")
+    finally:
+        db.close() 
