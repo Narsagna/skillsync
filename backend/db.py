@@ -39,6 +39,18 @@ class PullRequest(Base):
     def __repr__(self):
         return f"<PullRequest(id={self.id}, repo_url='{self.repo_url}', pr_number={self.pr_number}, developer='{self.developer}', title='{self.title}')>"
 
+class DevSkillProfile(Base):
+    __tablename__ = "dev_skill_profiles"
+    id = Column(Integer, primary_key=True, index=True)
+    developer = Column(String, nullable=False, index=True)
+    repository_filters = Column(JSON, nullable=True)  # Store as JSON array
+    skills = Column(JSON, nullable=False)
+    pr_count = Column(Integer, default=0)
+    updated_at = Column(String, nullable=False)  # ISO timestamp
+
+    def __repr__(self):
+        return f"<DevSkillProfile(id={self.id}, developer='{self.developer}', pr_count={self.pr_count}, updated_at='{self.updated_at}')>"
+
 def init_db():
     Base.metadata.create_all(bind=engine) 
 
