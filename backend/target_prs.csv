@@ -1,0 +1,1259 @@
+pr_number,merged_at,author,title
+32675,2025-03-19T19:42:05Z,poteto,[ci] Add cache cleanup workflow
+32674,2025-03-19T19:41:48Z,poteto,[ci] Bump build_and_lint to 25 workers
+32214,2025-03-18T19:05:56Z,gaearon,"Revert ""Fix:- Improve HOC support and state preservation in React Refresh"""
+32660,2025-03-18T17:54:26Z,jackpope,Add getClientRects to fragment instances
+32646,2025-03-17T16:14:19Z,rickhanlonii,[devtools] add filters for internal builds
+32619,2025-03-17T15:40:06Z,jackpope,Add observer methods to fragment instances
+32605,2025-03-14T17:16:30Z,sebmarkbage,Gate flushGestureMutations and flushGestureAnimations
+32585,2025-03-14T17:16:20Z,sebmarkbage,Merge restoreEnterViewTransitions and restoreExitViewTransitions
+32597,2025-03-13T23:08:39Z,mofeiZ,[compiler][ez] Stop bailing out early for hoisted gated functions
+32602,2025-03-13T21:46:46Z,poteto,[ci] mkdir before mv
+32592,2025-03-12T23:12:45Z,poteto,[rollup] Add support for running prebuild commands
+32591,2025-03-12T23:12:34Z,poteto,[rollup] Fix codeFrame is not a function
+32520,2025-03-12T19:08:55Z,mofeiZ,[compiler] Repro for object spread and Array.from with mutable iterators
+32579,2025-03-12T18:20:36Z,sebmarkbage,Ignore AbortError for gestures
+32550,2025-03-07T21:41:55Z,poteto,[compiler] Migrate compiler packages to tsup
+32528,2025-03-07T17:03:59Z,sammy-SC,Fix asserts caused by OffscreenComponent rendering in React Native with passChildrenWhenCloningPersistedNodes
+32500,2025-03-05T01:10:08Z,sebmarkbage,During a Swipe Gesture Render a Clone Offscreen and Animate it Onscreen
+32426,2025-03-04T17:34:34Z,rickhanlonii,[flags] remove enableOwnerStacks
+32457,2025-02-28T16:22:08Z,poteto,feat(eslint-plugin-react-hooks): make flat config the `recommended` config
+32411,2025-02-28T16:12:10Z,poteto,refactor(eslint-plugin-react-hooks): move rules to `rules` folder
+32487,2025-02-27T18:07:52Z,poteto,[ci] Add workflow to publish releases
+32486,2025-02-27T16:24:31Z,poteto,[release] Update publishing scripts to make publishing allowlisted packages easier
+32477,2025-02-26T00:09:21Z,poteto,[forgive][ez] Ignore test file
+32476,2025-02-25T23:55:49Z,poteto,[forgive] Add basic codelens provider
+32462,2025-02-25T17:45:44Z,sebmarkbage,Move ViewTransitions helpers to ReactFiberCommitViewTransitions
+32001,2025-02-25T17:45:19Z,sebmarkbage,Use valid CSS selectors in useId format
+32446,2025-02-24T13:46:06Z,rubennorte,[RN] Move definition of public instances to ReactNativePrivateInterface
+25231,2025-02-24T12:01:59Z,eps1lon,use-sync-external-store: Add `exports` field to `package.json`
+32445,2025-02-21T17:48:32Z,gnoff,[Fizz] Responsive images should not be preloaded with link headers
+32422,2025-02-21T16:27:05Z,sebmarkbage,Add Example of a SwipeRecognizer
+32412,2025-02-21T16:03:05Z,sebmarkbage,Allow passing range option to useSwipeTransition
+32379,2025-02-20T23:13:09Z,sebmarkbage,Rerender useSwipeTransition when direction changes
+32420,2025-02-18T21:56:03Z,poteto,[eslint] Target ES5
+31812,2025-02-18T19:25:34Z,mofeiZ,[compiler][be] Clean up bug test fixtures; evaluate more fixtures
+32287,2025-02-18T18:54:20Z,mofeiZ,[compiler] Represent array accesses with PropertyLoad
+32104,2025-02-18T16:38:03Z,mofeiZ,[compiler] Clean up deadcode: DeriveMinimalDeps (non-hir fork)
+32098,2025-02-18T16:37:35Z,mofeiZ,[compiler] Clean up deadcode: ReactiveFunctionValue
+32097,2025-02-18T16:37:21Z,mofeiZ,[compiler] Remove redundant InferMutableContextVariables
+32397,2025-02-16T22:00:43Z,poteto,ci: add workflow for running the eslint plugin e2e tests
+32398,2025-02-16T21:14:43Z,poteto,chore: remove `devEngines` declaration in root package
+32240,2025-02-16T19:10:54Z,poteto,feat(eslint-plugin-react-hooks): convert to typescript and package type declarations
+32396,2025-02-16T18:23:44Z,poteto,test(eslint): create eslint test fixtures
+32393,2025-02-16T15:38:13Z,poteto,build: add support to the rollup build for building typescript packages
+32382,2025-02-14T14:10:37Z,hoxyq,Change TouchedViewDataAtPoint type in ReactNativeTypes to use supported by Flow tooling syntax
+32372,2025-02-13T12:02:55Z,hoxyq,fix(devtools): Handle nullish values passed to `formatConsoleArguments`
+32371,2025-02-12T20:13:47Z,poteto,[ci] Also notify compiler ready for review PRs
+32368,2025-02-12T16:59:56Z,poteto,[compiler] Upgrade esbuild
+32363,2025-02-12T13:52:57Z,rubennorte,[RN] Set up test to create public instances lazily in Fabric
+32355,2025-02-11T22:01:04Z,poteto,Added dev-only warning for null/undefined create in use*Effect
+32204,2025-02-11T19:05:50Z,poteto,[crud] Rename useResourceEffect flag
+32348,2025-02-10T19:08:44Z,poteto,[react-native] fix divergence in synced code
+32344,2025-02-09T22:55:50Z,rickhanlonii,"Trigger Discord notification when draft PR is set to ""ready for review"""
+32342,2025-02-09T20:01:28Z,sebmarkbage,Remove useActionState Hook export from experimental react-server condition
+32337,2025-02-07T23:01:53Z,poteto,[ci] Fix typo
+32335,2025-02-07T22:49:09Z,poteto,[ci] Disallow PRs against builds branch
+32333,2025-02-07T21:39:37Z,poteto,[ci] Combine sizebot jobs
+32318,2025-02-07T16:12:29Z,jackpope,Ship enableFabricCompleteRootInCommitPhase
+32327,2025-02-07T11:07:47Z,hoxyq,fix[react-devtools-standalone]: define missing globals
+32326,2025-02-07T10:54:45Z,hoxyq,React DevTools 6.1.0 -> 6.1.1
+32252,2025-02-06T23:05:51Z,gnoff,"[Fiber][Dev] Relax dom nesting validation when the root is a Document, html tag, or body tag"
+32321,2025-02-06T22:30:41Z,gnoff,[Fiber] `getHoistableRoot()` should account for Document containers
+32311,2025-02-05T23:31:32Z,rickhanlonii,Export addTransitionType for www
+32298,2025-02-05T12:52:49Z,hoxyq,"DevTools: refactor NativeStyleEditor, don't use custom cache implementation"
+32306,2025-02-04T20:53:03Z,jackpope,Set enableViewTransition to dynamic for www
+32250,2025-02-04T20:39:52Z,gnoff,[Fiber] Disable comments as containers in OSS
+32224,2025-02-04T20:30:31Z,gnoff,[Fiber] support hydration when rendering Suspense anywhere
+32294,2025-02-04T19:17:14Z,sebmarkbage,[Flight Parcel] Implement findSourceMapURL
+32283,2025-02-03T17:07:30Z,poteto,build(eslint-plugin-react-hooks): tsconfig and global types
+32297,2025-02-03T09:59:58Z,hoxyq,fix[react-devtools-fusebox]: add extension globals to build
+32296,2025-02-03T09:59:47Z,hoxyq,DevTools: fix host component filter option title
+32164,2025-01-31T23:57:27Z,mofeiZ,[compiler][rfc] Hacky retry pipeline for fire
+32210,2025-01-31T22:35:48Z,gnoff,Reconciler: Combine identical cases in findParent
+32279,2025-01-31T19:32:23Z,poteto,build(eslint-plugin-react-hooks): add dev dependencies for typescript migration
+32117,2025-01-31T06:59:45Z,yungsters,Permit non-`DEV` Elements in `React.Children` w/ `DEV`
+32277,2025-01-31T06:44:03Z,poteto,Fix typo in dangerfile.js which results in an unreachable code path…
+32262,2025-01-30T20:08:17Z,hoxyq,chore[DevTools]: make clipboardWrite optional for chromium
+32275,2025-01-30T19:13:46Z,poteto,[ci] Only install chromium for flight fixtures
+32254,2025-01-30T17:13:37Z,sebmarkbage,[Fiber] Track Appearing Named ViewTransition in the accumulateSuspenseyCommit Phase
+32267,2025-01-30T16:55:29Z,poteto,[ci] Remove build_devtools_and_process_artifacts as a dependency to run_devtools_e2e_tests
+32266,2025-01-30T16:49:04Z,poteto,[ci] Try to parallelize devtools builds
+32273,2025-01-30T16:46:43Z,sebmarkbage,[Fiber] Read the class name from props.layout
+32272,2025-01-30T15:23:18Z,facebook-github-bot,Expose new method in Fabric renderer to access root instance from root tag
+32260,2025-01-29T17:07:00Z,rubennorte,[RN] Add support for document instance in React Native
+32163,2025-01-29T06:42:50Z,gnoff,[Fiber] Support Suspense boundaries anywhere (excluding hydration)
+32132,2025-01-27T20:39:56Z,sebmarkbage,[Flight Parcel] Pass import maps through client references
+32238,2025-01-27T19:40:46Z,rickhanlonii,Update MAINTAINERS
+32225,2025-01-27T16:59:26Z,poteto,fix(react-compiler-healthcheck): Add shebang to banner
+32219,2025-01-24T20:55:16Z,josephsavona,[compiler][be] Remove unused experimental Rust port
+32217,2025-01-24T20:06:15Z,poteto,[ci] Fix typo
+32216,2025-01-24T19:56:37Z,poteto,[ci] Parse inputs for maintainer check workflow
+32215,2025-01-24T19:41:25Z,poteto,[ci] Make maintainer check workflow usable from other repositories
+32207,2025-01-24T17:25:30Z,sophiebits,Clarify useActionState async non-transition warning
+30660,2025-01-24T11:48:20Z,hoxyq,Fix:- Improve HOC support and state preservation in React Refresh
+32161,2025-01-22T22:09:41Z,jbrown215,Move effect dep inference tests to infer-effect-dependencies directory
+32160,2025-01-22T21:21:54Z,mofeiZ,[compiler][ez] Fix main (bad rebase / amend for #32095)
+32095,2025-01-22T20:02:51Z,mofeiZ,[compiler] Fix invalid Array.map type
+32094,2025-01-22T19:58:52Z,mofeiZ,[compiler] Repro for invalid Array.map type
+32093,2025-01-22T19:34:08Z,mofeiZ,[compiler][ez] rewrite invariant in InferReferenceEffects
+32131,2025-01-22T19:22:35Z,mofeiZ,[compiler][ez] Patch for JSX escape sequences in @babel/generator
+32138,2025-01-22T17:04:59Z,mofeiZ,fix(react-compiler): `JSXText` emits incorrect with bracket
+32149,2025-01-22T15:59:50Z,eps1lon,docs(eslint-plugin-react-compiler): fix typo
+32157,2025-01-22T15:39:00Z,eps1lon,Include error name in error chunks
+32106,2025-01-22T14:15:49Z,hoxyq,DevTools: support useEffectEvent and forward-fix experimental prefix support
+32105,2025-01-21T20:00:02Z,sebmarkbage,Add Transition Types
+32120,2025-01-18T22:41:34Z,poteto,Support eslint 8+ flat plugin syntax out of the box for eslint-plugin-react-compiler
+32116,2025-01-17T22:48:57Z,unstubbable,[Flight] Transport custom error names in dev mode
+32115,2025-01-17T20:16:36Z,poteto,[eslint-plugin-react-hooks] Inline meta fields
+32069,2025-01-17T18:54:11Z,gnoff,[Fizz] Support Suspense boundaries anywhere
+32112,2025-01-17T17:42:07Z,poteto,[ci] Use correct actor when checking if maintainer
+31960,2025-01-17T17:04:02Z,josephsavona,[compiler] validation against calling impure functions
+32087,2025-01-17T16:42:30Z,sebmarkbage,Fix moveBefore feature detection
+32111,2025-01-17T15:35:25Z,poteto,[ci] Fix maintainer output condition check
+32110,2025-01-17T15:22:34Z,poteto,Fix maintainer check condition
+30774,2025-01-16T23:39:11Z,poteto,feat(eslint-plugin-react-hooks): support flat config
+32103,2025-01-16T20:12:11Z,poteto,[ci] Only notify after labeling
+32102,2025-01-16T20:05:40Z,poteto,Fix outdated maintainers list
+32101,2025-01-16T19:21:55Z,poteto,[ci] Use shared maintainer check for discord notifications
+32100,2025-01-16T19:16:21Z,poteto,[ci] Automatically label PRs from core team
+32091,2025-01-16T18:37:14Z,poteto,[rcr] Always target node
+32092,2025-01-16T17:09:58Z,poteto,[ci] Better filtering for discord notifications
+32090,2025-01-16T17:07:03Z,hoxyq,React DevTools 6.0.1 -> 6.1.0
+32088,2025-01-16T15:42:54Z,hoxyq,fix[DevTools]: support useResourceEffect
+32080,2025-01-16T15:33:24Z,jackpope,Fix local react usage in DOM fixture
+32086,2025-01-16T14:17:06Z,hoxyq,fix[DevTools]: fix HostComponent naming in filters for Native
+32079,2025-01-15T22:41:31Z,rickhanlonii,[actions] split out compiler notify
+32077,2025-01-15T18:41:22Z,hoxyq,Fix copy functionality in Firefox
+32075,2025-01-15T16:20:45Z,rickhanlonii,"[internal] fix console patch, add RN"
+32074,2025-01-15T14:32:33Z,hoxyq,chore[DevTools]: don't use batchedUpdate
+32058,2025-01-15T14:19:21Z,rickhanlonii,Flag to remove www console forks
+32068,2025-01-14T23:40:54Z,eps1lon,Reduce risk of leaving shipped Hooks as nullable on Dispatcher
+32070,2025-01-14T23:29:37Z,eps1lon,Fix Flight fixture CI
+32067,2025-01-14T21:59:52Z,eps1lon,[Fizz] Restore `useMemoCache` in renderers with support for Client APIs
+32066,2025-01-14T20:23:42Z,hoxyq,[DevTools] Prevent crash when starting consecutive profiling sessions
+32045,2025-01-13T18:49:31Z,poteto,fix(eslint-plugin-react-compiler): support v9 context api
+32054,2025-01-13T18:42:20Z,eps1lon,Use internal `ReactCompilerRuntime` in `react/compiler-runtime` entrypoint
+32055,2025-01-13T17:18:59Z,mofeiZ,[compiler][ez] Patch compilationMode:infer object method edge case
+32050,2025-01-13T14:45:53Z,sebmarkbage,View Transition Class Names based on event kind
+32041,2025-01-12T18:16:54Z,sebmarkbage,View Transition Events
+32038,2025-01-10T16:51:37Z,sebmarkbage,View Transition Refs
+32036,2025-01-09T21:37:01Z,sebmarkbage,[Fiber] Support moveBefore at the top level of a container
+32018,2025-01-09T18:38:49Z,hoxyq,fix[DevTools/Tree]: only scroll to item when panel is visible
+31968,2025-01-09T18:21:55Z,hoxyq,[DevTools]  feat[Tree]: set initial scroll offset when inspected element index is set
+31956,2025-01-09T18:13:24Z,hoxyq,DevTools: merge element fields in TreeStateContext
+31892,2025-01-09T18:01:08Z,hoxyq,DevTools: fix initial host instance selection
+32015,2025-01-09T18:00:30Z,hoxyq,chore[DevTools/Tree]: don't pre-select root element and remove unused code
+32019,2025-01-09T18:00:09Z,hoxyq,chore[DevTools/TraceUpdates]: display names by default
+32012,2025-01-09T17:38:17Z,mofeiZ,[compiler] Playground qol: shared compilation option directives with tests
+32035,2025-01-09T17:21:06Z,poteto,[playground] Partially revert #32009
+32034,2025-01-09T16:33:34Z,sebmarkbage,Add ViewTransitionComponent to Stacks and DevTools
+32033,2025-01-09T15:51:58Z,javache,Remove enableGetInspectorDataForInstanceInProduction flag
+32031,2025-01-09T15:33:44Z,sebmarkbage,Suspensey Fonts for View Transition 
+32029,2025-01-09T00:13:25Z,sebmarkbage,Execute layout phase before after mutation phase inside view transition
+32028,2025-01-08T23:57:54Z,sebmarkbage,ViewTransitions in Navigation
+32002,2025-01-08T18:36:57Z,sebmarkbage,[Fiber] Suspend the commit while we wait for the previous View Transition to finish
+31996,2025-01-08T18:22:16Z,sebmarkbage,[Fiber] Support only View Transitions v2
+31999,2025-01-08T18:22:06Z,sebmarkbage,[Fiber] Use className on <ViewTransition> to assign view-transition-class
+31975,2025-01-08T17:11:18Z,sebmarkbage,Add <ViewTransition> Component
+31966,2025-01-08T17:08:30Z,sebmarkbage,[Fiber] Delete isMounted internals
+32008,2025-01-08T17:03:02Z,rickhanlonii,[flags] remove enableDeferRootSchedulingToMicrotask
+32005,2025-01-08T12:14:52Z,hoxyq,chore[react-devtools-shell]: disable warnings in dev server overlay
+31989,2025-01-07T19:17:14Z,rickhanlonii,[tests] Remove to*Dev matchers
+32010,2025-01-07T17:09:10Z,poteto,[ci] Make gh workflow names consistent
+32009,2025-01-07T16:53:28Z,poteto,[playground] Use default compiler config
+32006,2025-01-07T14:34:22Z,rickhanlonii,"Fix notify target, add lines"
+31985,2025-01-06T22:57:19Z,rickhanlonii,bot for pr notifications
+31988,2025-01-06T19:13:03Z,rickhanlonii,[assert helpers] ServerIntegration tests
+31986,2025-01-06T19:12:53Z,rickhanlonii,[assert helpers] react-reconciler
+31984,2025-01-06T19:12:35Z,rickhanlonii,[tests] fix hidden use() warnings
+31995,2025-01-06T16:02:23Z,poteto,[playground:ci] Don't install compiler deps twice
+31994,2025-01-06T16:01:38Z,poteto,[rcr] Generate ts defs
+31993,2025-01-06T14:06:09Z,poteto,fix: `react-compiler-runtime` should be cjs
+31823,2025-01-06T11:12:09Z,eps1lon,react-hooks/rules-of-hooks: detect issues in class properties
+31983,2025-01-05T22:10:29Z,rickhanlonii,[assert helpers] react-dom (pt3)
+31783,2025-01-03T17:53:28Z,rickhanlonii,[fizz] fix empty string href double warning
+31772,2025-01-03T17:53:19Z,rickhanlonii,[flags] Remove enableServerComponentLogs
+31965,2025-01-03T02:23:09Z,sebmarkbage,Make RefStatic and LayoutStatic the same bit
+31963,2025-01-02T21:59:56Z,poteto,[compiler] Switch to esbuild
+31962,2025-01-02T21:59:45Z,poteto,[compiler] Update prettier-plugin-hermes-parser
+31901,2025-01-02T20:53:19Z,rickhanlonii,[assert helpers] ReactDOMFloat-test
+31902,2025-01-02T20:53:06Z,rickhanlonii,[assert helpers] react-dom (pt2)
+31898,2025-01-02T20:28:15Z,rickhanlonii,[assert helpers] ReactDOMComponent-test
+31897,2025-01-02T20:28:06Z,rickhanlonii,[assert helpers] react-dom (pt 1)
+31930,2025-01-02T19:55:35Z,sebmarkbage,[Fiber] Refactor Commit Phase into Separate Functions for Before Mutation/Mutation/Layout
+31922,2025-01-02T19:34:26Z,sebmarkbage,[Fiber] Avoid return value from commitBeforeMutationEffects
+31921,2025-01-02T19:34:10Z,sebmarkbage,[Fiber] Gate Update flag on BeforeMutationMask on flags
+31876,2025-01-02T18:28:24Z,sebmarkbage,[Fiber] Mark error boundaries and commit phases when an error is thrown
+31866,2025-01-02T18:04:09Z,sebmarkbage,[Fiber] Mark cascading updates
+31828,2025-01-02T18:02:22Z,sebmarkbage,[Fiber] Yield every other frame for Transition/Retry work
+31919,2025-01-02T16:24:27Z,poteto,[compiler] Update rollup plugins
+31893,2025-01-02T14:07:21Z,hoxyq,DevTools: fork FastRefresh test for <18 versions of React
+31799,2024-12-31T18:13:43Z,sebmarkbage,[Flight Parcel] Implement prepareDestinationForModule
+31904,2024-12-29T15:36:21Z,hoxyq,DevTools: fix Compiler inegration test with 18.2
+31879,2024-12-28T07:02:16Z,sebmarkbage,[Flight] Mark Errored Server Components
+31877,2024-12-28T07:01:49Z,sebmarkbage,Add Profiler mode to fixtures even if React DevTools is not installed
+31915,2024-12-27T19:27:43Z,poteto,[rcr] Relax react peer dep requirement
+31920,2024-12-26T19:58:37Z,poteto,[compiler] Fix broken fire snapshot
+31894,2024-12-23T23:11:05Z,rickhanlonii,[assert helpers] Remove toWarnDev from fixtures/dom
+31853,2024-12-23T19:58:20Z,rickhanlonii,[asserts helpers] react package
+31881,2024-12-20T22:44:43Z,gnoff,(cherrypick) [Fizz][Float] Do not write after closing the stream (#27541)
+31811,2024-12-20T22:16:59Z,jbrown215,[compiler] Rewrite effect dep arrays that use fire
+31798,2024-12-20T21:55:01Z,jbrown215,"[compile] Error on fire outside of effects and ensure correct compilation, correct import"
+31797,2024-12-20T20:25:30Z,jbrown215,[compiler] add fire imports
+31796,2024-12-20T20:09:09Z,jbrown215,[compiler] transform fire calls
+31860,2024-12-20T17:41:30Z,rickhanlonii,[assert helpers] ReactFlight
+31862,2024-12-20T17:41:13Z,rickhanlonii,[assert helpers] not dom or reconciler
+31872,2024-12-20T17:01:12Z,gnoff,(cherrypick) [Flight Reply] Reject any new Chunks not yet discovered at the time of reportGlobalError (#31840)
+31871,2024-12-20T16:56:48Z,josephsavona,[compiler] Allow type cast expressions with refs
+31857,2024-12-19T19:43:01Z,eps1lon,Turn off `enableYieldingBeforePassive`
+31844,2024-12-19T18:05:23Z,rickhanlonii,[assert helpers] ReactChildren-test
+31861,2024-12-19T18:03:11Z,poteto,[ci] getWorkflowRun should not throw early if workflow hasn't completed
+31859,2024-12-19T16:49:14Z,jackpope,Fork Scheduler feature flags for native-fb
+31850,2024-12-19T15:18:06Z,acdlite,Update runtime workflow to use HEAD commit
+31851,2024-12-19T05:03:40Z,sebmarkbage,[Flight] Reject any new Chunks not yet discovered at the time of reportGlobalError
+31829,2024-12-19T04:53:54Z,sebmarkbage,[Fiber] Mark hydrated components in tertiary color (green)
+31848,2024-12-19T01:10:03Z,poteto,[ci] Don't cancel runs if more than one branch triggers CI
+31847,2024-12-19T01:09:50Z,poteto,[ci] Validate downloaded build artifact
+31846,2024-12-19T01:09:09Z,poteto,[ci] Allow build artifacts to be downloaded from any branch
+31839,2024-12-18T22:51:12Z,rickhanlonii,[flags] Remove debugRenderPhaseSideEffectsForStrictMode
+31845,2024-12-18T22:43:50Z,gnoff,(cherrypick) [Flight Reply] Reject any new Chunks not yet discovered at the time of reportGlobalError (#31840)
+31842,2024-12-18T22:07:28Z,gnoff,Cherry-pick #31840 in sync-nextjs-14
+31841,2024-12-18T21:26:00Z,gnoff,restore next14 sync base branch
+31840,2024-12-18T20:56:57Z,gnoff,[Flight Reply] Reject any new Chunks not yet discovered at the time of reportGlobalError
+31837,2024-12-18T20:29:16Z,eps1lon,Allow `<script>` and `<template>` tags in `<select>` tag
+31838,2024-12-18T19:45:38Z,rickhanlonii,[flags] Remove enableModernStrictMode
+31825,2024-12-18T18:29:41Z,rickhanlonii,[tests] <StrictMode /> nested in tree is broken
+31826,2024-12-18T18:29:22Z,rickhanlonii,[flags] Delete enableSchedulerDebugger
+31833,2024-12-18T15:35:02Z,unstubbable,[Flight] Fix double-incremented pending chunks counter
+31808,2024-12-18T13:08:56Z,eps1lon,Ensure function arity is preserved after build
+31788,2024-12-18T00:46:04Z,sebmarkbage,[Fiber] Log Effect and Render Times in Offscreen Commit Phase
+31785,2024-12-17T22:01:32Z,sebmarkbage,[Fiber] Schedule passive effects using the regular ensureRootIsScheduled flow
+31787,2024-12-17T21:49:01Z,sebmarkbage,[Scheduler] Always yield to native macro tasks when a virtual task completes
+31810,2024-12-17T16:56:00Z,jackpope,Clean up enableLazyContextPropagation
+31814,2024-12-17T15:27:46Z,rickhanlonii,[flags] Clean up scheduler flags
+31761,2024-12-17T03:52:19Z,rickhanlonii,Enable debugRenderPhaseSideEffectsForStrictMode in test renderers
+31804,2024-12-17T03:51:16Z,rickhanlonii,Enable disableDefaultPropsExceptForClasses
+31769,2024-12-17T03:43:51Z,rickhanlonii,Turn on useModernStrictMode in test renderers
+31583,2024-12-16T21:45:17Z,mofeiZ,[compiler][ez] Add shape for global Object.keys
+31582,2024-12-16T21:45:05Z,mofeiZ,[compiler] Context variables as dependencies
+31795,2024-12-16T20:48:33Z,jbrown215,[compiler] Add fire to known React APIs
+31794,2024-12-16T20:48:19Z,jbrown215,[compiler] Add option for firing effect functions
+31581,2024-12-16T20:11:52Z,mofeiZ,[compiler][ez] Clean up duplicate code in propagateScopeDeps
+31770,2024-12-16T19:43:34Z,mofeiZ,[compiler] Repro for aliased captures within inner function expressions
+31738,2024-12-16T18:39:19Z,sebmarkbage,[Flight] Color and badge non-primary environments
+31737,2024-12-16T18:16:53Z,sebmarkbage,[Flight] Emit Deduped Server Components Marker
+31736,2024-12-16T17:39:15Z,sebmarkbage,[Flight] Sort Server Components Track Group ahead of Client Scheduler/Components Tracks
+31806,2024-12-16T17:32:07Z,jackpope,Clean up context access profiling experiment
+31735,2024-12-16T16:58:25Z,sebmarkbage,[Flight] Stack Parallel Components in Separate Tracks
+31805,2024-12-16T16:18:03Z,rickhanlonii,Flag for requestPaint
+31778,2024-12-15T17:34:09Z,rickhanlonii,[flags] Cleanup enableCache
+31780,2024-12-15T17:16:10Z,rickhanlonii,[flags] Delete enableDebugTracing
+31784,2024-12-14T21:17:06Z,sebmarkbage,Implement requestPaint in the actual scheduler
+31752,2024-12-14T18:49:47Z,sebmarkbage,[Fiber] Highlight hydration and offscreen render phases
+31776,2024-12-14T18:46:21Z,sebmarkbage,[Fiber] Schedule client renders using non-hydration lane
+31779,2024-12-14T18:05:17Z,rickhanlonii,[flags] Delete enableSuspenseAvoidThisFallbackFizz
+31777,2024-12-14T17:32:58Z,sebmarkbage,Fix `commong` typo in <title> multiple children error message
+31767,2024-12-14T16:11:04Z,rickhanlonii,[flags] Cleanup enableUseMemoCacheHook
+31775,2024-12-14T01:10:08Z,josephsavona,Optimize method calls w props receiver
+31766,2024-12-13T21:39:13Z,rickhanlonii,Remove enableFlightReadableStream
+31765,2024-12-13T21:30:10Z,rickhanlonii,Remove enableFilterEmptyStringAttributesDOM
+31764,2024-12-13T20:52:43Z,rickhanlonii,Remove enableComponentStackLocations
+31762,2024-12-13T20:49:06Z,jackpope,Add --cleanup option to flags script to show groups of flags by status
+31759,2024-12-13T19:50:13Z,rickhanlonii,Remove enableBinaryflight
+31757,2024-12-13T18:58:18Z,rickhanlonii,Remove enableAsyncActions
+31756,2024-12-13T17:26:41Z,rickhanlonii,Remove disableIEWorkarounds
+31758,2024-12-13T16:26:44Z,jackpope,Fix useResourceEffect in Fizz
+31755,2024-12-13T16:05:10Z,rickhanlonii,Remove consoleManagedByDevToolsDuringStrictMode
+31577,2024-12-13T11:53:05Z,hoxyq,[DevTools] Show component names while highlighting renders
+31753,2024-12-13T04:53:37Z,sebmarkbage,Remove unused field _debugIsCurrentlyTiming
+31751,2024-12-13T04:06:07Z,sebmarkbage,[Fiber] Use hydration lanes when scheduling hydration work
+31746,2024-12-12T20:26:03Z,sebmarkbage,[Flight Parcel] Remove private package
+31741,2024-12-12T19:39:25Z,sebmarkbage,[Flight Parcel] Align with more recent changes
+31721,2024-12-12T19:11:24Z,jackpope,Fix canary version strings
+31676,2024-12-12T19:10:46Z,jackpope,Bump next prerelease version numbers
+31729,2024-12-12T19:03:19Z,sebmarkbage,[Flight] Log Server Component into Performance Track
+31725,2024-12-12T03:58:51Z,sebmarkbage,Implement react-server-dom-parcel
+31661,2024-12-11T17:00:26Z,noahlemen,Make enableOwnerStacks dynamic
+31457,2024-12-11T16:55:11Z,hoxyq,Remove comment syntax from ReactNativeTypes
+31716,2024-12-11T01:46:19Z,sebmarkbage,[Flight] Track Timing Information
+31720,2024-12-10T21:46:33Z,eps1lon,react-hooks/rules-of-hooks: Improve support for `do/while` loops
+31724,2024-12-10T19:51:40Z,gnoff, [Flight] rename `prerender` to `unstable_prerender` and include in stable channel
+31715,2024-12-10T16:59:51Z,sebmarkbage,[Flight] Don't call onError/onPostpone when halting and unify error branches
+31714,2024-12-10T00:47:43Z,sebmarkbage,Update ReactDebugInfo types to declare timing info separately
+31713,2024-12-09T22:20:47Z,sebmarkbage,[Flight] Extract special cases for Server Component return value position
+31710,2024-12-09T20:06:44Z,mvitousek,[compiler] Support for non-declatation for in/of iterators
+31709,2024-12-09T20:06:37Z,mvitousek,[compiler] Support for context variable loop iterators
+31683,2024-12-06T15:55:53Z,eps1lon,Fix headings in React 19 CHANGELOG
+31685,2024-12-06T15:12:38Z,jackpope,docs: use diff codeblock for `useReducer` typings change
+31675,2024-12-05T18:46:52Z,rickhanlonii,Add changelog for 19.0.0
+31667,2024-12-04T15:58:43Z,gnoff,Register Suspense retry handlers in commit phase
+31620,2024-12-03T21:13:36Z,gnoff,Client render dehydrated Suspense boundaries on document load
+31666,2024-12-03T18:54:08Z,jbrown215,[compiler] Empty dep arrays for globals/module-scoped values/imports
+31665,2024-12-03T16:46:09Z,mofeiZ,"Revert ""Replace deprecated dependency in `eslint-plugin-react-compiler`"""
+31657,2024-12-03T12:42:53Z,jbrown215,[compiler] Support default imports for autodep config
+31654,2024-12-02T22:42:58Z,mofeiZ,[compiler] Add meta internal option for useMemoCache import
+31005,2024-12-02T15:02:31Z,rickhanlonii,s/server action/server function
+31629,2024-11-25T04:32:11Z,poteto,Replace deprecated dependency in `eslint-plugin-react-compiler`
+31617,2024-11-22T21:13:42Z,poteto,[crud] Only export uRC when flag is enabled
+31619,2024-11-22T20:59:59Z,josephsavona,[compiler] Prune all unused array destructure items during DCE
+31615,2024-11-22T18:04:06Z,sebmarkbage,Mark all lanes in order on every new render
+31386,2024-11-22T17:15:14Z,mofeiZ,[compiler] First cut at dep inference
+31611,2024-11-22T00:36:38Z,sebmarkbage,Mark ping time as update
+31610,2024-11-21T22:16:54Z,sebmarkbage,Fix Logging of Immediately Resolved Promises
+31599,2024-11-20T21:54:41Z,poteto,[crud] Fix deps comparison bug
+31590,2024-11-19T22:25:11Z,poteto,[crud] Enable on RTR FB builds
+31588,2024-11-19T22:13:01Z,poteto,[crud] Fix copy paste typo
+31563,2024-11-19T18:56:22Z,sebmarkbage,Log yielded time in the Component Track
+31552,2024-11-19T18:42:44Z,sebmarkbage,Track suspended time when the render doesn't commit because it suspended
+31585,2024-11-19T15:52:38Z,poteto,[compiler] Update react deps
+31119,2024-11-19T09:36:30Z,eps1lon,fix[eslint-plugin-react-hooks]: Fix error when callback argument is an identifier with an `as` expression
+31573,2024-11-19T00:18:09Z,poteto,[playground] Fix broken tests
+31572,2024-11-19T00:17:58Z,poteto,[playground] Fix incorrect ci path and change reporter
+31571,2024-11-18T21:34:11Z,poteto,[playground] Always upload test results in ci
+31561,2024-11-18T20:38:22Z,poteto,[playground] Fixes #31331
+31570,2024-11-18T16:54:11Z,mofeiZ,[compiler] repro for type inference + control flow bug
+31558,2024-11-18T15:51:16Z,jackpope,[compiler] Support enableRefAsProp in jsx transform
+31523,2024-11-18T15:16:37Z,poteto,[crud] Basic implementation
+31554,2024-11-15T22:52:24Z,sebmarkbage,Track separate SuspendedOnAction flag by rethrowing a separate SuspenseActionException sentinel
+31557,2024-11-15T22:50:50Z,poteto,[crud] Rename Effect type
+31556,2024-11-15T22:49:43Z,poteto,[crud] Add enableUseResourceEffectHook flag
+31555,2024-11-15T22:49:31Z,poteto,[crud] Scaffold initial types
+31202,2024-11-15T18:06:39Z,mofeiZ,[compiler][be] Clean up nested function context in DCE
+31203,2024-11-15T18:06:30Z,mofeiZ,[compiler][be] Patch test fixtures for evaluator
+31201,2024-11-15T18:06:19Z,mofeiZ,[compiler] Lower JSXMemberExpression with LoadLocal
+31200,2024-11-15T18:06:05Z,mofeiZ,[compiler] Stop using function `dependencies` in propagateScopeDeps
+31521,2024-11-15T18:05:55Z,mofeiZ,[compiler] Fix: ref.current now correctly reactive
+31548,2024-11-15T17:13:24Z,sebmarkbage,Log Render Phases that Never Committed
+31546,2024-11-15T09:05:37Z,eps1lon,Don't dist-tag canaries with `rc`
+31547,2024-11-15T04:51:51Z,sebmarkbage,Unify RootDidNotComplete and RootSuspendedWithDelay exit path 
+31524,2024-11-14T22:03:59Z,gnoff,(chore): copy fix in <style> precedence error
+31536,2024-11-14T21:44:29Z,sebmarkbage,"Format event with ""warning"" yellow and prefix with ""Event: """
+31528,2024-11-14T21:35:08Z,sebmarkbage,"Fix Overlapping ""message"" Bug in Performance Track"
+31526,2024-11-14T21:30:06Z,sebmarkbage,Log passive commit phase when it wasn't delayed
+31540,2024-11-14T20:46:35Z,poteto,Export __COMPILER_RUNTIME in stable
+31459,2024-11-14T20:43:36Z,poteto,[compiler] Disable emit of .tsbuildinfo
+31527,2024-11-14T18:05:39Z,sebmarkbage,Use completedRenderEndTime as the start of the commit phase if it's an immediate commit
+31525,2024-11-14T18:05:20Z,sebmarkbage,Separate Tracks for Components and Phases
+31542,2024-11-14T16:48:33Z,acdlite,Bump RC version to 19.0.0-rc.1
+31541,2024-11-14T16:48:14Z,acdlite,Turn on enableSiblingPrerendering in canary
+31535,2024-11-13T20:13:47Z,poteto,Fix sizebot
+31522,2024-11-13T15:57:15Z,sebmarkbage,Only log component level profiling for components that actually performed work
+31519,2024-11-12T19:04:54Z,mofeiZ,[compiler] repro for reactive ref.current accesses
+31518,2024-11-12T17:46:55Z,sebmarkbage,"Revert ""Performance tracks are sorted by start time"" hack"
+31434,2024-11-11T22:25:37Z,rickhanlonii,Fix continuation bug
+31466,2024-11-10T19:58:53Z,gnoff,update flight readme wording
+31464,2024-11-09T00:07:37Z,gnoff,[Flight] Add initial readme to react-server package
+31426,2024-11-07T14:53:44Z,sammy-SC,Update React Native shims to use export syntax
+31439,2024-11-07T14:05:32Z,kassens,[www] set disableLegacyMode to true
+31443,2024-11-06T19:00:10Z,kassens,[string-refs] cleanup string ref code
+31442,2024-11-06T17:54:44Z,gsathya,[compiler] Outline JSX with non-jsx children
+31441,2024-11-06T17:50:13Z,gsathya,[compiler] Outline jsx with duplicate attributes
+31438,2024-11-06T17:13:44Z,kassens,[www] set disableStringRefs to true
+31435,2024-11-06T15:35:23Z,sophiebits,Remove unused lastFullyObservedContext
+31437,2024-11-06T14:41:18Z,kassens,"Back out ""[bundles] stop building legacy Paper renderer (#31429)"""
+31414,2024-11-06T14:00:49Z,kassens,[string-refs] remove enableLogStringRefsProd flag
+31415,2024-11-06T13:58:36Z,kassens,Followup: remove dead test code from #30346
+31346,2024-11-06T00:25:05Z,mofeiZ,[compiler] Collect temporaries and optional chains from inner functions
+31199,2024-11-06T00:22:04Z,mofeiZ,[compiler] Delete propagateScopeDeps (non-hir)
+31362,2024-11-05T23:26:50Z,mofeiZ,[compiler][be] Stabilize compiler output: sort deps and decls by name
+31347,2024-11-05T23:19:44Z,mofeiZ,[compiler][ez] Clean up pragma parsing for tests + playground
+31350,2024-11-05T22:57:19Z,mofeiZ,[compiler][ez] tsconfig: treat all snap fixtures as modules
+31349,2024-11-05T22:56:53Z,mofeiZ,[compiler][ez] Fixture repro for function hoisting bug
+31348,2024-11-05T22:56:36Z,mofeiZ,[compiler] Add fixture for objectexpr computed key bug
+31432,2024-11-05T21:04:03Z,kassens,[bundles] update GitHub actions for commit build branch
+31429,2024-11-05T20:49:20Z,kassens,[bundles] stop building legacy Paper renderer
+31431,2024-11-05T20:27:39Z,mofeiZ,[compiler] patch: rewrite scope dep/decl in inlineJsxTransform
+31345,2024-11-05T20:25:54Z,mofeiZ,[compiler] bugfix for hoistable deps for nested functions
+31197,2024-11-05T20:25:40Z,mofeiZ,[compiler][ez] Patch hoistability for ObjectMethods
+31427,2024-11-05T20:05:04Z,sebmarkbage,"Fork the ""empty"" prepareStackTrace case for Server builds"
+31430,2024-11-05T19:14:39Z,poteto,[cleanup] Remove compiler runtime-compat fixture library
+31413,2024-11-04T20:30:02Z,rickhanlonii,Remove trim_trailing_whitespace from editorconfig
+30346,2024-11-04T19:30:59Z,kassens,Remove enableRefAsProp feature flag
+31267,2024-11-04T18:19:05Z,jackpope,[compiler] Wrap inline jsx transform codegen in conditional
+31404,2024-11-04T15:46:28Z,rickhanlonii,More Unit Tests for Refs in Hidden Subtrees
+31405,2024-11-01T22:17:51Z,gnoff,Reenable lazy context propagation
+31403,2024-11-01T22:16:26Z,gnoff,temporarily disable lazy context propagation
+31391,2024-10-31T20:47:51Z,sebmarkbage,[Flight] Handle errors during JSON stringify of console values
+31379,2024-10-31T20:24:45Z,yungsters,Fix Ref Lifecycles in Hidden Subtrees
+31385,2024-10-30T01:51:41Z,poteto,[compiler] Update react deps to experimental instead of beta
+31384,2024-10-30T01:36:48Z,poteto,[compiler] Check if local identifier is a hook when resolving globals
+31383,2024-10-30T01:36:36Z,poteto,[compiler] Ref validation repro for ImportSpecifier with renamed local
+31376,2024-10-28T15:08:27Z,gsathya,[compiler][ez] Remove unused param
+31344,2024-10-28T13:10:01Z,gsathya,[compiler] Handle member expr as computed property
+31360,2024-10-25T23:59:52Z,mvitousek,[compiler] Fix to ref access check to ban ref?.current
+31355,2024-10-25T16:17:08Z,jackpope,"Revert ""[Re-land] Make prerendering always non-blocking (#31268)"""
+31336,2024-10-24T18:08:57Z,poteto,[react-compiler-runtime] Support React 17 peer dependency
+31340,2024-10-23T23:29:20Z,sebmarkbage,[Flight] encodeURI filenames parsed from stack traces
+31333,2024-10-23T16:13:22Z,poteto,[playground] Upgrade to Next 15 stable
+31329,2024-10-23T15:38:33Z,sebmarkbage,[Flight] Allow <anonymous> stack frames to be serialized if opt-in
+31332,2024-10-23T15:36:40Z,sebmarkbage,Fix error handling in `resolveClientReference`
+31326,2024-10-22T23:49:10Z,poteto,remove terser from react-compiler-runtime build
+28714,2024-10-22T20:07:10Z,mofeiZ,`react-hooks/rules-of-hooks`: Add support for `do/while` loops
+31315,2024-10-22T17:51:58Z,poteto,chore: remove unsued deps from React Compiler Babel plugin
+31314,2024-10-21T23:17:41Z,SamChou19815,[flow] Eliminate usage of more than 1-arg `React.AbstractComponent` in React codebase
+31313,2024-10-21T18:52:10Z,sebmarkbage,[Flight] Support Async Modules in Server References
+31304,2024-10-20T06:35:15Z,sebmarkbage,Fix timing issue with fake promise resolving sync
+31303,2024-10-20T06:23:32Z,sebmarkbage,Fix types
+31302,2024-10-20T06:12:06Z,sebmarkbage,[Flight] Handle bound arguments for loaded server references
+31301,2024-10-20T04:02:48Z,sebmarkbage,[Flight] Align turbopack option name with webpack name
+31298,2024-10-20T02:33:28Z,sebmarkbage,Expose prerender() for SSG in stable
+31300,2024-10-20T01:10:26Z,sebmarkbage,[Flight] Add serverModuleMap option for mapping ServerReferences
+31299,2024-10-20T00:45:20Z,sebmarkbage,Rename SSRManifest to ServerConsumerManifest
+31297,2024-10-18T19:02:27Z,poteto,[ez] Update compiler issue template
+31296,2024-10-18T19:02:14Z,poteto,[ci] Don't use branch name for concurrency
+31294,2024-10-18T18:43:44Z,poteto,[ci] Publish compiler weekly prereleases
+31282,2024-10-18T18:27:48Z,josephsavona,[compiler] InlineJSXTransform transforms jsx inside function expressions
+31293,2024-10-18T18:25:36Z,poteto,[playground] Upgrade various packages
+31292,2024-10-18T18:09:30Z,poteto,[playground] Remove unnecessary fs package
+31291,2024-10-18T18:09:08Z,poteto,[playground] Upgrade to Next 15
+31289,2024-10-18T17:32:27Z,poteto,[fixture] Update compiler to use latest package
+31288,2024-10-18T17:24:30Z,poteto,[ci:compiler] Only add latest tag to non-experimental
+31284,2024-10-18T04:20:14Z,poteto,[ci] Don't auto push to latest tag
+31283,2024-10-17T22:12:58Z,poteto,[ci] Allow passing various params to compiler publish script
+31278,2024-10-17T22:02:41Z,poteto,[compiler] Clean up publish script
+30956,2024-10-17T17:15:32Z,gsathya,JSX Outlining
+31241,2024-10-17T08:02:42Z,hoxyq,tests[react-devtools]: added tests for Compiler integration
+31277,2024-10-16T22:44:50Z,poteto,[ez] Update references to 'forget' in react-compiler-runtime
+31276,2024-10-16T18:19:01Z,yungsters,Delete `__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED` from React Native Renderer
+31274,2024-10-16T15:45:24Z,EdmondChuiHW,Add Bridge types for Fusebox
+31268,2024-10-15T20:47:02Z,jackpope,[Re-land] Make prerendering always non-blocking
+31208,2024-10-15T15:17:41Z,eps1lon,[ESLint] Add test for rejected `useId` in async Components
+31263,2024-10-15T13:15:27Z,hoxyq,React DevTools 6.0.0 -> 6.0.1
+31196,2024-10-15T11:53:45Z,hoxyq,[DevTools] Fix React Compiler badging
+31261,2024-10-15T11:46:05Z,hoxyq,fix[react-devtools]: fixed timeline profiler tests
+31239,2024-10-14T16:07:09Z,poteto,[ci] Consistent cache names
+31177,2024-10-14T15:20:48Z,poteto,[compiler] Use consistent version hash for npm
+31175,2024-10-14T14:13:40Z,kassens,[string-refs] make disableStringRefs a dynamic www flag
+31209,2024-10-13T16:57:50Z,eps1lon,Also don't cut off type and key
+31178,2024-10-12T00:29:25Z,mvitousek,[compiler] Kill markReactiveIdentifier and friends
+31188,2024-10-11T23:14:41Z,mvitousek,[compiler] Allow refs to be lazily initialized during render
+31186,2024-10-11T20:29:34Z,poteto,Bump micromatch from 4.0.5 to 4.0.8 in /compiler
+31185,2024-10-11T20:29:18Z,poteto,Bump json5 from 2.2.1 to 2.2.3 in /compiler
+31176,2024-10-11T12:51:59Z,eps1lon,eslint-plugin-react-hooks: Release 5.0.0
+31161,2024-10-10T22:12:47Z,kassens,[string-refs] log string ref from prod
+31171,2024-10-10T19:41:08Z,mvitousek,[compiler] Represent phis with places rather than identifiers
+31179,2024-10-10T18:52:34Z,sebmarkbage,Fix limit without owner stacks
+31103,2024-10-10T16:23:44Z,mofeiZ,[compiler] Test fixture: non-reactive phi creates 'dangling ref' scope
+31167,2024-10-10T15:40:06Z,poteto,[compiler] Consume compiled lib in react 19 app
+31166,2024-10-10T15:39:54Z,poteto,[compiler] Consume compiled lib in react 18 app
+31165,2024-10-10T15:39:42Z,poteto,[compiler] Compile lib
+31164,2024-10-10T15:33:02Z,poteto,[compiler] Scaffold fixture apps
+31159,2024-10-10T15:24:51Z,eps1lon,Fix prepare-prerelease script
+31148,2024-10-10T14:53:58Z,poteto,[compiler] Scaffold fixture library
+31168,2024-10-10T14:53:27Z,poteto,[prettier] Ignore compiler/target
+31169,2024-10-10T13:47:32Z,gnoff,[Flight] don't emit chunks for rejected thenables after abort
+31160,2024-10-10T11:36:38Z,sebmarkbage,[Flight] Don't limit objects that are children of special types
+31170,2024-10-10T05:41:34Z,mvitousek,[compiler][ez] Include phi identifier in AssertValidMutableRanges
+31163,2024-10-10T03:29:48Z,gnoff,[Flight] Serialize top-level Date
+31062,2024-10-09T20:46:35Z,kassens,[cleanup] remove flag enableAddPropertiesFastPath
+31154,2024-10-09T14:27:04Z,hoxyq,fix[react-devtools]: record timeline data only when supported
+31132,2024-10-09T12:57:02Z,hoxyq,refactor[react-devtools]: flatten reload and profile config
+31151,2024-10-09T12:34:01Z,hoxyq,fix[react-devtools]: remove all listeners when Agent is shutdown
+31131,2024-10-09T12:32:04Z,hoxyq,fix[react-devtools]: removed redundant startProfiling call
+31118,2024-10-09T12:26:16Z,hoxyq,refactor[react-devtools/fiber/renderer]: optimize durations resolution
+31117,2024-10-09T12:23:23Z,hoxyq,fix[react-devtools]: update profiling status before receiving response from backend
+31153,2024-10-09T08:54:34Z,hoxyq,fix[react-devtools]: wrap key string in preformatted text html element
+31146,2024-10-07T22:50:07Z,poteto,[rcr] Publish react-compiler-runtime to npm
+31145,2024-10-07T22:07:12Z,poteto,[rcr] Remove runtimeModule compiler option
+31144,2024-10-07T21:59:33Z,poteto,[rcr] Update default runtimeModule to react-compiler-runtime
+31143,2024-10-07T21:50:53Z,poteto,[rcr] Add target flag to compiler
+31142,2024-10-07T20:38:06Z,poteto,[snap] Add react-compiler-runtime as a dependency
+31141,2024-10-07T20:31:59Z,poteto,[snap] Remove unnecessary React.c override
+31140,2024-10-07T20:31:20Z,poteto,[rcr] Reexport React.__COMPILER_RUNTIME.c or fallback to polyfill
+31139,2024-10-07T20:25:04Z,poteto,[rcr] Re-export useMemoCache in top level React namespace
+31137,2024-10-07T17:09:40Z,mofeiZ,[compiler][ez] Fix reanimated custom type defs for imports
+31136,2024-10-07T16:39:14Z,poteto,[rcr][ez] Clean up unused $read from rcr
+31066,2024-10-03T18:41:32Z,mofeiZ,[compiler][hir] Only hoist always-accessed PropertyLoads from function decls
+31032,2024-10-03T17:55:59Z,mofeiZ,[compiler][hir-rewrite] Check mutability of base identifier when hoisting
+31037,2024-10-02T17:30:57Z,mofeiZ,[compiler] Optional chaining for dependencies (HIR rewrite)
+31101,2024-10-02T00:25:59Z,yungsters,Define `HostInstance` type for React Native
+31106,2024-10-01T18:28:51Z,sebmarkbage,[Flight] Allow aborting encodeReply
+31088,2024-10-01T15:00:58Z,jackpope,Disable infinite render loop detection
+31059,2024-10-01T13:26:13Z,hoxyq,chore[react-devtools]: drop legacy context tests
+31060,2024-10-01T13:04:05Z,hoxyq,chore[react-devtools]: add legacy mode error message to the ignore list for tests
+31104,2024-09-30T19:45:13Z,sebmarkbage,[Flight] Serialize Error Values
+31036,2024-09-30T16:35:25Z,mofeiZ,[compiler] Renames and no-op refactor for next PR
+31082,2024-09-30T16:35:24Z,mofeiZ,[compiler][fixtures] Patch error-handling edge case in snap evaluator
+31035,2024-09-30T16:35:23Z,mofeiZ,[compiler] repro for dep merging edge case (non-hir)
+31034,2024-09-30T16:35:22Z,mofeiZ,[compiler][hir-rewrite] Cleanup Identifier -> IdentifierId
+31033,2024-09-30T16:35:20Z,mofeiZ,"[compiler][hir-rewrite] Infer non-null props, destructure source"
+31031,2024-09-30T16:35:20Z,mofeiZ,[compiler][test fixtures] Add enablePropagateDepsInHIR to forked tests
+31030,2024-09-30T16:35:18Z,mofeiZ,[compiler][test fixtures] Fork more fixtures for hir-rewrite
+31087,2024-09-30T16:07:54Z,hoxyq,fix[scripts/devtools/publish-release]: parse version list instead of handling 404
+31081,2024-09-27T19:25:08Z,poteto,[playground] Decouple playground from compiler
+31078,2024-09-26T21:44:30Z,poteto,[compiler] Fix broken tests
+31083,2024-09-26T21:43:09Z,poteto,[ci] Fix incorrect sha / commit messages in manual Meta builds
+31083,2024-09-26T21:43:09Z,poteto,[ci] Fix incorrect sha / commit messages in manual Meta builds
+31079,2024-09-26T20:51:46Z,gnoff,[Fizz] Start initial work immediately
+31080,2024-09-26T20:48:57Z,poteto,"Revert ""Make prerendering always non-blocking"""
+31076,2024-09-26T16:55:46Z,jackpope,Turn on lazy context propagation for RN and RTR
+31069,2024-09-26T14:42:59Z,hoxyq,fix: update release scripts for react devtools
+31074,2024-09-26T14:34:38Z,poteto,[dependabot] Ignore all fixture directories
+31073,2024-09-26T14:34:37Z,poteto,[dependabot] Remove stale directories from config
+31047,2024-09-26T14:20:15Z,poteto,[ez] Update deprecated action
+31046,2024-09-26T14:20:14Z,poteto,[ez] Make commit sha clickable for fbsource
+31045,2024-09-26T14:20:13Z,poteto,[ci] Fix missing values during manual workflow dispatch
+30980,2024-09-26T13:56:24Z,poteto,Bump express from 4.18.2 to 4.21.0
+30463,2024-09-26T13:56:10Z,poteto,Bump ws from 6.2.2 to 6.2.3 in /scripts/release
+30694,2024-09-26T13:51:12Z,poteto,Bump axios from 1.7.1 to 1.7.4 in /compiler
+31039,2024-09-26T13:45:02Z,poteto,Bump rollup from 4.13.2 to 4.22.4 in /compiler
+31048,2024-09-26T11:39:28Z,EdmondChuiHW,refactor: allow custom impl of backend realod-to-profile support check
+31068,2024-09-26T09:17:16Z,hoxyq,fix: use public instance in Fiber renderer and expose it from getInspectorDataForViewAtPoint
+31065,2024-09-25T22:20:03Z,eps1lon,[Fiber] Fix missing render times when we cancel a pending commit
+31056,2024-09-25T20:31:44Z,acdlite,Make prerendering always non-blocking
+31029,2024-09-25T18:33:12Z,acdlite,"Unify perform{Sync,Concurrent}WorkOnRoot implementation"
+31061,2024-09-25T15:50:42Z,jackpope,Increase nested update limit to 100
+31058,2024-09-25T13:38:35Z,hoxyq,React DevTools 5.3.1 -> 6.0.0
+31010,2024-09-24T18:51:21Z,hoxyq,refactor: data source for errors and warnings tracking is now in Store
+31009,2024-09-24T16:49:19Z,hoxyq,fix: consider alternate as a key for componentLogsEntry when inspecting raw fiber instance
+31028,2024-09-23T21:39:56Z,poteto,Fix runtime_commit_artifacts workflow
+31027,2024-09-23T19:38:08Z,poteto,Allow forcing a build in artifacts workflow dispatch
+31027,2024-09-23T19:38:08Z,poteto,Allow forcing a build in artifacts workflow dispatch
+31026,2024-09-23T18:58:22Z,poteto,Fix missing trailing / in commit artifacts workflow
+31024,2024-09-23T12:25:44Z,EdmondChuiHW,Fix: profiling crashes #30661 #28838
+31008,2024-09-20T18:27:12Z,sebmarkbage,"[Fiber] Track Event Time, startTransition Time and setState Time"
+31011,2024-09-20T17:00:02Z,gnoff,[Fizz] Include componentStack at the root when aborting
+31006,2024-09-19T22:04:07Z,jackpope,Update react-native/react-dom build directory
+31003,2024-09-19T17:42:49Z,rickhanlonii,[lint] Add no-optional-chaining
+31002,2024-09-19T14:47:25Z,hoxyq,chore: remove using local storage for persisting console settings on the frontend
+31000,2024-09-19T14:44:34Z,hoxyq,feat: display message if user ended up opening hook script
+30996,2024-09-19T14:34:24Z,jackpope,[compiler] Allow ReactElement symbol to be configured when inlining jsx
+30995,2024-09-19T14:07:29Z,jackpope,[compiler] Pass through unmodified props spread when inlining jsx
+30711,2024-09-18T21:44:55Z,yungsters,Build `react-dom` in `builds/facebook-fbsource`
+30986,2024-09-18T17:30:33Z,hoxyq,chore: remove settings manager from react-devtools-core
+30636,2024-09-18T17:26:40Z,hoxyq,feat[react-devtools/extension]: use chrome.storage to persist settings across sessions
+30610,2024-09-18T17:19:01Z,hoxyq,refactor[react-devtools]: propagate settings from global hook object to frontend
+30597,2024-09-18T17:16:20Z,hoxyq,chore[react-devtools]: extract some utils into separate modules to unify implementations
+30596,2024-09-18T17:12:18Z,hoxyq,refactor[react-devtools]: move console patching to global hook
+30566,2024-09-18T17:02:13Z,hoxyq,refactor[react-devtools]: remove browserTheme from ConsolePatchSettings
+30564,2024-09-18T16:37:01Z,hoxyq,feat[react-devtools]: add settings to global hook object
+30867,2024-09-18T15:51:36Z,jackpope,[compiler] Add JSX inlining optimization
+30984,2024-09-17T20:36:10Z,sebmarkbage,[Fiber] Color Performance Track Entries by Self Time
+30983,2024-09-17T20:14:57Z,sebmarkbage,[Fiber] Log Component Effects to Performance Track
+30991,2024-09-17T19:25:00Z,sebmarkbage,Don't read currentTransition back from internals
+30981,2024-09-17T19:12:16Z,sebmarkbage,[Fiber] Optimize enableProfilerCommitHooks by Collecting Elapsed Effect Duration in Module Scope
+30977,2024-09-16T19:56:24Z,mofeiZ,[compiler][eslint] Report bailout diagnostics with correct column #
+30971,2024-09-16T19:00:18Z,sebmarkbage,Remove execution context check from shouldProfile
+30922,2024-09-16T18:13:01Z,mvitousek,[compiler] Implement support for hoisted and recursive functions
+30917,2024-09-16T17:57:15Z,mvitousek,"[compiler] Allow all hooks to take callbacks which access refs, but ban hooks from taking direct ref value arguments"
+30902,2024-09-16T17:57:13Z,mvitousek,[compiler] Improve handling of refs
+30970,2024-09-16T16:51:00Z,javache,[react-native] Fix misleading crash when view config is not found
+30969,2024-09-16T16:43:40Z,hoxyq,fix: add Error prefix to Error objects names
+30967,2024-09-16T15:45:51Z,sebmarkbage,[Fiber] Log Component Renders to Custom Performance Track
+30966,2024-09-16T15:10:05Z,sebmarkbage,[Fiber] Move Profiler onPostCommit processing of passive effect durations to plain passive effect
+30960,2024-09-16T15:09:40Z,sebmarkbage,Add enableComponentPerformanceTrack Flag
+30968,2024-09-16T13:47:57Z,hoxyq,fix[rdt/fiber/renderer.js]: getCurrentFiber can be injected as null
+30961,2024-09-14T16:26:01Z,gnoff,[Flight] Start initial work immediately
+28255,2024-09-14T15:18:28Z,gnoff,Fix nodeName to UPPERCASE in insertStylesheetIntoRoot
+30957,2024-09-14T01:51:52Z,sebmarkbage,[Fiber] Profiler - Use two separate functions instead of branch by flag
+30958,2024-09-13T22:55:42Z,gnoff,[Flight] properly track pendingChunks when changing environment names
+30959,2024-09-13T20:33:05Z,sebmarkbage,[Flight] Respect `async` flag in client manifest
+30951,2024-09-13T20:29:40Z,josephsavona,fix: restore selection should consider the window of the container
+30954,2024-09-13T20:18:15Z,rickhanlonii,Call cleanup of insertion effects when hidden
+30920,2024-09-13T19:38:25Z,mvitousek,[compiler] Factor out function effects from reference effects
+30942,2024-09-13T16:27:00Z,sebmarkbage,[Fiber] Set profiler values to doubles
+30894,2024-09-12T21:41:01Z,mofeiZ,[compiler][rewrite] PropagateScopeDeps hir rewrite
+30949,2024-09-12T21:41:00Z,mofeiZ,[compiler] Fork fixtures for enablePropagateDepsInHIR
+30948,2024-09-12T21:40:59Z,mofeiZ,[compiler][ez] Add entrypoints to ssa fixtures
+30933,2024-09-12T21:19:35Z,sebmarkbage,[Flight] Track owner/stack where the Flight Client reads as the root
+30935,2024-09-12T17:01:56Z,sebmarkbage,Enable lazy context propagation
+30952,2024-09-12T16:33:20Z,gnoff,disable `enableSiblingPrerendering` in experimental channel
+30934,2024-09-11T15:41:54Z,acdlite,Start prerendering Suspense retries immediately
+30947,2024-09-11T15:35:01Z,sebmarkbage,[Fizz] Use RequestInstance constructor for resuming
+30938,2024-09-10T23:42:19Z,sebmarkbage,[Flight] Unwrap lazy before reading the value
+30936,2024-09-10T20:46:35Z,sebmarkbage,[Fiber] Don't call performance.now() twice in a row
+30879,2024-09-10T17:23:32Z,acdlite,Prerender during same pass if blocked anyway
+30888,2024-09-10T16:25:31Z,josephsavona,[compiler] Validate type configs for hooks/non-hooks
+30930,2024-09-10T14:37:29Z,sebmarkbage,[DevTools] Implement getComponentStack and onErrorOrWarning for replayed Flight logs
+30832,2024-09-10T04:09:42Z,sebmarkbage,[DevTools] Use Unicode Atom Symbol instead of Atom Emoji
+30929,2024-09-10T02:07:36Z,sebmarkbage,[Flight] Reset currentOwnerInDEV
+30926,2024-09-09T23:52:05Z,sebmarkbage,[Flight] Add react-stack-bottom-frame to console replaying
+30925,2024-09-09T19:33:30Z,sebmarkbage,[DevTools] Improve Layering Between Console and Renderer
+30905,2024-09-09T19:12:28Z,sebmarkbage,[DevTools] Add Map for Server Component Logs
+30900,2024-09-09T19:12:13Z,sebmarkbage,[DevTools] Delete fiberToFiberInstanceMap
+30910,2024-09-09T19:11:57Z,sebmarkbage,[Flight] Inject Client Into DevTools
+30906,2024-09-09T19:11:35Z,sebmarkbage,[DevTools] Add Flight Renderer
+30899,2024-09-09T19:10:04Z,sebmarkbage,[DevTools] Refactor Error / Warning Count Tracking
+30919,2024-09-09T15:41:44Z,SamChou19815,[flow] Upgrade Flow to 0.245.2
+30708,2024-09-09T12:12:49Z,hoxyq,[DevTools] Separate RDT Fusebox into single-panel entry points
+30907,2024-09-08T00:50:22Z,mvitousek,[compiler][playground] Fix displayed naming of outlined functions
+30897,2024-09-07T01:59:09Z,sebmarkbage,[DevTools] Build Updater List from the Commit instead of Map
+30896,2024-09-07T01:58:20Z,sebmarkbage,[DevTools] Simplify Context Change Tracking in Profiler
+30895,2024-09-07T01:46:09Z,sebmarkbage,[DevTools] Remove use of .alternate in root and recordProfilingDurations
+30887,2024-09-07T01:45:52Z,sebmarkbage,[DevTools] Handle reordered contexts in Profiler
+30889,2024-09-06T21:32:21Z,josephsavona,Fix useMemoCache with setState in render
+30893,2024-09-06T17:02:12Z,mofeiZ,[compiler] Add enablePropagateDepsInHIR flag
+30891,2024-09-06T17:02:10Z,mofeiZ,[compiler][cleanup] Remove unused enableReactiveScopesInHIR flag
+30882,2024-09-06T00:54:40Z,sebmarkbage,[Fiber] Move runWithFiberInDEV from CommitWork to CommitEffects
+30881,2024-09-06T00:53:28Z,sebmarkbage,[Fiber] Extract Functions that Call User Space and Host Configs in Commit to Separate Modules
+30870,2024-09-05T19:48:17Z,sebmarkbage,[DevTools] Refactor Forcing Fallback / Error of Suspense / Error Boundaries
+30849,2024-09-05T17:30:35Z,mofeiZ,[compiler runtime] repro: infinite render with useMemoCache + render phase updates
+30878,2024-09-05T00:25:35Z,sebmarkbage,[DevTools] Avoid getFiberIDUnsafe in debug() Helper
+30865,2024-09-04T23:35:28Z,sebmarkbage,[DevTools] Include some Filtered Fiber Instances
+30869,2024-09-04T20:28:36Z,josephsavona,[compiler] Type inference for tagged template literals
+30875,2024-09-04T20:15:53Z,sebmarkbage,[DevTools] Track root instances in a root Map
+30800,2024-09-04T17:55:29Z,acdlite,Schedule prerender after something suspends
+30762,2024-09-04T16:38:36Z,acdlite,Temporarily disable suspending during work loop
+30831,2024-09-03T21:28:06Z,sebmarkbage,[DevTools] Track all public HostInstances in a Map
+30866,2024-09-03T20:04:24Z,sebmarkbage,[Fiber] Stash ThenableState on the Dependencies Object for Use By DevTools
+30853,2024-09-03T16:29:59Z,sebmarkbage,[DevTools] Support VirtualInstances in findAllCurrentHostInstances
+30850,2024-09-03T16:29:16Z,sebmarkbage,[DevTools] Add Filtering of Environment Names
+30847,2024-08-30T19:11:57Z,sebmarkbage,[Flight] Ship DEV-only enableServerComponentLogs flag in Stable/Canary
+30837,2024-08-30T09:34:52Z,hoxyq,fix[react-devtools/ReactDebugHooks]: support unstable prefixes in hooks and useContextWithBailout
+30848,2024-08-30T09:34:27Z,hoxyq,[DevTools] Increase max payload for websocket in standalone app
+30844,2024-08-30T05:41:56Z,josephsavona,[compiler] Errors in earlier functions dont stop subsequent compilation
+30839,2024-08-29T16:49:30Z,sebmarkbage,[DevTools] Filter Server Components
+30802,2024-08-29T16:45:03Z,sebmarkbage,[DevTools] Track virtual instances on the tracked path for selections
+30841,2024-08-29T16:44:48Z,sebmarkbage,[DevTools] Remove displayName from inspected data
+30827,2024-08-29T10:34:31Z,hoxyq,chore[react-devtools/hook]: remove unused native values
+30826,2024-08-29T10:32:18Z,hoxyq,chore[react-devtools/extensions]: remove unused storage permission
+30825,2024-08-29T10:31:43Z,hoxyq,fix[react-devtools/extensions]: fixed tabs API calls and displaying restricted access popup
+30824,2024-08-29T10:28:35Z,hoxyq,feat[react-devtools]: support Manifest v3 for Firefox extension
+30840,2024-08-28T22:59:40Z,josephsavona,[compiler] Inferred deps must match exact optionality of manual deps
+30838,2024-08-28T22:59:39Z,josephsavona,[compiler] Enable optional dependencies by default
+30836,2024-08-28T22:59:37Z,josephsavona,[compiler] Handle optional where innermost property access is non-optional
+30819,2024-08-28T22:59:35Z,josephsavona,[compiler] Infer optional dependencies (behind feature flag)
+30816,2024-08-28T22:59:34Z,josephsavona,[compiler] Allow inferred non-optional paths when manual deps were optional
+30814,2024-08-28T22:59:32Z,josephsavona,[compiler] Add fallthrough to branch terminal
+30813,2024-08-28T22:59:31Z,josephsavona,[compiler] Add DependencyPath optional property
+30812,2024-08-28T22:59:29Z,josephsavona,[compiler] Wrap ReactiveScopeDep path tokens in object
+30811,2024-08-28T22:59:28Z,josephsavona,[compiler] Stop reusing ScopeDep type in AnalyzeFunctions
+30821,2024-08-27T17:12:21Z,mvitousek,[compiler] Track refs through object expressions and property lookups
+30820,2024-08-27T17:12:10Z,mvitousek,[compiler] Fixture to demonstrate issue with returning object containing ref
+30419,2024-08-27T17:10:37Z,sebmarkbage,Spawn new task if we hit stack overflow
+30822,2024-08-27T16:05:48Z,sebmarkbage,[DevTools] Reconcile Fibers Against Previous Children Instances
+30818,2024-08-27T16:05:24Z,sebmarkbage,[DevTools] Remove findCurrentFiberUsingSlowPathByFiberInstance
+30817,2024-08-27T16:05:10Z,sebmarkbage,[DevTools] Track Tree Base Duration of Virtual Instances
+29210,2024-08-27T02:06:02Z,rickhanlonii,Enable suspenseCallback on React Native
+30798,2024-08-27T00:50:43Z,sebmarkbage,[DevTools] Use Owner Stacks to Implement View Source of a Server Component
+30806,2024-08-26T17:16:05Z,poteto,[ez] Remove trailing space from babel-refresh header
+30786,2024-08-26T15:53:17Z,sebmarkbage,[DevTools] Make function inspection instant
+30797,2024-08-23T22:24:56Z,josephsavona,[compiler] Special-case phi inference for mixed readonly type
+30796,2024-08-23T22:24:54Z,josephsavona,"[compiler] Infer phi types, extend mutable ranges to account for Store effects"
+30795,2024-08-23T22:24:52Z,josephsavona,"[compiler] Remove phi type, infer phi.id.type"
+30794,2024-08-23T22:24:49Z,josephsavona,[compiler] Typedefs for Array.prototype.flatMap
+30793,2024-08-23T22:24:47Z,josephsavona,[compiler] Repros for missing memoization due to lack of phi type inference
+30759,2024-08-23T16:30:08Z,acdlite,Fix: Synchronous popstate transitions
+30792,2024-08-22T19:04:41Z,poteto,"Revert ""[compiler][eslint] remove compilationMode override; report bailouts on first line"""
+30778,2024-08-22T16:36:05Z,sebmarkbage,[Flight] Preserve location of bound server actions
+30769,2024-08-22T16:35:50Z,sebmarkbage,[DevTools] Make Functions Clickable to Jump to Definition
+30763,2024-08-22T16:35:17Z,sebmarkbage,[Flight] Enable Server Action Source Maps in flight-esm Fixture
+30758,2024-08-22T16:34:48Z,sebmarkbage,[Flight ESM] Wire up Source Maps in the flight-esm fixture
+30790,2024-08-22T16:33:26Z,josephsavona,[compiler] Flatten returnIdentifier to just returnType
+30789,2024-08-22T16:33:24Z,josephsavona,[compiler] Rename HIRFunction.returnType
+30785,2024-08-22T16:33:22Z,josephsavona,[compiler] Infer return types of function expressions
+30784,2024-08-22T16:33:20Z,josephsavona,[compiler] Add returnIdentifier to function expressions
+30783,2024-08-22T16:33:17Z,josephsavona,[compiler] Repro of missing memoization due to capturing w/o mutation
+30771,2024-08-22T16:33:16Z,josephsavona,[compiler] Environment option for resolving imported module types
+30766,2024-08-22T16:33:14Z,josephsavona,"[compiler] Transitively freezing functions marks values as frozen, not effects"
+30764,2024-08-22T16:33:12Z,josephsavona,[compiler] Repro for missing memoization due to inferred mutation
+30761,2024-08-22T14:17:19Z,acdlite,Feature flag: enableSiblingPrerendering
+30779,2024-08-21T22:17:29Z,sebmarkbage,[DevTools] Support REACT_LEGACY_ELEMENT_TYPE for formatting JSX
+30775,2024-08-21T15:49:04Z,poteto,[ez] Add @noformat etc headers into some files
+30770,2024-08-21T14:55:56Z,gnoff,[Fizz] use microtasks rather than tasks when scheduling work while prerendering
+30756,2024-08-21T13:58:32Z,sebmarkbage,Remove turbopack unbundled/register/loader
+30768,2024-08-21T04:43:21Z,gnoff,[Flight] use microtask for scheduling during prerenders
+30760,2024-08-20T20:40:01Z,acdlite,Test infra: Support gate('enableFeatureFlag')
+30732,2024-08-20T20:30:52Z,gnoff,[Fizz][Static] when aborting a prerender halt unfinished boundaries instead of erroring
+30757,2024-08-20T20:12:23Z,eps1lon,Ensure `react-dom/client` is built in Codesandbox preview builds
+30750,2024-08-20T17:22:40Z,gnoff, [Flight] When halting omit any reference rather than refer to a shared missing chunk
+30751,2024-08-20T16:49:41Z,gnoff,[Fizz] track postpones when aborting boundaries with a postpone
+30753,2024-08-20T16:38:29Z,poteto,[flow] Remove CI_MAX_WORKERS option
+30740,2024-08-20T02:34:20Z,gnoff,[Flight] model halting as never delivered chunks
+30748,2024-08-19T20:34:38Z,sebmarkbage,[Flight] Revert Emit Infinite Promise as a Halted Row (#30746)
+30746,2024-08-19T19:02:41Z,sebmarkbage,[Flight] Emit Infinite Promise as a Halted Row
+30747,2024-08-19T18:51:22Z,sebmarkbage,[Flight] Rename Chunk constructor to ReactPromise
+30731,2024-08-19T18:24:41Z,gnoff,[Flight] model halted references explicitly
+30725,2024-08-19T18:24:26Z,josephsavona,[compiler] Validate against JSX in try statements
+30741,2024-08-18T16:31:45Z,sebmarkbage,[Flight] Source Map Server Actions to their Server Location
+30730,2024-08-17T01:29:18Z,gnoff,[Fizz] handle throwing after abort during render
+30726,2024-08-17T00:05:06Z,josephsavona,[compiler] Validate environment config while parsing plugin opts
+30717,2024-08-16T23:52:12Z,sebmarkbage,[DevTools] Find owners from the parent path that matches the Fiber or ReactComponentInfo
+30721,2024-08-16T22:12:08Z,poteto,[compiler] Surface unused opt out directives in eslint
+30720,2024-08-16T22:12:07Z,poteto,[compiler] Run compiler pipeline on 'use no forget'
+30705,2024-08-16T21:21:57Z,gnoff,[Flight][Static] Implement halting a prerender behind enableHalt
+30722,2024-08-16T19:08:20Z,eps1lon,[Fax] Make `react-markup` publishable via scripts
+30716,2024-08-16T17:27:57Z,mvitousek,[compiler] Make ref enforcement on by default
+30724,2024-08-16T17:27:50Z,mvitousek,[compiler] Allow functions containing refs to be returned
+30723,2024-08-16T17:27:44Z,mvitousek,[compiler] Reposition ref-in-render errors to the read location of .current
+30715,2024-08-16T17:27:38Z,mvitousek,[compiler] Don't error on ref-in-render on StartMemoize
+30714,2024-08-16T17:27:32Z,mvitousek,[compiler] Fixture to show ref-in-render enforcement issue with useCallback
+30713,2024-08-16T17:27:26Z,mvitousek,[compiler] Exclude refs and ref values from having mutable ranges
+30719,2024-08-16T16:53:52Z,SamChou19815,[flow] Eliminate a few React.Element type that will be synced to react-native
+30686,2024-08-15T21:28:28Z,gnoff,[Flight] Implement prerender
+30697,2024-08-15T19:00:40Z,mvitousek,[compiler] Support for member expression inc/decrement
+30699,2024-08-15T18:27:41Z,mvitousek,[compiler] Allow hoisting of destructured variable declarations
+30703,2024-08-15T15:04:54Z,sebmarkbage,"[Flight/DevTools] Pass the Server Component's ""key"" as Part of the ReactComponentInfo"
+30685,2024-08-15T14:38:26Z,josephsavona,[compiler] Off-by-default validation against setState directly in passive effect
+30690,2024-08-15T06:50:56Z,eps1lon,Publish `experimental_renderToHTML`
+30702,2024-08-15T01:10:40Z,gnoff,[Flight] reorganize code for forked entrypoints
+30662,2024-08-14T21:45:49Z,poteto,[fresh] Add failing test for useMemoCache reset case
+30696,2024-08-14T19:48:05Z,sebmarkbage,[DevTools] Hide props section if it is null
+30681,2024-08-14T17:54:43Z,mvitousek,[compiler] Support for useTransition
+30679,2024-08-14T17:54:41Z,mvitousek,[compiler] Recognize that refs are stable
+30689,2024-08-14T17:35:16Z,eps1lon,Rename `renderToMarkup` to `renderToHTML`
+30688,2024-08-14T17:22:44Z,eps1lon,Move `react-html` to `react-markup`
+30684,2024-08-14T15:16:51Z,sebmarkbage,[DevTools] Support Server Components in Tree
+30692,2024-08-14T15:04:42Z,jackpope,Fix unstable_useContextWithBailout dispatcher assignment
+30676,2024-08-14T12:35:06Z,hoxyq,fix[react-devtools/InspectedElement]: fixed border stylings when some of the panels are not rendered
+30683,2024-08-14T03:59:45Z,gnoff,[Flight] do not emit error after abort
+30678,2024-08-13T20:57:48Z,mvitousek,[compiler] Reordering of logical expressions
+30675,2024-08-13T20:42:10Z,gnoff,[Flight] erroring after abort should not result in unhandled rejection
+30674,2024-08-13T20:35:59Z,mvitousek,[compiler] Allow lets to be hoisted
+30668,2024-08-13T19:18:34Z,sebmarkbage,[DevTools] Compute new reordered child set from the instance tree
+30665,2024-08-13T19:18:24Z,sebmarkbage,[DevTools] Unmount instance by walking the instance tree instead of the fiber tree
+30673,2024-08-13T15:31:44Z,jackpope,Fix unstable_useContextWithBailout incorrect dispatcher assignment
+30669,2024-08-12T23:32:40Z,yungsters,Unit Test for `findNodeHandle` Error Behavior
+30591,2024-08-12T19:56:12Z,mvitousek,[compiler][ez] Enable some sprout tests that no longer need to be disabled
+30589,2024-08-12T19:56:06Z,mvitousek,[compiler] Allow macro methods
+30554,2024-08-12T19:41:25Z,mvitousek,[compiler] Promote temporaries when necessary to prevent codegen reordering over side-effectful operations
+30666,2024-08-12T18:41:14Z,poteto,[compiler] Publish to latest tag
+30658,2024-08-12T16:41:30Z,sebmarkbage,[DevTools] Further Refactoring of Unmounts
+30657,2024-08-12T16:32:55Z,sebmarkbage,[DevTools] Remove lodash.throttle
+30644,2024-08-12T04:35:43Z,sebmarkbage,[DevTools] Unmount by walking previous nodes no longer in the new tree
+30652,2024-08-09T22:19:10Z,mofeiZ,[compiler] Patch error reporting for blocklisted imports
+30592,2024-08-09T21:53:54Z,josephsavona,Punctuation & correcting spelling mistakes
+30633,2024-08-09T21:11:07Z,josephsavona,[compiler][be] Remove completed todo comment
+30632,2024-08-09T21:11:04Z,josephsavona,[compiler][be] Cleanup class naming in PromoteUsedTemporaries
+30651,2024-08-09T17:21:25Z,kassens,[ci] fix path in compiler_typescript.yml
+30643,2024-08-09T16:10:08Z,mofeiZ,[compiler][ez] Option to bail out on blocklisted imports
+30641,2024-08-09T16:10:04Z,mofeiZ,"[compiler][ez] Add types for Math.min, recursive global"
+30639,2024-08-08T16:42:45Z,kassens,[compiler] remove duplicate root files
+30628,2024-08-08T14:53:17Z,gsathya,[compiler] Add context callee import if required
+30612,2024-08-08T14:53:16Z,gsathya,[compiler] Rewrite useContext callee
+30631,2024-08-08T05:07:04Z,josephsavona,[compiler] Replace `for...in` with `for...of` for array of strings
+30603,2024-08-08T01:58:07Z,mofeiZ,[compiler] Patch ValidatePreserveMemo to bailout correctly for refs
+30630,2024-08-08T01:58:06Z,mofeiZ,[compiler] Remove transitive memo check in validatePreserveMemo
+30629,2024-08-08T01:58:03Z,mofeiZ,[compiler][repro] False positives for ValidatePreserveMemo
+30602,2024-08-08T01:58:01Z,mofeiZ,[compiler][repro] ValidatePreserveMemo x useRef bug
+30601,2024-08-08T01:57:59Z,mofeiZ,[compiler][be] Less ambiguous error messages for validateMemo bailout
+30548,2024-08-07T15:30:14Z,gsathya,[compiler] Add lowerContextAccess pass
+30622,2024-08-07T07:34:59Z,mvitousek,[compiler][ez] Default to using flow suppressions
+30620,2024-08-06T21:27:30Z,poteto,[ci] Fix incorrect tags being pushed for compiler releases
+30619,2024-08-06T19:35:40Z,poteto,[ci] Fix dist-tag command
+30618,2024-08-06T19:12:06Z,poteto,[final] Actually publish packages to npm
+30573,2024-08-06T19:02:55Z,josephsavona,[compiler] Stay in SSA form through entire pipeline
+30569,2024-08-06T19:02:53Z,josephsavona,[compiler] Add Identifier.declarationId
+30617,2024-08-06T18:59:22Z,poteto,[ci] Make compiler publish script runnable
+30614,2024-08-06T18:48:38Z,poteto,[compiler] Refactor release script
+30613,2024-08-06T18:48:37Z,poteto,[compiler] Remove sleep in manual release script
+30616,2024-08-06T18:48:36Z,poteto,Fix rust lints
+30609,2024-08-06T18:43:10Z,poteto,[CI] fix the shared_lint cached key
+30598,2024-08-06T15:06:14Z,kassens,Replace NodeJS 21 with 22 in devEngines field
+30585,2024-08-06T14:30:03Z,gsathya,[compiler] Refactor createTemporaryPlace
+30595,2024-08-05T15:25:05Z,kassens,Remove flag enableUseDeferredValueInitialArg
+30593,2024-08-05T14:11:39Z,kassens,Fix typos in Turbopack configuration and in Node.js loader error messages
+30579,2024-08-05T06:53:08Z,hoxyq,chore[packages/react-devtools]: remove unused index.js
+30588,2024-08-03T00:08:08Z,sebmarkbage,[Flight] Warn for keyless fragments in an array
+30590,2024-08-02T23:22:39Z,sebmarkbage,[DevTools] Track DOM nodes to Fiber map for HostHoistable Resources
+30587,2024-08-02T21:55:58Z,mvitousek,[compiler] Fix issue with macro arguments being outlined
+30586,2024-08-02T21:53:17Z,sebmarkbage,[DevTools] Rename mountFiberRecursively/updateFiberRecursively
+30584,2024-08-02T21:04:27Z,sebmarkbage,[DevTools] Allow Highlighting/Inspect HostSingletons/Hoistables and Resources
+30576,2024-08-02T19:24:45Z,mvitousek,[compiler] Allow global mutation effects in arguments passed to hooks and in return values
+30547,2024-08-02T17:13:58Z,gsathya,[compiler] Add flag for lowering context access
+30546,2024-08-02T17:13:56Z,gsathya,[compiler] Add typing for useContext hook
+30545,2024-08-02T17:13:55Z,gsathya,[compiler] Refactor makeTemporary outside HIRBuilder
+30544,2024-08-02T17:13:54Z,gsathya,[compiler] Simplify FunctionExpression node
+30583,2024-08-02T17:06:11Z,josephsavona,[compiler] Validate against setState in useMemo (resubmit of #30552)
+27647,2024-08-01T19:11:20Z,kassens,Cloned flag to avoid extra clones in persistent renderer
+30560,2024-08-01T15:34:38Z,sebmarkbage,[DevTools] Enable pointEvents while scrolling
+30555,2024-08-01T15:04:57Z,sebmarkbage,[DevTools] Make Element Inspection Feel Snappy
+28728,2024-08-01T08:55:54Z,eps1lon,[Devtools] Ensure initial read of `useFormStatus` returns `NotPendingTransition`
+30540,2024-07-31T18:11:10Z,mvitousek,[compiler] More complete validation against locals being reassigned after render
+30541,2024-07-31T15:33:44Z,gnoff,[Fizz] Update postpone abort semantics when prerendering
+30542,2024-07-31T14:07:17Z,sebmarkbage,[DevTools] Track the parent DevToolsInstance while mounting a tree
+30534,2024-07-31T13:02:37Z,eps1lon,Build all bundles required by flight fixture with `build-for-flight-dev`
+30473,2024-07-31T11:56:16Z,sebmarkbage,[Flight] Enable owner stacks on the client when replaying logs
+30516,2024-07-30T22:31:31Z,jackpope,Set enableLazyContextPropagation to dynamic on RN
+30538,2024-07-30T21:06:16Z,gaearon,Remove RefreshRuntime.findAffectedHostInstances
+30537,2024-07-30T21:05:25Z,poteto,[compiler] Visit nested scopes in pruned scopes in PromoteUsedTemporaries
+30536,2024-07-30T20:32:14Z,mofeiZ,[compiler][repro] JSX tag local variable is named lowercase
+30535,2024-07-30T20:32:13Z,mofeiZ,[compiler][repro] fixtures for fbt plural and macro bugs
+30524,2024-07-30T20:32:12Z,mofeiZ,[compiler] Bail out on local variables named 'fbt'
+30523,2024-07-30T20:32:11Z,mofeiZ,[compiler][repro] Fbt local var incompatibility repro
+30528,2024-07-30T19:31:32Z,eps1lon,Assign resolved outlined props to element object (and not only tuple)
+30517,2024-07-30T19:15:45Z,sebmarkbage,[DevTools] Add DevToolsInstance to Store Stateful Information
+30522,2024-07-30T19:03:54Z,sebmarkbage,[Fiber] Make DevTools Config use Static Injection
+30494,2024-07-30T18:57:26Z,sebmarkbage,"[DevTools] Implement ""best renderer"" by taking the inner most matched node"
+30425,2024-07-30T18:23:43Z,kassens,Enable prettier for some blocklisted fixtures with invalid GraphQL
+30531,2024-07-30T15:54:53Z,poteto,[ci] Fix incorrect polling
+30530,2024-07-30T15:54:52Z,poteto,[ci] Read node version from .nvmrc instead of hardcoding
+30529,2024-07-30T15:54:50Z,poteto,[ci] Make some workflows dispatchable
+30518,2024-07-30T14:57:37Z,poteto,[rfc] Delete devtools_check_repro workflow
+30491,2024-07-30T13:12:13Z,sebmarkbage,[DevTools] Rename NativeElement to HostInstance in the Bridge
+30519,2024-07-30T00:05:14Z,sebmarkbage,[Fiber/DevTools] Stop injecting findHostInstanceByFiber
+30515,2024-07-29T23:18:13Z,poteto,[ci] Add polling to download-build-artifacts
+30510,2024-07-29T23:18:12Z,poteto,[ci] Deprecate yarn publish-prereleases
+30509,2024-07-29T23:18:11Z,poteto,[ci] Cleanup more references to circleci
+30508,2024-07-29T23:18:09Z,poteto,[ci] Cleanup --ci flag
+30507,2024-07-29T23:18:08Z,poteto,[ci] Rename scripts/circleci to scripts/ci
+30506,2024-07-29T23:18:06Z,poteto,[ci] Cleanup forked build files
+30513,2024-07-29T22:38:55Z,kassens,[RN] experiment to move Fabric completeWork to the commit phase
+30512,2024-07-29T21:36:45Z,poteto,[ci] Override actions/cache default timeout
+30514,2024-07-29T20:50:28Z,jackpope,Update enableLazyContextPropagation flag
+30488,2024-07-29T20:18:15Z,gnoff,[Fizz] Allow aborting during render
+30511,2024-07-29T20:16:11Z,poteto,[ci] Temporarily always build from source for codesandbox
+30490,2024-07-29T18:29:52Z,sebmarkbage,[DevTools] Rename Fiber to Element in the Bridge Protocol and RendererInterface
+30504,2024-07-29T18:27:23Z,poteto,[ci] Fix passing secrets to runtime_prereleases
+30497,2024-07-29T18:09:54Z,gnoff,[Fizz] Don't perform work when closing
+30502,2024-07-29T17:26:17Z,poteto,[ez] Remove circleci badge from readme
+30471,2024-07-29T17:18:52Z,mofeiZ,[compiler] patch: retain UpdateExpression for globals
+30470,2024-07-29T17:18:50Z,mofeiZ,[compiler] Repro: updates to globals should be retained
+30437,2024-07-29T17:18:48Z,mofeiZ,[compiler] Todo for fbt with multiple pronoun/plural
+30432,2024-07-29T17:18:47Z,mofeiZ,[compiler][repro] Test fixture for fbt plural bug
+30501,2024-07-29T17:04:05Z,poteto,"[ci] Remove references to CIRCLE_NODE_{TOTAL,INDEX}"
+30500,2024-07-29T17:04:04Z,poteto,[ci] Remove jestSequencer
+30499,2024-07-29T17:04:03Z,poteto,[ci] Fix ci prep script
+30498,2024-07-29T16:37:08Z,poteto,[ci] Fix prereleases reusable workflow
+30496,2024-07-29T15:29:33Z,poteto,[ci] Delete .circleci
+30495,2024-07-29T15:29:31Z,poteto,[ci] Add prerelease workflows to GH actions
+30483,2024-07-26T21:06:47Z,gnoff,[Fizz] Prerender fallbacks before children
+30486,2024-07-26T19:15:02Z,poteto,[ci] Fix invalid username and email in synthetic commit
+30485,2024-07-26T18:57:55Z,poteto,[ci] Update prepare-release-from-ci to dl from GH
+30484,2024-07-26T18:57:54Z,poteto,[ci] Refactor download-build-artifacts
+30407,2024-07-26T18:38:24Z,jackpope,Add unstable context bailout for profiling
+30475,2024-07-26T16:56:39Z,poteto,[compiler] Add git info to `package.json` files in compiler packages
+30480,2024-07-26T15:58:23Z,poteto,[circleci] Remove build_and_test workflow
+30479,2024-07-26T15:58:22Z,poteto,[ci] Update runtime_commit_artifacts step versions
+30477,2024-07-26T15:34:29Z,poteto,[ci] Unfork runtime_commit_artifacts
+30476,2024-07-26T15:34:28Z,poteto,[ci] Add commit steps to new runtime_commit_artifacts_v2
+30351,2024-07-25T22:46:45Z,gnoff,[Fiber] use srcset to trigger load even on img mount
+30472,2024-07-25T22:09:34Z,poteto,[ci] Temporary fork runtime_commit_artifacts
+30468,2024-07-25T21:27:42Z,poteto,[ci] Remove devtools_regression_tests workflow from circleci
+30406,2024-07-25T21:27:40Z,poteto,[ci] Add devtools regression workflow
+30467,2024-07-25T21:09:14Z,poteto,[ci] Cleanup run_devtools_e2e_tests
+30466,2024-07-25T19:38:23Z,poteto,[compiler] Make inserting outlined functions more resilient
+30465,2024-07-25T19:38:21Z,poteto,[compiler] Add repro for outlining in non VarDecls
+30464,2024-07-25T19:38:20Z,poteto,[compiler] Always emit FuncDecl for outlined functions
+30456,2024-07-25T16:47:23Z,gsathya,[compiler] Add tests for incorrect global mutation detection
+30461,2024-07-25T16:32:16Z,sebmarkbage,Switch to binding the console with badging instead of calling it directly
+30445,2024-07-25T15:59:50Z,jackpope,Remove allowConcurrentByDefault flag
+30455,2024-07-25T15:46:58Z,sebmarkbage,Configure the requested environment and annotate tasks at boundary between environments
+30452,2024-07-25T15:14:24Z,sebmarkbage,[Flight] Include environment name both in the virtual URL and findSourceMapURL
+30447,2024-07-25T14:50:56Z,sebmarkbage,[Flight] Add filterStackFrame options to the RSC Server
+30450,2024-07-25T11:44:57Z,jackpope,Fix existing usage of names/type in build command
+30441,2024-07-24T23:34:41Z,sebmarkbage,Fix resolving of references to deduped props in lazy elements
+30449,2024-07-24T21:45:22Z,sebmarkbage,Use brackets instead of parenthesis in empty name eval
+30446,2024-07-24T20:02:32Z,poteto,[compiler] Correctly insert (Arrow)FunctionExpressions
+30443,2024-07-24T20:02:31Z,poteto,[compiler] Repro for outlining bug in funcexprs
+30396,2024-07-24T18:02:21Z,eps1lon,[Flight] Allow parens in filenames when parsing stackframes
+30438,2024-07-24T17:01:07Z,sebmarkbage,Stop filtering owner stacks
+30426,2024-07-24T14:59:40Z,kassens,[BE] enable prettier for flow fixtures
+30436,2024-07-24T14:17:33Z,jackpope,Remove forceConcurrentByDefaultForTesting flag
+30428,2024-07-24T00:22:41Z,josephsavona,[compiler] Stop relying on identifier mutable ranges after constructing scopes
+30431,2024-07-24T00:22:36Z,josephsavona,[compiler] repro of false positive for ValidatePreserveManualMemo
+30399,2024-07-24T00:22:31Z,josephsavona,[compiler] Maintain RPO and unique instruction ids when constructing scope terminals
+30398,2024-07-24T00:22:27Z,josephsavona,"[compiler] Flatten scopes based on fallthrough, not scope range"
+30397,2024-07-24T00:22:21Z,josephsavona,[compiler] printTerminal always prints instruction id
+30429,2024-07-23T22:49:42Z,sebmarkbage,[Fiber] Call life-cycles with a react-stack-bottom-frame stack frame
+30427,2024-07-23T20:48:32Z,sebmarkbage,[Flight] Prefix owner stacks added to the console.log with the current stack
+30435,2024-07-23T19:56:59Z,poteto,[compiler] Repro for interaction b/w outlining and idx
+30434,2024-07-23T19:56:59Z,poteto,[compiler] Add babel-plugin-idx to snap
+30433,2024-07-23T19:51:23Z,sebmarkbage,Transform JSX to Lazy Requires instead of Wrappers
+30423,2024-07-23T18:24:40Z,mofeiZ,[compiler][eslint] remove compilationMode override; report bailouts on first line
+30394,2024-07-23T18:24:38Z,mofeiZ,[compiler][repro] Test fixture for fbt whitespace bug
+30372,2024-07-23T17:00:51Z,eps1lon,Log Fragment name when trying to render a lazy fragment
+30422,2024-07-23T15:27:51Z,jackpope,Update yarn build options
+30421,2024-07-22T23:16:13Z,kassens,[BE] switch to hermes parser for prettier
+30416,2024-07-22T22:50:14Z,sebmarkbage, Reverse engineer original stack frames when virtual frames are re-serialized
+30417,2024-07-22T22:49:44Z,sebmarkbage,[DevTools] Implement Owner Stacks
+30420,2024-07-22T20:09:01Z,kassens,[BE] upgrade prettier to 3.3.3
+30337,2024-07-22T18:10:08Z,kassens,Add _debugStack and _debugTask under enableObjectFiber flag
+30343,2024-07-22T15:50:36Z,kassens,Set enableFastJSX flag to true
+30410,2024-07-22T15:18:55Z,sebmarkbage,[Flight] Parse Stack on the Server and Transfer Structured Stack
+30401,2024-07-22T15:03:15Z,sebmarkbage,[Flight] Normalize Stack Using Fake Evals
+30369,2024-07-22T14:47:38Z,sebmarkbage,"Tag all user space call sites with the ""react-stack-bottom-frame"" name"
+30400,2024-07-20T01:13:03Z,sebmarkbage,[Flight] Consistently flag debugOwner field
+30395,2024-07-19T20:45:28Z,eps1lon,[test] Add `findSourceMapURL` to `ReactNoopFlightClient`
+30393,2024-07-18T21:42:51Z,poteto,[ci] Update sizebot node_modules caching strategy
+30391,2024-07-18T21:42:50Z,poteto,Add run prettier commit to .git-blame-ignore-revs
+30392,2024-07-18T21:42:49Z,poteto,[ci] Fix sizebot job omitting build_and_lint dependency
+30390,2024-07-18T21:42:48Z,poteto,[ci] Only run sizebot on pull requests
+30205,2024-07-18T21:00:24Z,kassens,Compiler: unfork prettier config
+30388,2024-07-18T20:41:30Z,poteto,[circleci] Inline scrape_warning_messages
+30387,2024-07-18T20:41:29Z,poteto,[ci] Remove sizebot from circleci
+30380,2024-07-18T20:41:28Z,poteto,[ci] Add sizebot to gh actions
+30376,2024-07-18T20:41:27Z,poteto,[ci] Add script to download artifact from github
+30375,2024-07-18T20:41:26Z,poteto,[ci] Use yargs to parse args to download-experimental-build
+30374,2024-07-18T20:41:25Z,poteto,[ci] Fork scripts/release/download-experimental-build.js
+30385,2024-07-18T20:41:24Z,poteto,[ci] Rename temporary build parts
+30389,2024-07-18T20:18:40Z,mofeiZ,[compiler][patch] Don't wrap non-ascii fbt operands in JSXExpressionContainer
+30386,2024-07-18T20:18:39Z,mofeiZ,[compiler][fixtures] Repro for fbt + non-ascii strings
+30382,2024-07-18T20:18:38Z,mofeiZ,[compiler][patch] Fix jsx non-ascii regex pattern
+30364,2024-07-18T15:53:07Z,poteto,[ci][ez] Rename artifact from process_artifacts_combined
+30344,2024-07-17T01:22:31Z,josephsavona,"[compiler] Show outlined functions in logging, playground"
+30332,2024-07-17T01:22:27Z,josephsavona,[compiler][be] Promote destructured params to temporaries
+30331,2024-07-17T01:22:25Z,josephsavona,[compiler] General-purpose function outlining
+30330,2024-07-17T01:22:21Z,josephsavona,[compiler] Refactor Program to use queue of functions to compile
+30329,2024-07-17T01:22:17Z,josephsavona,[compiler] Fixture for function outlining
+30328,2024-07-17T01:22:13Z,josephsavona,[compiler] Store babel scope on Environment
+30345,2024-07-16T23:51:12Z,poteto,"fix(compiler): Align return types of `ErrImp<E>` and `OkImpl<T>` with `Result<T, E>` for TS 5.5"
+30359,2024-07-16T19:49:10Z,poteto,[ci] Remove RELEASE_CHANNEL_stable_yarn_test_dom_fixtures from circleci
+30358,2024-07-16T19:49:09Z,poteto,[ci] Add RELEASE_CHANNEL_stable_yarn_test_dom_fixtures to gh actions
+30357,2024-07-16T19:49:08Z,poteto,[ci] Remove run_fixtures_flight_tests from circleci
+30356,2024-07-16T19:49:07Z,poteto,[ci] Add run_fixtures_flight_tests to gh actions
+30355,2024-07-16T19:48:29Z,poteto,[ci] Remove check_error_codes from circleci
+30354,2024-07-16T19:48:27Z,poteto,[ci] Add check_error_codes to gh actions
+30353,2024-07-16T19:48:26Z,poteto,[ci] Remove some circleci jobs
+30352,2024-07-16T19:48:25Z,poteto,[ci] Remove DevTools jobs from circleci build_and_test
+30349,2024-07-16T16:32:43Z,poteto,[ci] Try sharding test_build
+30347,2024-07-16T16:32:42Z,poteto,[ci] Add DevTools jobs to gh actions
+30340,2024-07-16T15:25:25Z,gnoff,[Fiber] Ensure `srcset` and `src` are assigned last on `img` instances
+30333,2024-07-16T04:28:23Z,josephsavona,[compiler] Handle earlier creation of early return on scopes
+30321,2024-07-16T04:27:27Z,josephsavona,[compiler] Fix mode for generating scopes for reassignments
+30342,2024-07-15T21:56:10Z,mofeiZ,[compiler][eslint] Add donotuse flag for bailouts
+30341,2024-07-15T21:56:09Z,mofeiZ,[compiler][ez] Upgrade babel generator version for playground
+30336,2024-07-15T21:56:08Z,mofeiZ,[compiler][eslint] Use logger callback instead of exceptions to report eslint diagnostics
+30335,2024-07-15T21:56:07Z,mofeiZ,[compiler][be] Fix lint violations in eslint-plugin
+30339,2024-07-15T18:20:40Z,kassens,[native-fb] set disableDefaultPropsExceptForClasses flag to true
+30325,2024-07-13T20:33:48Z,sebmarkbage,[Flight] Encode the name of a function as an object property
+30327,2024-07-13T14:24:43Z,gnoff,[Fizz] correctly track header length
+25968,2024-07-13T03:57:45Z,rickhanlonii,Fixed  `useSyncExternalStoreWithSelector` to update memoizedSnapshot on change
+30326,2024-07-12T22:03:10Z,sebmarkbage,Add build-for-flight-dev script to package.json
+30313,2024-07-12T18:39:38Z,sebmarkbage,Disable consoleWithStackDev Transform except in RN/WWW
+30308,2024-07-12T17:02:22Z,sebmarkbage,Remove Component Stack from React Logged Warnings and Error Reporting
+30324,2024-07-12T16:53:08Z,poteto,[ci] Combine Runtime workflows
+30323,2024-07-12T16:53:07Z,poteto,[ci] Standardize node version and timezones
+30322,2024-07-12T16:11:52Z,poteto,"[RN] Remove __EXPERIMENTAL__ from enableOwnerStacks, enableUseDeferredValueInitialArg"
+30322,2024-07-12T16:11:52Z,poteto,"[RN] Remove __EXPERIMENTAL__ from enableOwnerStacks, enableUseDeferredValueInitialArg"
+30169,2024-07-12T16:09:22Z,poteto,[ci] Add check_release_dependencies job
+30072,2024-07-12T16:09:20Z,poteto,[ci] Add yarn_test_build job to gh actions
+30073,2024-07-12T16:09:19Z,poteto,[ci] Add process_artifacts_combined job
+30071,2024-07-12T16:09:18Z,poteto,[ci] Parallelize yarn build
+30070,2024-07-12T16:09:17Z,poteto,[ci] Add yarn build gh action
+30310,2024-07-11T22:44:50Z,sebmarkbage,Add FB RSC Entry for React Package
+30306,2024-07-11T22:34:41Z,sebmarkbage,Remove top stack frame from getCurrentStack
+30319,2024-07-11T20:21:12Z,kassens,Feature flag to disable legacy context for function components
+30318,2024-07-11T17:58:11Z,kassens,Use explicit git hash length in version string
+30317,2024-07-11T17:05:27Z,sebmarkbage,Gate inlined consoleWithStackDev transpilation
+29872,2024-07-11T16:47:21Z,rozele,Updates ViewConfig types to delegate isInAParentText context
+30312,2024-07-11T15:20:42Z,sebmarkbage,Delete suppressWarning in OSS
+30315,2024-07-11T14:42:37Z,kassens,easy: add link to legacy context warning
+30314,2024-07-11T02:11:05Z,josephsavona,feat(compiler): Ignore `TSInterfaceDeclaration`
+30309,2024-07-10T20:58:46Z,sebmarkbage,Override the getCurrentStack temporarily while printing uncaught errors
+28734,2024-07-10T20:42:08Z,kassens,Experiment with using an object literal for Fiber creation
+30307,2024-07-10T20:23:55Z,sebmarkbage,Convert some tests to use assertConsoleErrorDev or just avoid mocking
+30305,2024-07-10T17:37:57Z,sebmarkbage,Add RN fork of consoleWithStackDev so we can improve the mainline one
+30302,2024-07-10T16:17:14Z,sebmarkbage,Format DOM Nesting Warning as Diff View + An Additional Log for Stack Trace
+30297,2024-07-10T15:53:00Z,kassens,Warn about legacy context when legacy context is not disabled
+30303,2024-07-10T14:33:14Z,kassens,CI: reduce job waterfall for runtime test jobs
+30294,2024-07-10T04:15:15Z,sebmarkbage,[Flight] Serialize rate limited objects in console logs as marker an increase limit
+30300,2024-07-10T04:15:00Z,sebmarkbage,[Fiber] Override the getCurrentStack temporarily while printing errors
+30299,2024-07-09T23:55:09Z,kassens,Dedupe legacy context warnings
+30298,2024-07-09T19:44:02Z,sebmarkbage,[Fizz] Refactor Component Stack Nodes
+30295,2024-07-09T18:22:50Z,sebmarkbage,[Flight] Fully support serializing Map/Set in console logs
+30293,2024-07-09T02:52:00Z,sebmarkbage,[Flight] Add context for non null prototype error
+30289,2024-07-08T22:42:59Z,sebmarkbage,[DevTools] Print component stacks as error objects to get source mapping
+30292,2024-07-08T20:45:24Z,sebmarkbage,Warn for useFormState on initial render
+30118,2024-07-08T18:11:11Z,kassens,Upgrade flow to 0.235.0
+30117,2024-07-08T18:00:00Z,kassens,Upgrade flow to 0.234.0
+30116,2024-07-08T17:48:24Z,kassens,Upgrade flow to 0.233.0
+30290,2024-07-08T15:54:14Z,sebmarkbage,Add unknown location information to component stacks
+29665,2024-07-06T06:52:20Z,eps1lon,Consider dispatch from `useActionState` stable
+30206,2024-07-04T16:31:23Z,sebmarkbage,[Flight] Set Current Owner / Task When Calling console.error or invoking onError/onPostpone
+30197,2024-07-04T16:15:51Z,sebmarkbage,[Flight] Implement captureStackTrace and owner stacks on the Server
+30207,2024-07-04T16:15:35Z,sebmarkbage,[Flight] Add option to replay console logs or not
+29199,2024-07-04T14:34:49Z,hoxyq,fix: path handling in react devtools
+30204,2024-07-03T20:57:05Z,sebmarkbage,Don't strip out component stack in assertConsole helpers
+30131,2024-07-03T17:25:04Z,sebmarkbage,[Flight] Allow String Chunks to Passthrough in Node streams and renderToMarkup
+30198,2024-07-03T11:10:23Z,sebmarkbage,Add regression test for #30172
+30199,2024-07-03T10:46:46Z,hoxyq,React DevTools 5.3.0 -> 5.3.1
+30182,2024-07-02T23:46:18Z,sebmarkbage,[Fizz] Track Current debugTask and run it for onError Callbacks
+30174,2024-07-02T22:26:32Z,sebmarkbage,[Fizz] Implement debugInfo
+30132,2024-07-02T20:05:20Z,sebmarkbage,[Fizz] Include a component stack in prod but only lazily generate it
+30173,2024-07-01T19:30:00Z,sebmarkbage,[Fizz] Gate legacyContext field on disableLegacyContext
+30151,2024-07-01T16:05:58Z,mvitousek,[compiler][playground] Formatting changes to pass tabs
+30150,2024-07-01T16:05:56Z,mvitousek,[compiler] Flow support for playground
+30158,2024-07-01T14:43:12Z,hoxyq,chore[react-devtools/renderer]: dont show strict mode warning for prod renderer builds
+30152,2024-07-01T14:27:52Z,sebmarkbage,[Fizz] Enable owner stacks for SSR
+30159,2024-07-01T14:27:15Z,hoxyq,chore[react-devtools/ui]: fix strict mode badge styles
+30142,2024-07-01T13:50:45Z,sebmarkbage,[Fizz] Run console.createTask during SSR when available
+30140,2024-07-01T13:26:29Z,sebmarkbage,[Flight Server] Run Server Components in console.createTask when available
+30156,2024-07-01T08:01:28Z,eps1lon,Update `react-refresh-webpack-plugin` in Flight fixture
+30148,2024-07-01T05:43:36Z,mvitousek,[compiler] Clone computation block in change detection mode
+30149,2024-06-30T23:36:42Z,mvitousek,[prettier][eslint] Support sapling in prettier changed files command
+30130,2024-06-28T17:42:18Z,sebmarkbage,[Flight] Make byteLengthOfChunk Optional
+30129,2024-06-28T14:19:20Z,sebmarkbage,Only build react-html in experimental channel
+30122,2024-06-28T13:35:12Z,sebmarkbage,Add doctype to renderToMarkup when html tags are rendered
+30121,2024-06-28T13:25:10Z,sebmarkbage,Add renderToMarkup for Client Components
+30123,2024-06-28T08:26:28Z,eps1lon,[fix] replace polyfill.io with cloudflare equivalent
+30102,2024-06-27T16:10:09Z,sebmarkbage,Warn for invalid type in renderer with the correct RSC stack
+30105,2024-06-27T16:09:40Z,sebmarkbage,Add new package with renderToMarkup export
+30115,2024-06-27T16:08:57Z,sebmarkbage,Remove isPrimaryRenderer from Flight Server Config
+29919,2024-06-27T14:07:09Z,kassens,Bump ws from 7.2.1 to 7.5.10
+30111,2024-06-27T00:08:14Z,mvitousek,[compiler] Always error on async reassignments
+30110,2024-06-27T00:08:12Z,mvitousek,[compiler] Repro for nested function local reassignment issue
+30109,2024-06-26T23:51:22Z,josephsavona,[compiler] Add todo fixtures for local reassignment in an async callback
+30107,2024-06-26T23:51:20Z,josephsavona,[compiler] Validate against locals being reassigned after render
+30106,2024-06-26T23:51:18Z,josephsavona,[compiler] Examples of invalid code reassigning locals outside of render
+30103,2024-06-26T20:04:38Z,kassens,Update ReactFabric-test.internal to concurrent root
+29853,2024-06-26T17:47:39Z,sebmarkbage,Add new error message for awaiting the client export
+29846,2024-06-26T17:27:27Z,sebmarkbage,Badge Environment Name on Thrown Errors from the Server
+30101,2024-06-26T16:51:46Z,kassens,Run ReactFabric-test.internal.js in xplat variant
+30090,2024-06-26T15:50:06Z,yungsters,Enable `enableDeferRootSchedulingToMicrotask` and `enableInfiniteRenderLoopDetection` for React Native (Meta)
+30069,2024-06-26T13:59:03Z,gsathya,compiler: fix the `hookKind` for `useInsertionEffect`
+30043,2024-06-26T13:56:13Z,kassens,Bump ws from 8.13.0 to 8.17.1 in /compiler
+30091,2024-06-26T13:17:09Z,hoxyq,fix[react-devtools]: restore original args when recording errors
+30078,2024-06-25T21:00:21Z,mofeiZ,[compiler][ez] PrintHIR prints optional flag for debugging
+30077,2024-06-25T21:00:21Z,mofeiZ,[compiler][patch] Patch O(n^2) traversal in validatePreserveMemo
+30076,2024-06-25T21:00:20Z,mofeiZ,[compiler][hir] Correctly remove non-existent terminal preds when pruning labels
+30075,2024-06-25T21:00:18Z,mofeiZ,[compiler][ez] Add more Array.prototype methods
+30074,2024-06-25T21:00:17Z,mofeiZ,[compiler][ez] Patch Array.concat object shape to capture callee
+29891,2024-06-25T21:00:16Z,mofeiZ,[compiler][rewrite] Patch logic for aligning scopes to non-value blocks
+29878,2024-06-25T21:00:15Z,mofeiZ,"[compiler][fixtures] test repros: codegen, alignScope, phis"
+29954,2024-06-25T18:30:28Z,hoxyq,Read constructor name more carefully
+30092,2024-06-25T18:09:06Z,poteto,[ez] Remove outdated files
+30064,2024-06-25T16:01:43Z,gsathya,[compiler] Enable sourceMaps in tsconfig
+30067,2024-06-24T17:49:39Z,josephsavona,[compiler] Fix assignment within for update expression
+30066,2024-06-24T16:28:39Z,jackpope,Set renameElementSymbol to dynamic value
+30027,2024-06-24T12:28:17Z,hoxyq,refactor[react-devtools/extensions]: dont debounce cleanup logic on navigation
+30037,2024-06-22T16:37:49Z,poteto,[ci] Cleanup
+30036,2024-06-22T16:37:48Z,poteto,[ci] Remove circleci check_generated_fizz_runtime job
+30035,2024-06-22T16:37:46Z,poteto,[ci] Add new fizz GitHub action
+30034,2024-06-22T16:37:46Z,poteto,[ci] Remove circleci yarn_test job
+30033,2024-06-22T16:37:45Z,poteto,[ci] Improve parallelism of yarn test
+30032,2024-06-22T16:37:44Z,poteto,[ci] Add new yarn test GitHub action
+29998,2024-06-21T23:48:20Z,josephsavona,[compiler] add fixture for optimization across scopes
+29882,2024-06-21T23:48:17Z,josephsavona,[compiler] Optimize instruction reordering
+30029,2024-06-21T19:02:20Z,poteto,[ci] Add new flags GitHub action
+30030,2024-06-21T19:02:20Z,poteto,[ci] Remove circleci yarn_flags job
+30028,2024-06-21T16:32:51Z,poteto,[ci] Remove circleci yarn_flow job
+30026,2024-06-21T16:32:50Z,poteto,[ci] Parallelize flow github action
+30025,2024-06-21T16:32:49Z,poteto,[ci] Add new flow GitHub action
+28721,2024-06-21T16:24:32Z,kassens,lint: enable reportUnusedDisableDirectives and remove unused suppressions
+30024,2024-06-21T16:05:35Z,poteto,[ci] Remove circleci yarn_lint job
+30023,2024-06-21T16:05:34Z,poteto,[ci] Add new lint GitHub action
+30022,2024-06-21T16:05:32Z,poteto,[prettier] Run prettier
+30021,2024-06-21T16:05:31Z,poteto,[prettier] Combine compiler and runtime configs
+29997,2024-06-21T14:08:17Z,poteto,[compiler:codegen] Wrap non-ascii characters in JsxExpressionContainer
+29996,2024-06-21T13:51:46Z,kassens,www: remove dynamic scheduler feature flag: enableProfiling
+29967,2024-06-21T10:39:10Z,sebmarkbage,Plumbing of isomorphic code
+29993,2024-06-20T23:09:32Z,poteto,Re-enable prettier for compiler/
+29995,2024-06-20T21:17:25Z,kassens,"Revert ""www: remove dynamic feature flag enableSchedulingProfiler"""
+29994,2024-06-20T20:47:29Z,kassens,www: remove dynamic feature flag enableSchedulingProfiler
+29906,2024-06-20T20:12:41Z,hoxyq,[chore] Fix TypeError in shouldSkipBundle During yarn build-for-devtools-dev and yarn build-for-devtools-prod  Commands
+29957,2024-06-20T16:01:36Z,poteto,fix[compiler playground]: Set source as the pre-change state in HIR diff
+29963,2024-06-20T08:29:06Z,hoxyq,fix[react-devtools/extensions]: propagate globals from env
+29923,2024-06-19T18:19:49Z,sebmarkbage,"Export captureOwnerStacks() only in DEV ""react"" builds"
+29929,2024-06-19T14:45:01Z,hoxyq,refactor[react-devtools/tests]: use registered marks instead of cleared in tests
+29916,2024-06-18T17:02:20Z,gsathya,[compiler] Treat ref-like named objects as refs
+29918,2024-06-18T11:12:27Z,hoxyq,React DevTools 5.2.0 -> 5.3.0
+29917,2024-06-17T19:26:56Z,josephsavona,Consider dispatch function from useActionState non-reactive
+29873,2024-06-17T15:38:03Z,hoxyq,chore[react-devtools]: improve console arguments formatting before passing it to original console
+29856,2024-06-17T15:13:04Z,hoxyq,chore[react-devtools/backend]: remove consoleManagedByDevToolsDuringStrictMode
+29886,2024-06-17T10:58:19Z,hoxyq,chore[react-devtools/extensions]: make source maps url relative
+29903,2024-06-15T00:09:50Z,yungsters,Prepare Feature Flags for React Native 0.75
+29863,2024-06-14T21:14:46Z,josephsavona,[compiler] Instruction reordering
+29881,2024-06-14T21:14:45Z,josephsavona,[compiler] Allow more instruction kinds btw merged scopes
+29901,2024-06-14T19:27:32Z,kassens,"Revert ""Set disableLegacyMode to true for www"""
+29888,2024-06-14T17:37:19Z,rozele,Use a constant HostContext in prod builds for Fabric renderer
+29808,2024-06-14T17:17:44Z,kassens,sanitize javascript: urls for <object> tags
+29871,2024-06-14T13:52:49Z,kassens,Set disableLegacyMode to true for www
+29893,2024-06-14T00:36:40Z,josephsavona,[compiler] Provide support for custom fbt-like macro functions
+29889,2024-06-13T18:02:51Z,mvitousek,[compiler][playground] Make change detection work in playground
+29830,2024-06-13T15:23:42Z,vzaidman,created a vscode workspace file for the repo
+29884,2024-06-13T15:02:12Z,josephsavona,[compiler] Fix visitors to emit the correct kind
+29885,2024-06-13T14:37:51Z,vzaidman,fix[react-devtools] divided inspecting elements between inspecting do…
+29880,2024-06-12T22:32:02Z,mvitousek,[compiler] Make unary and binary operator types more precise
+29877,2024-06-12T22:31:23Z,gnoff,Standardize condition order so that edge-lite preferred over browser
+29879,2024-06-12T21:49:25Z,josephsavona,[compiler] Fix merging of queues states in InferReferenceEffects
+29876,2024-06-12T20:15:22Z,sebmarkbage,Execute event handlers in the context of the instance that it's associated with
+29868,2024-06-12T18:13:17Z,eps1lon,Avoid acccessing React internals from `use-sync-external-store/shim`
+29857,2024-06-12T15:17:06Z,kassens,Bump braces from 3.0.2 to 3.0.3 in /fixtures/flight-esm
+29771,2024-06-12T15:14:51Z,kassens,remove unstable_renderSubtreeIntoContainer
+29836,2024-06-12T15:12:22Z,kassens,delete ReactServerStreamConfig.dom-fb-experimental.js
+29867,2024-06-12T14:55:42Z,sebmarkbage,[Flight] Let environmentName vary over time by making it a function of string 
+29814,2024-06-11T22:10:24Z,sebmarkbage,Use the Nearest Parent of an Errored Promise as its Owner
+29866,2024-06-11T21:08:28Z,mvitousek,[compiler] Expect component props annotations to be potential objects
+29865,2024-06-11T21:08:26Z,mvitousek,[compiler] Expect components to have hook calls or jsx directly in body
+29864,2024-06-11T21:08:25Z,mvitousek,[compiler] Option to only compile component syntax
+29807,2024-06-11T21:04:14Z,sebmarkbage,[Fiber] Track debugInfo on module state instead of stack
+29804,2024-06-11T19:57:41Z,sebmarkbage,[Fiber] Create virtual Fiber when an error occurs during reconcilation
+29858,2024-06-11T19:55:29Z,sebmarkbage,[Flight/Fizz] Use Constructors for Large Request/Response Objects in Flight/Fizz
+29861,2024-06-11T19:25:07Z,poteto,[compiler] Remove .vscode
+29844,2024-06-11T15:36:36Z,kassens,Bump braces from 3.0.2 to 3.0.3 in /fixtures/legacy-jsx-runtimes
+29845,2024-06-11T15:35:54Z,kassens,Bump braces from 3.0.2 to 3.0.3 in /fixtures/flight
+29843,2024-06-11T15:35:40Z,kassens,Bump braces from 3.0.2 to 3.0.3 in /fixtures/stacks
+29840,2024-06-11T15:35:06Z,josephsavona,[compiler] HIR-based FlattenScopesWithHooksOrUse
+29838,2024-06-11T15:35:04Z,josephsavona,[compiler] HIR-based FlattenReactiveLoops
+29837,2024-06-11T15:35:02Z,josephsavona,[compiler] Add pruned-scope terminal in HIR
+29852,2024-06-11T13:32:39Z,vzaidman,fix[react-devtools] component badge in light mode is now not invisible
+29842,2024-06-11T00:35:43Z,poteto,[compiler] Remove unused scripts
+29841,2024-06-11T00:35:42Z,poteto,[compiler] Remove playground postinstall script
+29839,2024-06-10T22:41:56Z,sebmarkbage,Remove Warning: prefix and toString on console Arguments
+29835,2024-06-10T18:41:15Z,gnoff,[Float][Fiber] Assume stylesheets in document are already loaded (cherrypick #29811)
+29760,2024-06-10T18:31:37Z,rickhanlonii,Add jest lint rules
+29834,2024-06-10T18:29:58Z,josephsavona,[compiler] Type `ref` prop as a ref
+29833,2024-06-10T17:24:46Z,rickhanlonii,Fix xplat sync
+29820,2024-06-10T15:42:16Z,josephsavona,compiler: Known hooks/nonescaping scopes dont count as pruned
+29810,2024-06-10T15:42:14Z,josephsavona,compiler: Log metrics on pruned memo blocks/values
+29790,2024-06-10T15:42:12Z,josephsavona,compiler: treat pruned scope outputs as reactive
+29789,2024-06-10T15:42:10Z,josephsavona,compiler: Promote pruned scope declarations to temporaries if used in a later scope
+29781,2024-06-10T15:42:09Z,josephsavona,compiler: Represent pruned scopes instead of inlining
+29799,2024-06-10T14:16:40Z,rickhanlonii,Move @generated from build to sync
+29752,2024-06-08T23:18:35Z,josephsavona,feat(compiler): Support MetaProperty
+29809,2024-06-08T15:15:57Z,sebmarkbage,Minify DEV bundles with closure
+29812,2024-06-08T00:03:31Z,gnoff,[Float][Fiber] Assume stylesheets in document are already loaded (#29811)
+29811,2024-06-07T23:53:24Z,gnoff,[Float][Fiber] Assume stylesheets in document are already loaded
+29806,2024-06-07T19:50:35Z,poteto,[compiler] Always emit variable decl in gating mode
+29802,2024-06-07T19:50:34Z,poteto,[compiler] Add repro for func properties bug with @gating
+29791,2024-06-07T17:38:44Z,sebmarkbage,[Fiber] Track the Real Fiber for Key Warnings
+29800,2024-06-07T16:29:52Z,poteto,[compiler] Fix outdated comment in scripts/release
+29717,2024-06-07T15:54:15Z,sebmarkbage,[Flight] Run recreated Errors within a fake native stack
+29774,2024-06-07T11:36:10Z,kassens,www: make disableLegacyMode dynamic flag
+29733,2024-06-07T00:19:45Z,josephsavona,compiler: Allow mutating refs in callbacks passed to JSX
+29764,2024-06-06T21:41:27Z,gnoff,[Flight] Allow aborting during render
+29777,2024-06-06T19:01:15Z,hoxyq,fix[react-devtools/store-test]: fork the test to represent current be…
+29787,2024-06-06T18:07:16Z,rickhanlonii,Fix RN version string in builds
+29785,2024-06-06T17:54:58Z,poteto,[compiler] Check for __DEV__ for FastRefresh
+29775,2024-06-06T17:48:24Z,josephsavona,fix<compiler>: reread the testfilter file if filter enabled during the watch process
+29491,2024-06-06T17:19:58Z,gnoff,[Flight] Schedule work in a microtask
+29551,2024-06-06T17:07:24Z,gnoff,[Flight][Fizz] schedule work async
+29784,2024-06-06T16:48:44Z,vzaidman,Default native inspections config false
+29779,2024-06-06T16:10:40Z,vzaidman,fix[react-devtools] remove native inspection button when it can't be used
+29705,2024-06-05T23:51:09Z,josephsavona,feat<Compiler>: consider that the dispatch function from `useReducer` is non-reactive
+29772,2024-06-05T18:58:13Z,hoxyq,chore[react-devtools]: ip => internal-ip
+29664,2024-06-05T14:07:58Z,dmytrorykun,Add enableShallowPropDiffing feature flag
+29725,2024-06-05T10:17:35Z,hoxyq,Fix #29724: `ip` dependency update for CVE-2024-29415
+29734,2024-06-04T17:07:29Z,rickhanlonii,Add xplat test variants
+29753,2024-06-04T16:23:36Z,sebmarkbage,Remove startTransition and useActionState from react-server condition of react
+29756,2024-06-04T15:17:19Z,kassens,www: set enableRefAsProp to true
+29738,2024-06-03T20:39:38Z,rickhanlonii,Fix xplat sync to ignore @generated header
+29697,2024-06-03T16:26:38Z,sebmarkbage,[Fiber] Prefix owner stacks with the current stack at the console call
+29695,2024-06-03T15:25:43Z,acdlite,"useActionState: On error, cancel remaining actions"
+29694,2024-06-03T15:20:27Z,acdlite,useActionState: Transfer transition context
+29732,2024-06-03T14:51:21Z,gnoff,Fix stylesheet typo in 29693
+29693,2024-06-03T14:47:45Z,gnoff,"[Fiber][Float] Error when a host fiber changes ""flavor"""
+29631,2024-05-31T23:04:45Z,poteto,[compiler:eslint] Don't crash if hermes parser fails to parse
+29670,2024-05-31T21:52:47Z,acdlite,Fix: `useTransition` after `use` gets stuck in pending state
+29658,2024-05-31T21:08:58Z,mvitousek,[compiler] rfc: Include location information in identifiers and reactive scopes for debugging
+29657,2024-05-31T21:07:59Z,mvitousek,[compiler] Recompute values every time
+29653,2024-05-31T21:07:11Z,mvitousek,[compiler] Prune dependencies that are only used by useRef or useState
+29656,2024-05-31T21:06:27Z,mvitousek,[compiler] Debug tool to emit change detection code rather than memoization
+29655,2024-05-31T21:05:27Z,mvitousek,[compiler] Option to always take the non-memo branch
+29654,2024-05-31T21:02:16Z,mvitousek,[compiler] Option for preserving calls to useMemo/useCallback
+29673,2024-05-31T17:54:10Z,sebmarkbage,Create a root task for every Flight response
+29691,2024-05-31T16:05:32Z,rickhanlonii,Don't allow blank issues
+29625,2024-05-31T04:22:23Z,sebmarkbage,Use both displayName and name in forwardRef/memo
+29675,2024-05-31T01:02:47Z,yungsters,Fix Missing `key` Validation in `React.Children`
+29661,2024-05-30T23:37:09Z,josephsavona,Add react-easy-state to list of known incompatible libraries.
+29671,2024-05-30T19:00:55Z,sebmarkbage,[Flight] Try/Catch Eval
+29632,2024-05-30T16:00:47Z,sebmarkbage,[Flight] Eval Fake Server Component Functions to Recreate Native Stacks
+29652,2024-05-30T15:11:56Z,hoxyq,fix[ReactDebugHooks/find-primitive-index]: remove some assumptions
+29662,2024-05-30T14:25:48Z,yungsters,Fix `key` Warning for Flattened Positional Children
+29608,2024-05-30T09:24:00Z,dmytrorykun,Add tests for ReactNativeAttributePayloadFabric.js
+29650,2024-05-29T17:35:19Z,josephsavona,feat(compiler): Implement constant folding for more binary expressions
+29170,2024-05-29T16:27:47Z,josephsavona,compiler: ValidateNoRefInRender detects writes of refs
+29626,2024-05-29T15:41:10Z,sophiebits,"Tweak error message for ""Should have a queue"""
+29592,2024-05-29T14:45:58Z,josephsavona,compiler: Add todo for getter/setter syntax
+29591,2024-05-29T14:45:56Z,josephsavona,compiler: Allow global mutation in jsx props
+29630,2024-05-29T09:12:20Z,poteto,Update .git-blame-ignore-revs
+29627,2024-05-29T03:36:41Z,yungsters,"Fix ""findNodeHandle inside its render()"" False Positive Warning"
+29211,2024-05-29T02:46:38Z,poteto,[compiler:babel] Don't read config files when not running as part of
+29214,2024-05-29T02:46:35Z,poteto,[compiler] Run prettier
+29213,2024-05-29T02:46:32Z,poteto,[compiler] Fix up prettier
+29621,2024-05-28T23:15:46Z,josephsavona,feat(compiler): Implement constant string concat propagation
+29611,2024-05-28T23:07:30Z,sebmarkbage,[Flight] Check if a return value is a client reference before introspecting
+29624,2024-05-28T22:17:54Z,josephsavona,compiler: fix for calls on builtin jsx/function types
+29596,2024-05-28T19:47:48Z,eps1lon,Export `version` from `react-dom` entry with `react-server` condition
+29618,2024-05-28T19:08:59Z,acdlite,Fix: Use action implementation at time of dispatch
+29610,2024-05-28T18:55:14Z,jackpope,Clean up disableDOMTestUtils
+29236,2024-05-28T18:06:31Z,acdlite,Throw if React and React DOM versions don't match
+29615,2024-05-28T17:06:06Z,josephsavona,Repro function expr hoisting
+29193,2024-05-28T10:07:32Z,hoxyq,cleanup[react-devtools]: remove unused supportsProfiling flag from store config
+29223,2024-05-26T21:55:58Z,sebmarkbage,[Fiber] Enable Native console.createTask Stacks When Available
+29221,2024-05-25T15:58:40Z,sebmarkbage,[Fiber] Replace setCurrentDebugFiberInDEV with runWithFiberInDEV
+29206,2024-05-25T15:58:17Z,sebmarkbage,[Fiber] Use Owner/JSX Stack When Appending Stacks to Console
+29190,2024-05-24T09:20:33Z,josephsavona,compiler: only resolve globals and react imports
+29188,2024-05-24T09:20:30Z,josephsavona,compiler: distinguish globals/imports/module-locals
+29226,2024-05-23T21:19:09Z,acdlite,Fix async batching in React.startTransition
+29222,2024-05-23T20:54:52Z,gnoff,[Fiber] clarify entry condition for suspensey commit recursion
+29088,2024-05-23T16:48:58Z,sebmarkbage,Move createElement/JSX Warnings into the Renderer
+29197,2024-05-23T16:45:06Z,josephsavona,compiler: repro for unmerged scopes due to intermediates
+29156,2024-05-23T16:45:01Z,josephsavona,compiler: Improve merging of memo scopes that invalidate together
+29155,2024-05-23T16:44:59Z,josephsavona,compiler: fixture for suboptimal jsx sibling memo block merging
+29044,2024-05-23T16:39:52Z,sebmarkbage,Set the current fiber to the source of the error during error reporting
+29038,2024-05-23T16:25:23Z,sebmarkbage,Unify ReactFiberCurrentOwner and ReactCurrentFiber
+29218,2024-05-22T22:42:07Z,josephsavona,compiler: Handle TSNonNullAssertion expressions
+29219,2024-05-22T19:15:14Z,eps1lon,[Flight] Allow temporary references in `decodeReplyFromBusboy`
+29007,2024-05-22T09:39:54Z,eps1lon,Dim `console` calls on additional Effect invocations due to `StrictMode`
+29207,2024-05-21T23:16:20Z,gnoff,[Flight Reply] retain listeners when resolving models with existing listeners
+28965,2024-05-21T23:03:47Z,gnoff,[Fiber] render boundary in fallback if it contains a new stylesheet during sync update
+29205,2024-05-21T22:12:35Z,poteto,[compiler:playground] Update babel.config.js
+29203,2024-05-21T22:12:34Z,poteto,[compiler:playground] JS tab is expanded by default
+29204,2024-05-21T21:04:47Z,gnoff,[Flight] don't overwrite existing chunk listeners in 'wakeChunkIfInitialized'
+29180,2024-05-21T19:44:06Z,poteto,[compiler:playground] Wait for build before running playground
+29198,2024-05-21T16:48:41Z,rickhanlonii,Fix assertConsoleErrorDev on message mismatch with withoutStack: true
+29177,2024-05-21T10:19:13Z,yungsters,Enable `disableStringRefs` and `enableRefAsProp` for React Native (Meta)
+29008,2024-05-20T22:30:45Z,eps1lon,Stop using Scheduler.log to test double invocations 
+27981,2024-05-20T20:01:39Z,eps1lon,React DOM: Add support for Popover API
+29167,2024-05-20T15:55:35Z,poteto,feat(compiler-healthcheck): Support strict mode check for nextjs apps
+29159,2024-05-20T15:05:48Z,poteto,[Compiler playground] bold changed passes
+29049,2024-05-20T14:12:21Z,hoxyq,refactor[react-devtools]: rewrite context menus
+29064,2024-05-20T11:03:55Z,kassens,Bump word-wrap from 1.2.3 to 1.2.5 in /compiler
+29065,2024-05-20T11:03:29Z,kassens,Bump tough-cookie from 4.1.2 to 4.1.4 in /compiler
+29173,2024-05-20T11:02:35Z,kassens,Bump rustix from 0.37.22 to 0.37.27 in /compiler
+29063,2024-05-20T10:47:51Z,kassens,Bump postcss from 8.4.24 to 8.4.31 in /compiler
+29162,2024-05-20T10:10:10Z,kassens,[compiler:chore] fix SSA pdf reference link
+29154,2024-05-20T02:13:00Z,josephsavona,compiler: fix accidental propagation of function effects from StartMemoize/FinishMemoize
+29151,2024-05-20T02:12:56Z,josephsavona,compiler: Improve ValidateNoRefAccessInRender to ignore access in effects
+28940,2024-05-19T03:17:52Z,rickhanlonii,feat(hyperlink): added a hyperlink to Node in README.md file
+29103,2024-05-19T03:17:28Z,rickhanlonii,Add hyperlink for Good First Issues header
+29114,2024-05-18T14:21:42Z,poteto,Add packageManager fields for Corepack compat
+29153,2024-05-17T22:11:33Z,poteto,[compiler:publish] Don't check branch in debug mode
+29150,2024-05-17T22:07:48Z,poteto,[compiler:publish] Bump time to reconsider to 3s
+29149,2024-05-17T22:07:39Z,poteto,[compiler:publish] Prompt for OTP
+29147,2024-05-17T22:07:29Z,poteto,[compiler:publish] Don't hash node_modules
+29148,2024-05-17T22:07:18Z,poteto,[compiler:publish] Rename publish script
+29143,2024-05-17T21:36:31Z,josephsavona,compiler: workaround babel issue with html entity escaping
+29133,2024-05-17T19:31:24Z,poteto,[compiler:playground] Resizable tabs
+29085,2024-05-17T18:58:15Z,mofeiZ,[Compiler][script] Dedupe error report counts before reporting in healthcheck
+29142,2024-05-17T18:37:18Z,josephsavona,compiler: update comment on memo cache import code
+29140,2024-05-17T18:33:57Z,poteto,Add issue template for React Compiler
+29141,2024-05-17T17:59:06Z,josephsavona,compiler: Workaround Babel bug with unicode in jsx string attrs
+29139,2024-05-17T17:58:42Z,sebmarkbage,Lazily freeze in case anything in the currently initializing chunk is blocked
+29118,2024-05-17T17:43:17Z,josephsavona,[compiler] Todo for for-await loops
+29122,2024-05-17T06:26:00Z,poteto,[compiler:playground] Fix broken builds
+29095,2024-05-17T00:29:05Z,josephsavona,compiler: merge reactive scopes across const StoreLocal
+29102,2024-05-16T23:11:22Z,josephsavona,docs: fix typo DESIGN_GOALS.md
+29096,2024-05-16T16:36:22Z,poteto,[React Compiler] Fix rule name for ESLint plugin
+29087,2024-05-16T00:42:21Z,poteto,[compiler:publish] Specify https for registry
+29086,2024-05-16T00:41:05Z,poteto,chore(docs): fix typo (plugion => plugin) in DESIGN_GOALS.md
+29084,2024-05-16T00:29:52Z,poteto,[compiler] Add readme for babel plugin
+29083,2024-05-15T23:17:28Z,poteto,[compiler] Check if current branch is main
+29082,2024-05-15T23:17:26Z,poteto,[compiler] Various fixes for publishing script
+29081,2024-05-15T22:44:24Z,poteto,[compiler:eslint] Fix false positive with TS type param syntax
+29079,2024-05-15T21:40:33Z,josephsavona,compiler: fix jsx text attributes with double quotes
+29076,2024-05-15T21:15:32Z,gsathya,[heathcheck] Check for namespaced StrictMode
+29073,2024-05-15T21:02:57Z,josephsavona,Fix ESLint and Prettier configs for React Compiler
+29072,2024-05-15T21:02:20Z,poteto,"Add a `main` field to `eslint-plugin-react-compiler`, fixes #29068."
+29061,2024-05-15T18:16:19Z,josephsavona,Open-source React Compiler
+29060,2024-05-15T15:01:28Z,acdlite,Bump React 19 beta to RC
+29027,2024-05-14T14:07:00Z,kassens,Remove 2 no longer existing files from inlinedHostConfig
+29052,2024-05-14T05:56:43Z,yungsters,Enable `enableUnifiedSyncLane` for React Native (Meta)
+29043,2024-05-10T13:37:42Z,sebmarkbage,[Flight] Error if a legacy React Element is attempted to be rendered
+29041,2024-05-10T10:00:04Z,dmytrorykun,Clean up the enableEarlyReturnForPropDiffing experiment
+29035,2024-05-10T00:56:16Z,sebmarkbage,[Flight] Enable Binary and ReadableStreams in Stable
+29010,2024-05-10T00:00:56Z,sebmarkbage,[Flight Reply] Encode Objects Returned to the Client by Reference
+28997,2024-05-09T23:24:37Z,sebmarkbage,[Flight Reply] Dedupe Objects and Support Cyclic References
+28996,2024-05-09T23:16:14Z,sebmarkbage,[Flight] Encode references to existing objects by property path
+29019,2024-05-09T17:16:08Z,acdlite,Support useFormStatus in progressively-enhanced forms
+29032,2024-05-09T16:23:06Z,sebmarkbage,Track Stack of JSX Calls
+29026,2024-05-08T17:57:25Z,kassens,Upgrade jest and jsdom
+29025,2024-05-08T17:37:47Z,kassens,Facebook: merge react index.classic.fb and index.modern.fb
+28743,2024-05-08T14:52:49Z,kassens,Cleanup enableServerComponentKeys flag
+29023,2024-05-08T12:16:27Z,hoxyq,fix[react-devtools/InspectedElementView.css]: dont draw bottom border for empty badge list
+29015,2024-05-08T12:10:05Z,dmytrorykun,Clean up fastAddProperties and make it more correct
+29016,2024-05-08T11:04:51Z,hoxyq,fix[react-devtools/ci]: fix configurations for e2e testing
+28988,2024-05-08T02:19:59Z,sebmarkbage,[Flight Reply] Resolve outlined models async in Reply just like in Flight Client
+28987,2024-05-08T01:53:10Z,sebmarkbage,[Fizz] Fallback to client replaying actions if we're trying to serialize a Blob
+28986,2024-05-08T01:52:55Z,sebmarkbage,[Flight Reply] Encode binary streams as a single collapsed Blob
+29014,2024-05-07T15:39:01Z,hoxyq,feat[react-devtools]: display forget badge for components in profiling session
+28982,2024-05-07T15:38:43Z,hoxyq,fix[react-devtools]: add backwards compat with legacy element type symbol
+29006,2024-05-07T15:15:39Z,eps1lon,Allow specifying timeout in tests via third argument
+28973,2024-05-07T15:06:36Z,motiz88,"[DevTools] Expose ""view source"" options to Fusebox integration"
+28841,2024-05-07T10:53:36Z,dmytrorykun,Create Fabric-specific version of ReactNativeAttributesPayload
+28964,2024-05-06T18:20:08Z,kassens,Set enableUseMemoCacheHook to true everywhere
+28990,2024-05-06T17:30:40Z,yungsters,Setup Wave 2 of Feature Flags for React Native
+29003,2024-05-06T15:32:43Z,jackpope,Add FB build for ReactReconcilerConstants

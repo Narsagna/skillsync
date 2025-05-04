@@ -1,0 +1,336 @@
+2025-05-04 18:09:41 - Starting download of React PR patches
+2025-05-04 18:09:41 - Loaded 1258 PR numbers from target_prs.csv
+2025-05-04 18:09:41 - PR #32675: Already downloaded
+2025-05-04 18:09:59 - Completed batch 1 of 126. Progress: 10/1258 (0.8%). Taking a 59.40 second break...
+2025-05-04 18:10:58 - PR #32592: Already downloaded
+2025-05-04 18:11:17 - Completed batch 2 of 126. Progress: 20/1258 (1.6%). Taking a 56.52 second break...
+2025-05-04 18:12:14 - PR #32487: Already downloaded
+2025-05-04 18:12:32 - Completed batch 3 of 126. Progress: 30/1258 (2.4%). Taking a 58.90 second break...
+2025-05-04 18:13:31 - PR #32412: Already downloaded
+2025-05-04 18:13:48 - Completed batch 4 of 126. Progress: 40/1258 (3.2%). Taking a 57.93 second break...
+2025-05-04 18:14:46 - PR #32240: Already downloaded
+2025-05-04 18:15:04 - Completed batch 5 of 126. Progress: 50/1258 (4.0%). Taking a 64.95 second break...
+2025-05-04 18:16:09 - PR #32348: Already downloaded
+2025-05-04 18:16:26 - Token ghp_U9L... rate limit reset
+2025-05-04 18:16:26 - Token ghp_YOg... rate limit reset
+2025-05-04 18:16:26 - Token ghp_0SM... rate limit reset
+2025-05-04 18:16:26 - Token ghp_glf... rate limit reset
+2025-05-04 18:16:26 - Token ghp_SAo... rate limit reset
+2025-05-04 18:16:26 - Token ghp_scm... rate limit reset
+2025-05-04 18:16:26 - Token ghp_d2u... rate limit reset
+2025-05-04 18:16:26 - Token ghp_KdO... rate limit reset
+2025-05-04 18:16:26 - Token ghp_VvI... rate limit reset
+2025-05-04 18:16:26 - Token ghp_HNX... rate limit reset
+2025-05-04 18:16:26 - Token ghp_VH3... rate limit reset
+2025-05-04 18:16:26 - Token ghp_ywS... rate limit reset
+2025-05-04 18:16:26 - Token ghp_loK... rate limit reset
+2025-05-04 18:16:26 - Token ghp_HBl... rate limit reset
+2025-05-04 18:16:26 - Token ghp_9Hu... rate limit reset
+2025-05-04 18:16:29 - Completed batch 6 of 126. Progress: 60/1258 (4.8%). Taking a 57.29 second break...
+2025-05-04 18:17:26 - PR #32321: Already downloaded
+2025-05-04 18:17:46 - PR #32297: Failed after 5 retries
+2025-05-04 18:17:50 - PR #32296: Failed after 5 retries
+2025-05-04 18:17:50 - Completed batch 7 of 126. Progress: 70/1258 (5.6%). Taking a 62.75 second break...
+2025-05-04 18:18:53 - PR #32164: Already downloaded
+2025-05-04 18:19:13 - PR #32267: Failed after 5 retries
+2025-05-04 18:19:17 - PR #32266: Failed after 5 retries
+2025-05-04 18:19:17 - Completed batch 8 of 126. Progress: 80/1258 (6.4%). Taking a 58.44 second break...
+2025-05-04 18:36:52 - PR #32273: Already downloaded
+2025-05-04 18:37:13 - PR #32217: Failed after 5 retries
+2025-05-04 18:37:17 - PR #32216: Failed after 5 retries
+2025-05-04 18:37:17 - Completed batch 9 of 126. Progress: 90/1258 (7.2%). Taking a 63.13 second break...
+2025-05-04 18:38:20 - PR #32215: Already downloaded
+2025-05-04 18:38:39 - Completed batch 10 of 126. Progress: 100/1258 (7.9%). Taking a 59.21 second break...
+2025-05-04 18:39:38 - PR #32149: Already downloaded
+2025-05-04 18:39:58 - Completed batch 11 of 126. Progress: 110/1258 (8.7%). Taking a 58.48 second break...
+2025-05-04 18:40:57 - PR #32087: Already downloaded
+2025-05-04 18:41:17 - PR #32091: Failed after 5 retries
+2025-05-04 18:41:20 - PR #32092: Failed after 5 retries
+2025-05-04 18:41:20 - Completed batch 12 of 126. Progress: 120/1258 (9.5%). Taking a 63.42 second break...
+2025-05-04 18:42:24 - PR #32090: Already downloaded
+2025-05-04 18:42:43 - PR #32058: Failed after 5 retries
+2025-05-04 18:42:47 - PR #32068: Failed after 5 retries
+2025-05-04 18:42:47 - Completed batch 13 of 126. Progress: 130/1258 (10.3%). Taking a 64.71 second break...
+2025-05-04 18:43:52 - PR #32070: Already downloaded
+2025-05-04 18:44:10 - PR #32038: Failed after 5 retries
+2025-05-04 18:44:13 - PR #32036: Failed after 5 retries
+2025-05-04 18:44:13 - Completed batch 14 of 126. Progress: 140/1258 (11.1%). Taking a 58.10 second break...
+2025-05-04 18:45:12 - PR #32018: Success
+2025-05-04 18:45:24 - PR #32015: Failed after 5 retries
+2025-05-04 18:45:27 - PR #32019: Failed after 5 retries
+2025-05-04 18:45:31 - PR #32012: Failed after 5 retries
+2025-05-04 18:45:35 - PR #32035: Failed after 5 retries
+2025-05-04 18:45:39 - PR #32034: Failed after 5 retries
+2025-05-04 18:45:42 - PR #32033: Failed after 5 retries
+2025-05-04 18:45:42 - Completed batch 15 of 126. Progress: 150/1258 (11.9%). Taking a 63.68 second break...
+2025-05-04 18:46:46 - PR #32031: Success
+2025-05-04 18:46:57 - PR #31996: Failed after 5 retries
+2025-05-04 18:47:00 - PR #31999: Failed after 5 retries
+2025-05-04 18:47:03 - PR #31975: Failed after 5 retries
+2025-05-04 18:47:07 - PR #31966: Failed after 5 retries
+2025-05-04 18:47:10 - PR #32008: Failed after 5 retries
+2025-05-04 18:47:14 - PR #32005: Failed after 5 retries
+2025-05-04 18:47:14 - Completed batch 16 of 126. Progress: 160/1258 (12.7%). Taking a 63.77 second break...
+2025-05-04 18:48:18 - PR #31989: Success
+2025-05-04 18:48:30 - PR #31985: Failed after 5 retries
+2025-05-04 18:48:33 - PR #31988: Failed after 5 retries
+2025-05-04 18:48:37 - PR #31986: Failed after 5 retries
+2025-05-04 18:48:41 - PR #31984: Failed after 5 retries
+2025-05-04 18:48:44 - PR #31995: Failed after 5 retries
+2025-05-04 18:48:48 - PR #31994: Failed after 5 retries
+2025-05-04 18:48:48 - Completed batch 17 of 126. Progress: 170/1258 (13.5%). Taking a 58.29 second break...
+2025-05-04 18:49:47 - PR #31993: Success
+2025-05-04 18:49:57 - PR #31772: Failed after 5 retries
+2025-05-04 18:50:01 - PR #31965: Failed after 5 retries
+2025-05-04 18:50:04 - PR #31963: Failed after 5 retries
+2025-05-04 18:50:08 - PR #31962: Failed after 5 retries
+2025-05-04 18:50:12 - PR #31901: Failed after 5 retries
+2025-05-04 18:50:16 - PR #31902: Failed after 5 retries
+2025-05-04 18:50:16 - Completed batch 18 of 126. Progress: 180/1258 (14.3%). Taking a 56.87 second break...
+2025-05-04 18:51:13 - PR #31898: Success
+2025-05-04 18:51:24 - PR #31921: Failed after 5 retries
+2025-05-04 18:51:27 - PR #31876: Failed after 5 retries
+2025-05-04 18:51:31 - PR #31866: Failed after 5 retries
+2025-05-04 18:51:35 - PR #31828: Failed after 5 retries
+2025-05-04 18:51:39 - PR #31919: Failed after 5 retries
+2025-05-04 18:51:42 - PR #31893: Failed after 5 retries
+2025-05-04 18:51:42 - Completed batch 19 of 126. Progress: 190/1258 (15.1%). Taking a 58.70 second break...
+2025-05-04 18:52:41 - PR #31799: Success
+2025-05-04 18:52:52 - PR #31915: Failed after 5 retries
+2025-05-04 18:52:55 - PR #31920: Failed after 5 retries
+2025-05-04 18:52:59 - PR #31894: Failed after 5 retries
+2025-05-04 18:53:02 - PR #31853: Failed after 5 retries
+2025-05-04 18:53:06 - PR #31881: Failed after 5 retries
+2025-05-04 18:53:09 - PR #31811: Failed after 5 retries
+2025-05-04 18:53:09 - Completed batch 20 of 126. Progress: 200/1258 (15.9%). Taking a 61.50 second break...
+2025-05-04 18:54:11 - PR #31798: Success
+2025-05-04 18:54:22 - PR #31862: Failed after 5 retries
+2025-05-04 18:54:26 - PR #31872: Failed after 5 retries
+2025-05-04 18:54:30 - PR #31871: Failed after 5 retries
+2025-05-04 18:54:34 - PR #31857: Failed after 5 retries
+2025-05-04 18:54:38 - PR #31844: Failed after 5 retries
+2025-05-04 18:54:42 - PR #31861: Failed after 5 retries
+2025-05-04 18:54:42 - Completed batch 21 of 126. Progress: 210/1258 (16.7%). Taking a 56.08 second break...
+2025-05-04 18:55:38 - PR #31859: Success
+2025-05-04 18:55:50 - PR #31848: Failed after 5 retries
+2025-05-04 18:55:53 - PR #31847: Failed after 5 retries
+2025-05-04 18:55:56 - PR #31846: Failed after 5 retries
+2025-05-04 18:55:59 - PR #31839: Failed after 5 retries
+2025-05-04 18:56:03 - PR #31845: Failed after 5 retries
+2025-05-04 18:56:06 - PR #31842: Failed after 5 retries
+2025-05-04 18:56:06 - Completed batch 22 of 126. Progress: 220/1258 (17.5%). Taking a 59.14 second break...
+2025-05-04 18:57:06 - PR #31841: Success
+2025-05-04 18:57:17 - PR #31825: Failed after 5 retries
+2025-05-04 18:57:21 - PR #31826: Failed after 5 retries
+2025-05-04 18:57:24 - PR #31833: Failed after 5 retries
+2025-05-04 18:57:28 - PR #31808: Failed after 5 retries
+2025-05-04 18:57:32 - PR #31788: Failed after 5 retries
+2025-05-04 18:57:36 - PR #31785: Failed after 5 retries
+2025-05-04 18:57:36 - Completed batch 23 of 126. Progress: 230/1258 (18.3%). Taking a 56.79 second break...
+2025-05-04 18:58:33 - PR #31787: Success
+2025-05-04 18:58:45 - PR #31804: Failed after 5 retries
+2025-05-04 18:58:48 - PR #31769: Failed after 5 retries
+2025-05-04 18:58:52 - PR #31583: Failed after 5 retries
+2025-05-04 18:58:56 - PR #31582: Failed after 5 retries
+2025-05-04 18:59:00 - PR #31795: Failed after 5 retries
+2025-05-04 18:59:04 - PR #31794: Failed after 5 retries
+2025-05-04 18:59:04 - Completed batch 24 of 126. Progress: 240/1258 (19.1%). Taking a 58.79 second break...
+2025-05-04 19:00:03 - PR #31581: Success
+2025-05-04 19:00:14 - PR #31736: Failed after 5 retries
+2025-05-04 19:00:17 - PR #31806: Failed after 5 retries
+2025-05-04 19:00:21 - PR #31735: Failed after 5 retries
+2025-05-04 19:00:25 - PR #31805: Failed after 5 retries
+2025-05-04 19:00:29 - PR #31778: Failed after 5 retries
+2025-05-04 19:00:33 - PR #31780: Failed after 5 retries
+2025-05-04 19:00:33 - Completed batch 25 of 126. Progress: 250/1258 (19.9%). Taking a 59.76 second break...
+2025-05-04 19:01:33 - PR #31784: Success
+2025-05-04 19:01:43 - PR #31777: Failed after 5 retries
+2025-05-04 19:01:47 - PR #31767: Failed after 5 retries
+2025-05-04 19:01:51 - PR #31775: Failed after 5 retries
+2025-05-04 19:01:55 - PR #31766: Failed after 5 retries
+2025-05-04 19:01:59 - PR #31765: Failed after 5 retries
+2025-05-04 19:02:02 - PR #31764: Failed after 5 retries
+2025-05-04 19:02:02 - Completed batch 26 of 126. Progress: 260/1258 (20.7%). Taking a 60.82 second break...
+2025-05-04 19:03:03 - PR #31762: Success
+2025-05-04 19:03:13 - PR #31758: Failed after 5 retries
+2025-05-04 19:03:17 - PR #31755: Failed after 5 retries
+2025-05-04 19:03:20 - PR #31577: Failed after 5 retries
+2025-05-04 19:03:24 - PR #31753: Failed after 5 retries
+2025-05-04 19:03:27 - PR #31751: Failed after 5 retries
+2025-05-04 19:03:30 - PR #31746: Failed after 5 retries
+2025-05-04 19:03:30 - Completed batch 27 of 126. Progress: 270/1258 (21.5%). Taking a 61.13 second break...
+2025-05-04 19:04:32 - PR #31741: Success
+2025-05-04 19:04:44 - PR #31725: Failed after 5 retries
+2025-05-04 19:04:48 - PR #31661: Failed after 5 retries
+2025-05-04 19:04:52 - PR #31457: Failed after 5 retries
+2025-05-04 19:04:55 - PR #31716: Failed after 5 retries
+2025-05-04 19:04:59 - PR #31720: Failed after 5 retries
+2025-05-04 19:05:04 - PR #31724: Failed after 5 retries
+2025-05-04 19:05:04 - Completed batch 28 of 126. Progress: 280/1258 (22.3%). Taking a 55.20 second break...
+2025-05-04 19:05:59 - PR #31715: Success
+2025-05-04 19:06:10 - PR #31709: Failed after 5 retries
+2025-05-04 19:06:13 - PR #31683: Failed after 5 retries
+2025-05-04 19:06:17 - PR #31685: Failed after 5 retries
+2025-05-04 19:06:21 - PR #31675: Failed after 5 retries
+2025-05-04 19:06:24 - PR #31667: Failed after 5 retries
+2025-05-04 19:06:27 - PR #31620: Failed after 5 retries
+2025-05-04 19:06:27 - Completed batch 29 of 126. Progress: 290/1258 (23.1%). Taking a 64.46 second break...
+2025-05-04 19:07:32 - PR #31666: Success
+2025-05-04 19:07:42 - PR #31005: Failed after 5 retries
+2025-05-04 19:07:45 - PR #31629: Failed after 5 retries
+2025-05-04 19:07:49 - PR #31617: Failed after 5 retries
+2025-05-04 19:07:53 - PR #31619: Failed after 5 retries
+2025-05-04 19:07:56 - PR #31615: Failed after 5 retries
+2025-05-04 19:08:00 - PR #31386: Failed after 5 retries
+2025-05-04 19:08:00 - Completed batch 30 of 126. Progress: 300/1258 (23.8%). Taking a 61.80 second break...
+2025-05-04 19:09:02 - PR #31611: Success
+2025-05-04 19:09:13 - PR #31588: Failed after 5 retries
+2025-05-04 19:09:16 - PR #31563: Failed after 5 retries
+2025-05-04 19:09:20 - PR #31552: Failed after 5 retries
+2025-05-04 19:09:24 - PR #31585: Failed after 5 retries
+2025-05-04 19:09:27 - PR #31119: Failed after 5 retries
+2025-05-04 19:09:31 - PR #31573: Failed after 5 retries
+2025-05-04 19:09:31 - Completed batch 31 of 126. Progress: 310/1258 (24.6%). Taking a 55.46 second break...
+2025-05-04 19:10:27 - PR #31572: Success
+2025-05-04 19:10:38 - PR #31558: Failed after 5 retries
+2025-05-04 19:10:41 - PR #31523: Failed after 5 retries
+2025-05-04 19:10:45 - PR #31554: Failed after 5 retries
+2025-05-04 19:10:49 - PR #31557: Failed after 5 retries
+2025-05-04 19:10:52 - PR #31556: Failed after 5 retries
+2025-05-04 19:10:56 - PR #31555: Failed after 5 retries
+2025-05-04 19:10:56 - Completed batch 32 of 126. Progress: 320/1258 (25.4%). Taking a 61.71 second break...
+2025-05-04 19:11:59 - PR #31202: Success
+2025-05-04 19:12:10 - PR #31521: Failed after 5 retries
+2025-05-04 19:12:15 - PR #31548: Failed after 5 retries
+2025-05-04 19:12:19 - PR #31546: Failed after 5 retries
+2025-05-04 19:12:22 - PR #31547: Failed after 5 retries
+2025-05-04 19:12:26 - PR #31524: Failed after 5 retries
+2025-05-04 19:12:30 - PR #31536: Failed after 5 retries
+2025-05-04 19:12:30 - Completed batch 33 of 126. Progress: 330/1258 (26.2%). Taking a 56.57 second break...
+2025-05-04 19:13:27 - PR #31528: Success
+2025-05-04 19:13:37 - PR #31527: Failed after 5 retries
+2025-05-04 19:13:41 - PR #31525: Failed after 5 retries
+2025-05-04 19:13:44 - PR #31542: Failed after 5 retries
+2025-05-04 19:13:48 - PR #31541: Failed after 5 retries
+2025-05-04 19:13:52 - PR #31535: Failed after 5 retries
+2025-05-04 19:13:57 - PR #31522: Failed after 5 retries
+2025-05-04 19:13:57 - Completed batch 34 of 126. Progress: 340/1258 (27.0%). Taking a 58.81 second break...
+2025-05-04 19:14:56 - PR #31519: Success
+2025-05-04 19:15:07 - PR #31464: Failed after 5 retries
+2025-05-04 19:15:11 - PR #31426: Failed after 5 retries
+2025-05-04 19:15:15 - PR #31439: Failed after 5 retries
+2025-05-04 19:15:19 - PR #31443: Failed after 5 retries
+2025-05-04 19:15:23 - PR #31442: Failed after 5 retries
+2025-05-04 19:15:28 - PR #31441: Failed after 5 retries
+2025-05-04 19:15:28 - Completed batch 35 of 126. Progress: 350/1258 (27.8%). Taking a 56.04 second break...
+2025-05-04 19:16:24 - PR #31438: Success
+2025-05-04 19:16:26 - Token ghp_U9L... rate limit reset
+2025-05-04 19:16:26 - Token ghp_YOg... rate limit reset
+2025-05-04 19:16:26 - Token ghp_0SM... rate limit reset
+2025-05-04 19:16:26 - Token ghp_glf... rate limit reset
+2025-05-04 19:16:26 - Token ghp_SAo... rate limit reset
+2025-05-04 19:16:26 - Token ghp_scm... rate limit reset
+2025-05-04 19:16:26 - Token ghp_d2u... rate limit reset
+2025-05-04 19:16:26 - Token ghp_KdO... rate limit reset
+2025-05-04 19:16:26 - Token ghp_VvI... rate limit reset
+2025-05-04 19:16:26 - Token ghp_HNX... rate limit reset
+2025-05-04 19:16:26 - Token ghp_VH3... rate limit reset
+2025-05-04 19:16:26 - Token ghp_ywS... rate limit reset
+2025-05-04 19:16:26 - Token ghp_loK... rate limit reset
+2025-05-04 19:16:26 - Token ghp_HBl... rate limit reset
+2025-05-04 19:16:26 - Token ghp_9Hu... rate limit reset
+2025-05-04 19:16:36 - PR #31415: Failed after 5 retries
+2025-05-04 19:16:39 - PR #31346: Failed after 5 retries
+2025-05-04 19:16:42 - PR #31199: Failed after 5 retries
+2025-05-04 19:16:46 - PR #31362: Failed after 5 retries
+2025-05-04 19:16:49 - PR #31347: Failed after 5 retries
+2025-05-04 19:16:53 - PR #31350: Failed after 5 retries
+2025-05-04 19:16:53 - Completed batch 36 of 126. Progress: 360/1258 (28.6%). Taking a 61.34 second break...
+2025-05-04 19:17:54 - PR #31349: Success
+2025-05-04 19:18:04 - PR #31431: Failed after 5 retries
+2025-05-04 19:18:08 - PR #31345: Failed after 5 retries
+2025-05-04 19:18:12 - PR #31197: Failed after 5 retries
+2025-05-04 19:18:16 - PR #31427: Failed after 5 retries
+2025-05-04 19:18:20 - PR #31430: Failed after 5 retries
+2025-05-04 19:18:24 - PR #31413: Failed after 5 retries
+2025-05-04 19:18:24 - Completed batch 37 of 126. Progress: 370/1258 (29.4%). Taking a 64.72 second break...
+2025-05-04 19:19:30 - PR #30346: Success
+2025-05-04 19:19:38 - PR #31403: Failed after 5 retries
+2025-05-04 19:19:43 - PR #31391: Failed after 5 retries
+2025-05-04 19:19:46 - PR #31379: Failed after 5 retries
+2025-05-04 19:19:50 - PR #31385: Failed after 5 retries
+2025-05-04 19:19:54 - PR #31384: Failed after 5 retries
+2025-05-04 19:19:58 - PR #31383: Failed after 5 retries
+2025-05-04 19:19:58 - Completed batch 38 of 126. Progress: 380/1258 (30.2%). Taking a 58.02 second break...
+2025-05-04 19:20:57 - PR #31376: Success
+2025-05-04 19:21:10 - PR #31336: Failed after 5 retries
+2025-05-04 19:21:14 - PR #31340: Failed after 5 retries
+2025-05-04 19:21:18 - PR #31333: Failed after 5 retries
+2025-05-04 19:21:22 - PR #31329: Failed after 5 retries
+2025-05-04 19:21:27 - PR #31332: Failed after 5 retries
+2025-05-04 19:21:31 - PR #31326: Failed after 5 retries
+2025-05-04 19:21:31 - Completed batch 39 of 126. Progress: 390/1258 (31.0%). Taking a 63.17 second break...
+2025-05-04 19:22:34 - PR #28714: Success
+2025-05-04 19:22:45 - PR #31304: Failed after 5 retries
+2025-05-04 19:22:49 - PR #31303: Failed after 5 retries
+2025-05-04 19:22:52 - PR #31302: Failed after 5 retries
+2025-05-04 19:22:56 - PR #31301: Failed after 5 retries
+2025-05-04 19:23:00 - PR #31298: Failed after 5 retries
+2025-05-04 19:23:03 - PR #31300: Failed after 5 retries
+2025-05-04 19:23:03 - Completed batch 40 of 126. Progress: 400/1258 (31.8%). Taking a 59.27 second break...
+2025-05-04 19:24:03 - PR #31299: Success
+2025-05-04 19:24:13 - PR #31282: Failed after 5 retries
+2025-05-04 19:24:18 - PR #31293: Failed after 5 retries
+2025-05-04 19:24:21 - PR #31292: Failed after 5 retries
+2025-05-04 19:24:24 - PR #31291: Failed after 5 retries
+2025-05-04 19:24:28 - PR #31289: Failed after 5 retries
+2025-05-04 19:24:31 - PR #31288: Failed after 5 retries
+2025-05-04 19:24:31 - Completed batch 41 of 126. Progress: 410/1258 (32.6%). Taking a 60.67 second break...
+2025-05-04 19:25:32 - PR #31284: Success
+2025-05-04 19:25:44 - PR #31241: Failed after 5 retries
+2025-05-04 19:25:48 - PR #31277: Failed after 5 retries
+2025-05-04 19:25:52 - PR #31276: Failed after 5 retries
+2025-05-04 19:25:55 - PR #31274: Failed after 5 retries
+2025-05-04 19:25:58 - PR #31268: Failed after 5 retries
+2025-05-04 19:26:02 - PR #31208: Failed after 5 retries
+2025-05-04 19:26:02 - Completed batch 42 of 126. Progress: 420/1258 (33.4%). Taking a 62.49 second break...
+2025-05-04 19:27:05 - PR #31263: Success
+2025-05-04 19:27:17 - PR #31177: Failed after 5 retries
+2025-05-04 19:27:20 - PR #31175: Failed after 5 retries
+2025-05-04 19:27:24 - PR #31209: Failed after 5 retries
+2025-05-04 19:27:28 - PR #31178: Failed after 5 retries
+2025-05-04 19:27:31 - PR #31188: Failed after 5 retries
+2025-05-04 19:27:35 - PR #31186: Failed after 5 retries
+2025-05-04 19:27:35 - Completed batch 43 of 126. Progress: 430/1258 (34.2%). Taking a 60.37 second break...
+2025-05-04 19:28:36 - PR #31185: Success
+2025-05-04 19:28:47 - PR #31179: Failed after 5 retries
+2025-05-04 19:28:50 - PR #31103: Failed after 5 retries
+2025-05-04 19:28:54 - PR #31167: Failed after 5 retries
+2025-05-04 19:28:58 - PR #31166: Failed after 5 retries
+2025-05-04 19:29:02 - PR #31165: Failed after 5 retries
+2025-05-04 19:29:05 - PR #31164: Failed after 5 retries
+2025-05-04 19:29:05 - Completed batch 44 of 126. Progress: 440/1258 (35.0%). Taking a 64.85 second break...
+2025-05-04 19:30:11 - PR #31159: Success
+2025-05-04 19:30:21 - PR #31160: Failed after 5 retries
+2025-05-04 19:30:24 - PR #31170: Failed after 5 retries
+2025-05-04 19:30:28 - PR #31163: Failed after 5 retries
+2025-05-04 19:30:32 - PR #31062: Failed after 5 retries
+2025-05-04 19:30:36 - PR #31154: Failed after 5 retries
+2025-05-04 19:30:39 - PR #31132: Failed after 5 retries
+2025-05-04 19:30:39 - Completed batch 45 of 126. Progress: 450/1258 (35.8%). Taking a 62.77 second break...
+2025-05-04 19:31:43 - PR #31151: Success
+2025-05-04 19:31:54 - PR #31153: Failed after 5 retries
+2025-05-04 19:31:58 - PR #31146: Failed after 5 retries
+2025-05-04 19:32:02 - PR #31145: Failed after 5 retries
+2025-05-04 19:32:06 - PR #31144: Failed after 5 retries
+2025-05-04 19:32:09 - PR #31143: Failed after 5 retries
+2025-05-04 19:32:13 - PR #31142: Failed after 5 retries
+2025-05-04 19:32:13 - Completed batch 46 of 126. Progress: 460/1258 (36.6%). Taking a 60.96 second break...
+2025-05-04 19:33:14 - PR #31141: Success
+2025-05-04 19:33:27 - PR #31136: Failed after 5 retries
+2025-05-04 19:33:31 - PR #31066: Failed after 5 retries
+2025-05-04 19:33:34 - PR #31032: Failed after 5 retries
+2025-05-04 19:33:37 - PR #31037: Failed after 5 retries
+2025-05-04 19:33:41 - PR #31101: Failed after 5 retries
+2025-05-04 19:33:44 - PR #31106: Failed after 5 retries
+2025-05-04 19:33:44 - Completed batch 47 of 126. Progress: 470/1258 (37.4%). Taking a 55.22 second break...
